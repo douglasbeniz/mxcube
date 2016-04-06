@@ -7,6 +7,7 @@ from widgets.create_discrete_widget import CreateDiscreteWidget
 from widgets.create_mesh_widget import CreateMeshWidget
 from widgets.create_char_widget import CreateCharWidget
 from qt import *
+import collections
 
 
 CollectionMethod = namedtuple('CollectionMethod', 
@@ -133,7 +134,7 @@ class PositionHistoryBrickWidget(QWidget):
         QListBoxText(self.point_list_box,'Point ' + \
                          str(self.points_cnt))
 
-        if callable(self.new_position_cb):
+        if isinstance(self.new_position_cb, collections.Callable):
             self.new_position_cb(cpos)
 
         return cpos
@@ -183,7 +184,7 @@ class PositionHistoryBrickWidget(QWidget):
     def clear_positions(self):
         points = []
         
-        indices = range(0, self.point_list_box.numRows())
+        indices = list(range(0, self.point_list_box.numRows()))
         indices.reverse()
 
         for index in indices:

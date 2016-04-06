@@ -629,7 +629,7 @@ class DataCollectTree(qt.QWidget):
         
         try:
             self.queue_hwobj.execute()
-        except Exception, e:
+        except Exception as e:
             raise e
         
     def stop_collection(self):

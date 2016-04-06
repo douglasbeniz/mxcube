@@ -347,7 +347,7 @@ class TreeBrick(BaseComponents.BlissWidget):
         l_samples = dict()            
    
         if self.sample_changer_hwobj.__class__.__TYPE__ == 'Robodiff':
-          for location, l_sample in location_samples.iteritems():
+          for location, l_sample in location_samples.items():
             if l_sample.lims_location != (None, None):
               basket, sample = l_sample.lims_location
               cell = int(round((basket+0.5)/3.0))

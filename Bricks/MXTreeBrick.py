@@ -5,6 +5,7 @@ from qt import *
 import dc_tree_widget
 import logging
 import sys
+import imp
 
 __category__ = 'mxCuBE'
 
@@ -15,7 +16,7 @@ class MXTreeBrick(BaseComponents.BlissWidget):
     def __init__(self, *args):
         BaseComponents.BlissWidget.__init__(self, *args)
 
-        reload(dc_tree_widget)
+        imp.reload(dc_tree_widget)
         
         self.defineSlot("add_data_collection", ())
         self.defineSlot("get_selected_sample", ())

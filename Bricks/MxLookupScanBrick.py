@@ -321,7 +321,7 @@ class MxLookupScanBrick(BaseGraphicScan) :
         posMot2 = []
         pointMatchNb = 0
         matchPointId = []
-        for i,(match,point) in enumerate(itertools.izip(self._matchPoints,self.__gridPoints)) : 
+        for i,(match,point) in enumerate(zip(self._matchPoints,self.__gridPoints)) : 
             if match :
                 posMot1.append(point[0,0])
                 posMot2.append(point[0,1])

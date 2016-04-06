@@ -99,7 +99,7 @@ class EDNALogBrick(BaseComponents.BlissWidget):
 
     def clearMessages(self):
         self.ednaOutputList.clear()
-        for output_widget in self.ednaOutputs.itervalues():
+        for output_widget in self.ednaOutputs.values():
           output_widget.clear()
         self.ednaOutputs={}
 

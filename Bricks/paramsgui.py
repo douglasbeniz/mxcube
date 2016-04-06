@@ -16,18 +16,18 @@ class SpinBox(qt.QSpinBox):
         self.editor().setAlignment(qt.QWidget.AlignLeft)
         qt.QObject.connect(self.editor(),qt.SIGNAL('textChanged(const QString &)'),self.inputFieldChanged)
         self.__name = options['variableName']
-        if options.has_key('unit'):
+        if 'unit' in options:
             qt.QSpinBox.setSuffix(self, ' ' + options['unit'])
-        if options.has_key('defaultValue'):
+        if 'defaultValue' in options:
             val = float(options['defaultValue'])
             self.setValue(int(val * float(10**self.decimalPlaces)))
-        if options.has_key('upperBound'):
+        if 'upperBound' in options:
             self.setMaxValue(float(options['upperBound']))
         else:
-            qt.QSpinBox.setMaxValue(self, sys.maxint)
-        if options.has_key('lowerBound'):
+            qt.QSpinBox.setMaxValue(self, sys.maxsize)
+        if 'lowerBound' in options:
             self.setMinValue(float(options['lowerBound']))
-        if options.has_key('tooltip'):
+        if 'tooltip' in options:
             qt.QToolTip.add(self, options['tooltip'])
 
     def inputFieldChanged(self,text):
@@ -118,7 +118,7 @@ class LineEdit(qt.QLineEdit):
         qt.QLineEdit.__init__(self, parent)
         self.setAlignment(qt.Qt.AlignLeft)
         self.__name = options['variableName']
-        if options.has_key('defaultValue'):
+        if 'defaultValue' in options:
             self.setText(options['defaultValue'])
         self.setAlignment(qt.Qt.AlignRight)
     def set_value(self, value):
@@ -132,10 +132,10 @@ class Combo(qt.QComboBox):
     def __init__(self, parent, options):
         qt.QComboBox.__init__(self, parent)
         self.__name = options['variableName']
-        if options.has_key('textChoices'):
+        if 'textChoices' in options:
             for val in options['textChoices']:
                 self.insertItem(val)
-        if options.has_key('defaultValue'):
+        if 'defaultValue' in options:
             self.setCurrentText(options['defaultValue'])
     def set_value(self, value):
         self.setCurrentText(value)
@@ -157,7 +157,7 @@ class File(qt.QWidget):
         self.__name = options['variableName']
         self.filepath = qt.QLineEdit(self)
         self.filepath.setAlignment(qt.Qt.AlignLeft)
-        if options.has_key('defaultValue'):
+        if 'defaultValue' in options:
             self.filepath.setText(options['defaultValue'])
         self.open_dialog_btn = qt.QPushButton('...', self)
         qt.QObject.connect(self.open_dialog_btn, qt.SIGNAL('clicked()'), self.open_file_dialog)
@@ -185,18 +185,18 @@ class IntSpinBox(qt.QSpinBox):
         qt.QSpinBox.__init__(self,parent)
         self.editor().setAlignment(qt.QWidget.AlignLeft)
         self.__name = options['variableName']
-        if options.has_key('unit'):
+        if 'unit' in options:
             qt.QSpinBox.setSuffix(self, ' ' + options['unit'])
-        if options.has_key('defaultValue'):
+        if 'defaultValue' in options:
             val = int(options['defaultValue'])
             self.setValue(val)
-        if options.has_key('upperBound'):
+        if 'upperBound' in options:
             self.setMaxValue(int(options['upperBound']))
         else:
-            qt.QSpinBox.setMaxValue(self, sys.maxint)
-        if options.has_key('lowerBound'):
+            qt.QSpinBox.setMaxValue(self, sys.maxsize)
+        if 'lowerBound' in options:
             self.setMinValue(int(options['lowerBound']))
-        if options.has_key('tooltip'):
+        if 'tooltip' in options:
             qt.QToolTip.add(self, options['tooltip'])
 
     def set_value(self, value):
@@ -270,7 +270,7 @@ class FieldsWidget(qt.QWidget):
         current_row = 0
         for field in fields:
             # should not happen but lets just skip them
-            if field['type'] != 'message' and not field.has_key('uiLabel'):
+            if field['type'] != 'message' and 'uiLabel' not in field:
                 continue
 
             # hack until the 'real' xml gets implemented server side and this mess gets rewritten
@@ -306,11 +306,11 @@ class FieldsWidget(qt.QWidget):
 
     def set_values(self, values):
         for field in self.field_widgets:
-            if values.has_key(field.get_name()):
+            if field.get_name() in values:
                 field.set_value(values[field.get_name()])
 
     def __print_xml(self):
-        print self.get_xml(True)
+        print(self.get_xml(True))
 
     def get_xml(self, olof=False):
         root = etree.Element('parameters')

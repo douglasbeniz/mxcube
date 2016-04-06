@@ -751,8 +751,6 @@ class Qt4_SampleChangerBrick3(BlissWidget):
         self.status = StatusView(self.contents_widget)
         self.switch_to_sample_transfer_button = QtGui.QPushButton(\
              "Switch to Sample Transfer mode", self.contents_widget)
-        self.test_sample_changer_button = QtGui.QPushButton(\
-             "Test sample changer", self.contents_widget)
         self.current_basket_view = CurrentBasketView(self.contents_widget)
         self.current_sample_view = CurrentSampleView(self.contents_widget)
 
@@ -782,7 +780,6 @@ class Qt4_SampleChangerBrick3(BlissWidget):
         _contents_widget_vlayout = QtGui.QVBoxLayout(self.contents_widget)
         _contents_widget_vlayout.addWidget(self.status)
         _contents_widget_vlayout.addWidget(self.switch_to_sample_transfer_button)
-        _contents_widget_vlayout.addWidget(self.test_sample_changer_button)
         _contents_widget_vlayout.addWidget(self.current_basket_view)
         _contents_widget_vlayout.addWidget(self.current_sample_view)
         _contents_widget_vlayout.addWidget(self.sc_contents_gbox)
@@ -796,7 +793,6 @@ class Qt4_SampleChangerBrick3(BlissWidget):
         self.main_vlayout.setSpacing(0)
         self.main_vlayout.setContentsMargins(0, 0, 0, 0)
         
-        self.test_sample_changer_button.clicked.connect(self.test_sample_changer)
         self.reset_baskets_samples_button.clicked.connect(self.resetBasketsSamplesInfo)
 
         """
@@ -1054,7 +1050,7 @@ class Qt4_SampleChangerBrick3(BlissWidget):
         for i, basket_checkbox in enumerate(self.baskets):
           baskets_to_scan.append(SC3.Basket.getBasketAddress(i+1) if basket_checkbox.isChecked() else None)
          
-        self.sample_changer_hwobj.scan(filter(None, baskets_to_scan), recursive=True, wait=False)
+        self.sample_changer_hwobj.scan([_f for _f in baskets_to_scan if _f], recursive=True, wait=False)
 
     def infoChanged(self):
         baskets_at_sc = self.sample_changer_hwobj.getComponents()        
@@ -1098,7 +1094,7 @@ class Qt4_SampleChangerBrick3(BlissWidget):
         if retval == QDialog.Accepted:
             self.sample_changer_hwobj.resetBasketsInformation()
 
-            for basket, samples in self.basketsSamplesSelectionDialog.result.iteritems():
+            for basket, samples in self.basketsSamplesSelectionDialog.result.items():
                 for i in range(10):
                     input=[basket, i+1, 0, 0, 0]
                 
@@ -1106,9 +1102,6 @@ class Qt4_SampleChangerBrick3(BlissWidget):
                     input[1]=sample
                     input[2]=1
                     self.sample_changer_hwobj.setBasketSampleInformation(input)
-
-    def test_sample_changer(self):
-        self.sample_changer_hwobj.run_test() 
 
 class HorizontalSpacer(QtGui.QWidget):
     def __init__(self,*args):
@@ -1210,7 +1203,7 @@ def handle_range(r):
         except:
             return []
         else:
-            return range(ll,hl+1,1)
+            return list(range(ll,hl+1,1))
     elif len(lim)==1:
         try:
             n = int(lim[0])

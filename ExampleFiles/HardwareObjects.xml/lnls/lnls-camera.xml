@@ -1,0 +1,13 @@
+<device class="LNLSCamera">
+    <!-- Channels -->
+    <channel type="epics" name="epicsAllied_data">MX1:image_allied:ArrayData</channel>
+    <channel type="epics" name="epicsAllied_back">MX1:allied:ArrayCallbacks</channel>
+    <channel type="epics" name="epicsAllied_en_back">MX1:image_allied:EnableCallbacks</channel>
+    <channel type="epics" name="epicsAllied_acq_stop">MX1:allied:AcquisitionStop</channel>
+    <channel type="epics" name="epicsAllied_acq_start">MX1:allied:AcquisitionStart</channel>
+    <channel type="epics" name="epicsAllied_acq">MX1:allied:Acquire</channel>
+    <!-- Properties -->
+    <username>Mockup Camera</username>
+    <source>/usr/local/src/mxcube-2/ExampleFiles/fakeimg.jpg</source>
+    <interval>60</interval>
+</device>

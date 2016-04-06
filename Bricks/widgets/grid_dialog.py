@@ -160,7 +160,7 @@ class GridDialog(qt.QDialog):
             try:
                 if self.__drawing_mgr:
                     self.__drawing_mgr.set_x_pixel_size(x_size)
-                for drawing_mgr in self.__list_items.values():
+                for drawing_mgr in list(self.__list_items.values()):
                     drawing_mgr.set_x_pixel_size(x_size)
                     drawing_mgr.reposition(scale_factor_x = zoom_factor)
             except AttributeError:
@@ -181,7 +181,7 @@ class GridDialog(qt.QDialog):
                     self.__drawing_mgr.set_y_pixel_size(y_size)
                     self.__drawing_mgr.reshape()
 
-                for drawing_mgr in self.__list_items.values():
+                for drawing_mgr in list(self.__list_items.values()):
                     drawing_mgr.set_y_pixel_size(y_size)
                     drawing_mgr.reshape()
                     drawing_mgr.reposition(scale_factor_y = zoom_factor)
@@ -202,7 +202,7 @@ class GridDialog(qt.QDialog):
 
             self.__drawing_mgr.set_beam_position(beam_c_x, beam_c_y,
                                                  beam_width_mm, beam_height_mm)
-            for drawing_mgr in self.__list_items.itervalues():
+            for drawing_mgr in self.__list_items.values():
                 drawing_mgr.set_beam_position(beam_c_x, beam_c_y)
         except:
             # Drawing manager not set when called
@@ -215,7 +215,7 @@ class GridDialog(qt.QDialog):
         grid_dict.update(drawing_mgr._get_grid(key)[0])
 
     def _set_grid_data(self, key, result_data):  
-        for list_view_item in self.__list_items.keys():
+        for list_view_item in list(self.__list_items.keys()):
             if key == str(list_view_item.text(0)):
                 drawing_mgr = self.__list_items[list_view_item]
 
@@ -230,7 +230,7 @@ class GridDialog(qt.QDialog):
                 break
 
     def __selection_changed(self, item):
-        for current_item in self.__list_items.iterkeys():
+        for current_item in self.__list_items.keys():
             drawing_mgr = self.__list_items[current_item]
             if current_item == item:
                 drawing_mgr.highlight(True)
@@ -247,7 +247,7 @@ class GridDialog(qt.QDialog):
     def move_grid_hor(self, displacement_px):
         #print "hor: %f" % displacement_px
         try:
-            for drawing_mgr in self.__list_items.itervalues():
+            for drawing_mgr in self.__list_items.values():
                 drawing_mgr.moveBy(displacement_px, 0)
         except:
             # Drawing manager not set when called
@@ -256,7 +256,7 @@ class GridDialog(qt.QDialog):
     def move_grid_ver(self, displacement_px):
         #print "ver: %f" % displacement_px
         try:
-            for drawing_mgr in self.__list_items.itervalues():
+            for drawing_mgr in self.__list_items.values():
                 drawing_mgr.moveBy(0, displacement_px)
         except:
             # Drawing manager not set when called
@@ -265,7 +265,7 @@ class GridDialog(qt.QDialog):
     def __toggle_visibility_grid(self):
         item = self.__list_view.currentItem()
 
-        for current_item in self.__list_items.iterkeys():
+        for current_item in self.__list_items.keys():
             drawing_mgr = self.__list_items[current_item]
             if current_item == item:
                 if drawing_mgr.isVisible()[0]:

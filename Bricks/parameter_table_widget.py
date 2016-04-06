@@ -71,7 +71,7 @@ class ParametersTable(QWidget):
     def populate_parameter_table(self, parameters):
         self.parameter_table.setNumRows(11)
         i = 0
-        for param_key, parameter in parameters.items():
+        for param_key, parameter in list(parameters.items()):
 
             if param_key != 'positions':
                 self.parameter_table.setText(i, 0, parameter[0])

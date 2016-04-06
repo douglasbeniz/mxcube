@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import cPickle
+import pickle
 import sys
 import os
 import pprint
@@ -16,10 +16,10 @@ if __name__ == '__main__':
     try:
       cfg = open(sys.argv[2], 'r')
       gui = open(sys.argv[1], 'r')
-    except Exception, e:
-      print 'Could not open file', e
+    except Exception as e:
+      print('Could not open file', e)
   else:
-    print 'Usage: %s <.gui file> <cfg file> > new .gui file' % sys.argv[0]
+    print('Usage: %s <.gui file> <cfg file> > new .gui file' % sys.argv[0])
 
   gui_config = eval(gui.read())
   #config_obj = Configuration.Configuration()
@@ -29,14 +29,14 @@ if __name__ == '__main__':
   def find(item_name, config=gui_config):
     for x in config:
       if x["name"]==item_name:
-        return x, cPickle.loads(x["properties"])
+        return x, pickle.loads(x["properties"])
       cfg, item = find(item_name, x["children"]) 
       if item:
         return cfg,item
     return None, None
 
   for item in cfg:
-    for item_name, item_cfg in item.iteritems():
+    for item_name, item_cfg in item.items():
       # look for property object for item in .gui file
       gui_cfg_item, gui_item = find(item_name)  
 
@@ -45,13 +45,13 @@ if __name__ == '__main__':
       else:
         # assign properties
         sys.stderr.write('[%s]\n' % item_name)
-        for prop_name, prop_value in item_cfg.iteritems():
+        for prop_name, prop_value in item_cfg.items():
           sys.stderr.write('  -> setting value for property %s to %s\n' %(prop_name,prop_value))
           try:
             gui_item.properties[prop_name].setValue(prop_value)
           except KeyError:
             pass
         # re-dump PropertyBag
-        gui_cfg_item["properties"]=cPickle.dumps(gui_item)
+        gui_cfg_item["properties"]=pickle.dumps(gui_item)
 
-  print repr(gui_config)
+  print(repr(gui_config))

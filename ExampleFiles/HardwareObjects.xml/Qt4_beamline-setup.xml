@@ -7,6 +7,7 @@
 
   <object href="/diff-omega-mockup" role="omega_axis"/>
   <object href="/diff-kappa-mockup" role="kappa_axis"/>
+  <object href="/lnls/lnls-gonio_base" role="gonio_axis"/>
   <object href="/diff-kappaphi-mockup" role="kappa_phi_axis"/>
 
   <object href="/Qt4_mini-diff-mockup" role="diffractometer"/>

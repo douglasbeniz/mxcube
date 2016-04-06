@@ -591,7 +591,7 @@ class SoleilHutchMenuBrick(BlissWidget):
 
         try:
             successful_method=self.successfulMethods[method]
-        except KeyError,diag:
+        except KeyError as diag:
             pass
         else:
             try:
@@ -633,7 +633,7 @@ class SoleilHutchMenuBrick(BlissWidget):
 
         try:
             reset_method=self.resetMethods[method]
-        except KeyError,diag:
+        except KeyError as diag:
             pass
         else:
             try:
@@ -697,7 +697,7 @@ class SoleilHutchMenuBrick(BlissWidget):
             pass
 
     def connectNotify(self, signalName):
-        print "..... HutchMenuBrick:connectNotify  ", signalName
+        print("..... HutchMenuBrick:connectNotify  ", signalName)
         if signalName=='beamPositionChanged':
             if self.minidiff and self.minidiff.isReady() and self.beamInfo is not None:
 		self.beam_position = self.beamInfo.get_beam_position()
@@ -925,7 +925,7 @@ class SoleilHutchMenuBrick(BlissWidget):
     # Zoom changed: update pixels per mm
     def zoomPositionChanged(self,position,offset):
         pxmmy, pxmmz, pxsize_y, pxsize_z = None,None,None,None
-        print "** HutchMenuBrick: zoomPositionChanged", position,offset
+        print("** HutchMenuBrick: zoomPositionChanged", position,offset)
         if offset is None:
           # unknown zoom pos.
           try:
@@ -933,7 +933,7 @@ class SoleilHutchMenuBrick(BlissWidget):
             self.__rectangularBeam.hide()
             self.__beam.hide()
           except AttributeError:
-            print "&&& zoomPositionChanged AttributeError"
+            print("&&& zoomPositionChanged AttributeError")
             self.__scaleX = None
             self.__scaleY = None
         else:

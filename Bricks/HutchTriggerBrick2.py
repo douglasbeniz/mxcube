@@ -47,7 +47,7 @@ class HutchTriggerBrick2(DuoStateBrick):
     }
 
     def __init__(self, *args):
-        DuoStateBrick.__init__.im_func(self, *args)
+        DuoStateBrick.__init__.__func__(self, *args)
         self.hutchTrigger = None
         self.connect(self.stateLabel,PYSIGNAL('stopClicked'),self.stopClicked)
         self.addProperty('stopIcon', 'string', '')
@@ -97,7 +97,7 @@ class HutchTriggerBrick2(DuoStateBrick):
             else:
                 self.stateLabel.setButtonStopPixmap(Icons.load(newValue))
         elif propertyName=='icons':
-            DuoStateBrick.propertyChanged.im_func(self,propertyName,oldValue,newValue)
+            DuoStateBrick.propertyChanged.__func__(self,propertyName,oldValue,newValue)
         elif propertyName=='username':
             if newValue!="":
                 self.containerBox.setTitle(newValue)
@@ -109,14 +109,14 @@ class HutchTriggerBrick2(DuoStateBrick):
             self.stateChanged('entering')
             self.hutchTrigger.macro(1)
         else:
-            DuoStateBrick.setIn.im_func(self,False)
+            DuoStateBrick.setIn.__func__(self,False)
 
     def setOut(self,state):
         if state:
             self.stateChanged('leaving')
             self.hutchTrigger.macro(0)
         else:
-            DuoStateBrick.setOut.im_func(self,False)
+            DuoStateBrick.setOut.__func__(self,False)
 
     def connected(self):
         if self['mode']=='automatic':

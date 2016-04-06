@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import cPickle
+import pickle
 import sys
 import os
 import pprint
@@ -12,10 +12,10 @@ if __name__ == '__main__':
     try:
       f = open(sys.argv[1], 'r')
     except:
-      print 'Could not open file',sys.argv[1]
+      print('Could not open file',sys.argv[1])
       sys.exit(1)
   else:
-    print 'Usage: %s <.gui file> > output_file' % sys.argv[0]
+    print('Usage: %s <.gui file> > output_file' % sys.argv[0])
     sys.exit(1)
 
   config = eval(f.read())
@@ -25,8 +25,8 @@ if __name__ == '__main__':
     for child in children_list:
       d = {}
       config_list.append({child["name"]:d})
-      propbag = cPickle.loads(child["properties"])
-      for property in propbag.properties.itervalues():
+      propbag = pickle.loads(child["properties"])
+      for property in propbag.properties.values():
         d[property.name]=property.getUserValue()
       add_children_properties(child["children"], config_list)
 

@@ -6,7 +6,7 @@ import types
 from datetime import datetime, timedelta
 
 try:
-    import cPickle as pickle
+    import pickle as pickle
 except ImportError:
     import pickle
 
@@ -167,7 +167,7 @@ class BrowserBrick(BaseComponents.BlissWidget):
         try:
             path = self.history_map[index]
             self.load_file(path)
-        except KeyError, e:
+        except KeyError as e:
             # can happen when qt sends us the signal with
             # null data and we get the key ("","","")
             pass
@@ -242,7 +242,7 @@ class BrowserBrick(BaseComponents.BlissWidget):
         except KeyError:
             #user has no history yet
             self.history_map = dict()
-        for k,v in self.history_map.iteritems():
+        for k,v in self.history_map.items():
             self.history.insertRows(self.history.numRows())
             logging.debug('numRows() is %d', self.history.numRows())
             rows = self.history.numRows() - 1
@@ -256,10 +256,10 @@ class BrowserBrick(BaseComponents.BlissWidget):
         sessions_ttl = self.getProperty('sessions ttl (in days)').getValue()
         limit_date = datetime.now() - timedelta(sessions_ttl)
         #we're mutating the dict so do not use iteritems() just to be sure
-        for user in histories.keys():
+        for user in list(histories.keys()):
             history = histories[user]
             #get the keys where the date is more recent than the limit date
-            valid_keys = [x for x in history.keys()
+            valid_keys = [x for x in list(history.keys())
                           if datetime.strptime(x[0], '%Y-%m-%d %H:%M:%S') > limit_date]
             #NB: old format was "%a, %d %b %Y %H:%M:%S"
             if len(valid_keys) != len(history):

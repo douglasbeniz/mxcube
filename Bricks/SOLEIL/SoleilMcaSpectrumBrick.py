@@ -10,10 +10,10 @@ class SoleilMcaSpectrumBrick(McaSpectrumBrick):
 
 
     def setData(self, data, calib, config):
-        print 'McaSpectrumBrick: setData'
-        print 'data', data
-        print 'calib', calib
-        print 'config', config
+        print('McaSpectrumBrick: setData')
+        print('data', data)
+        print('calib', calib)
+        print('config', config)
         #calib = [0, 10, 0]
         try:
             #if config["file"]:

@@ -112,7 +112,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="osc_start_cbox">
+               <widget class="QLabel" name="osc_start_label">
                 <property name="maximumSize">
                  <size>
                   <width>16777215</width>

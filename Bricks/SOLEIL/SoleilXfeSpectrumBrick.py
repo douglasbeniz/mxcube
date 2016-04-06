@@ -25,9 +25,9 @@ class SoleilXfeSpectrumBrick(XfeSpectrumBrick):
     def spectrumFinished(self, mca_data, calib, config):
 
         a = str(self.directoryInput.text()).split(os.path.sep)
-        print 'a', a
+        print('a', a)
         dirctr = str(self.directoryInput.text()) #let's have string instead of QString
-        print 'self.directoryInput.text()', self.directoryInput.text()
+        print('self.directoryInput.text()', self.directoryInput.text())
         if dirctr[-1] == '/':
             a_dir = dirctr[:-1]
         else:
@@ -41,7 +41,7 @@ class SoleilXfeSpectrumBrick(XfeSpectrumBrick):
             #a_dir = os.path.join('/data/pyarch/',a[4],a[3],*a[5:])
         #if a_dir[-1]!=os.path.sep:
             #a_dir+=os.path.sep
-        print "a_dir --------------------------->", a_dir
+        print("a_dir --------------------------->", a_dir)
         
         if not os.path.exists(os.path.dirname(a_dir)):
             os.makedirs(os.path.dirname(a_dir))
@@ -76,7 +76,7 @@ class SoleilXfeSpectrumBrick(XfeSpectrumBrick):
         ax.set_title(filename)
         ax.grid(True)
         #ax.plot(*(zip(*mca_data)), **{"color":'black'})
-        ax.plot(*(zip(*calibrated_array)), **{"color":'black'})
+        ax.plot(*(list(zip(*calibrated_array))), **{"color":'black'})
         #ax.set_xlabel("MCA channel")
         #ax.set_ylabel("MCA counts")
         ax.set_xlabel("Energy")
@@ -90,7 +90,7 @@ class SoleilXfeSpectrumBrick(XfeSpectrumBrick):
             shutil.copy (filename, str(a_dir) + '/')
             logging.getLogger().debug("Copying .fit file to: %s", a_dir)
         except:
-            print 'Problem copying file ', filename, 'to ', a_dir
+            print('Problem copying file ', filename, 'to ', a_dir)
             logging.getLogger().debug("Problem copying .fit file to: %s", a_dir)
 
         logging.getLogger().debug("Copying .fit file to: %s", a_dir)
@@ -106,7 +106,7 @@ class SoleilXfeSpectrumBrick(XfeSpectrumBrick):
             self.emit(PYSIGNAL("xfeSpectrumDone"), (mca_data, calib, config))
         except:
             logging.getLogger().exception("XfeSpectrumBrick: problem updating embedded PyMCA")
-            print traceback.print_exc
+            print(traceback.print_exc)
             traceback.print_exc
         self.spectrumStatus.setPaletteBackgroundColor(QColor(color))
 

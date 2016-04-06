@@ -966,7 +966,7 @@ class SampleChangerSoleilBrick(BlissWidget):
         for i, basket_checkbox in enumerate(self.baskets):
           baskets_to_scan.append(SC3.Basket.getBasketAddress(i+1) if basket_checkbox.isChecked() else None)
          
-        self.sampleChanger.scan(filter(None, baskets_to_scan), recursive=True, wait=False)
+        self.sampleChanger.scan([_f for _f in baskets_to_scan if _f], recursive=True, wait=False)
 
     def infoChanged(self):
         baskets = self.sampleChanger.getComponents()
@@ -1002,7 +1002,7 @@ class SampleChangerSoleilBrick(BlissWidget):
         if retval == QDialog.Accepted:
             self.sampleChanger.resetBasketsInformation()
 
-            for basket, samples in self.basketsSamplesSelectionDialog.result.iteritems():
+            for basket, samples in self.basketsSamplesSelectionDialog.result.items():
                 for i in range(16):
                     input=[basket, i+1, 0, 0, 0]
                 
@@ -1110,7 +1110,7 @@ def handle_range(r):
         except:
             return []
         else:
-            return range(ll,hl+1,1)
+            return list(range(ll,hl+1,1))
     elif len(lim)==1:
         try:
             n = int(lim[0])

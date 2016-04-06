@@ -25,7 +25,7 @@ from PyQt4 import QtCore
 from BlissFramework.Utils import Qt4_widget_colors
 from BlissFramework.Qt4_BaseComponents import BlissWidget
 
-__category__ = 'General'
+__category__ = 'Qt4_General'
 
 STATES = {'unknown': Qt4_widget_colors.GRAY,
           'ready': Qt4_widget_colors.LIGHT_BLUE,
@@ -207,7 +207,7 @@ class Qt4_MachineInfoBrick(BlissWidget):
         Args.     :
         Return.   : 
         """
-        for x in ['m', unichr(181), 'n']:
+        for x in ['m', chr(181), 'n']:
             if num > 0.001:
                 num *= 1000.0 
                 return "%0.1f%s" % (num, x)

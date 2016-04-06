@@ -3,9 +3,10 @@ from HardwareRepository.dispatcher import dispatcher
 from BlissFramework.Utils import widget_colors
 #import logging
 
-class DataModelInputBinder(object):
+class DataModelInputBinder():
     def __init__(self,  obj):
-        object.__init__(self)
+        # LNLS
+        #object.__init__(self)
         self.__model = obj
         
         # Key - field name/attribute name of the persistant object.
@@ -53,7 +54,7 @@ class DataModelInputBinder(object):
         self.validate_all()
    
     def init_bindings(self):
-        for field_name in self.bindings.iterkeys():
+        for field_name in self.bindings.keys():
             self._update_widget(field_name, None)
 
     def _update_widget(self, field_name, data_binder):
@@ -129,7 +130,7 @@ class DataModelInputBinder(object):
     def validate_all(self):
         result = []
 
-        for (key, value) in self.bindings.iteritems():
+        for (key, value) in self.bindings.items():
             widget = value[0]
             validator = value[1]
             

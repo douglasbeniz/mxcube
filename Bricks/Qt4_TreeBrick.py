@@ -67,10 +67,10 @@ class Qt4_TreeBrick(BlissWidget):
 
         # Properties ---------------------------------------------------------- 
         self.addProperty("holderLengthMotor", "string", "")
-        self.addProperty("queue", "string", "/queue")
-        self.addProperty("queue_model", "string", "/queue-model")
-        self.addProperty("beamline_setup", "string", "/beamline-setup-break")
-        self.addProperty("xml_rpc_server", "string", "/xml_rpc_server")
+        self.addProperty("queue", "string", "/Qt4_queue")
+        self.addProperty("queue_model", "string", "/Qt4_queue-model")
+        self.addProperty("beamline_setup", "string", "/Qt4_beamline-setup-break")
+        self.addProperty("xml_rpc_server", "string", "/Qt4_xml_rpc_server")
         #names of sample changers could come from hwobj
         self.addProperty("scOneName", "string", "Sample changer")
         self.addProperty("scTwoName", "string", "Plate")
@@ -85,8 +85,8 @@ class Qt4_TreeBrick(BlissWidget):
         self.defineSignal("hide_dc_parameters_tab", ())
         self.defineSignal("hide_sample_centring_tab", ())
         self.defineSignal("hide_dcg_tab", ())
-        self.defineSignal("hide_sample_changer_tab", ())
-        self.defineSignal("hide_plate_manipulator_tab", ())
+        self.defineSignal("hide_sample_changer_one_tab", ())
+        self.defineSignal("hide_sample_changer_two_tab", ())
         self.defineSignal("hide_char_parameters_tab", ())
         self.defineSignal("hide_energy_scan_tab",())
         self.defineSignal("hide_xrf_spectrum_tab",())
@@ -183,8 +183,8 @@ class Qt4_TreeBrick(BlissWidget):
         self.emit(QtCore.SIGNAL("hide_dcg_tab"), True)
         self.emit(QtCore.SIGNAL("hide_sample_centring_tab"), False)
         self.emit(QtCore.SIGNAL("hide_char_parameters_tab"), True)
-        self.emit(QtCore.SIGNAL("hide_sample_changer_tab"), True)
-        self.emit(QtCore.SIGNAL("hide_plate_manipulator_tab"), True) 
+        self.emit(QtCore.SIGNAL("hide_sample_changer_one_tab"), True)
+        self.emit(QtCore.SIGNAL("hide_sample_changer_two_tab"), True) 
         self.emit(QtCore.SIGNAL("hide_sample_tab"), True)
         self.emit(QtCore.SIGNAL("hide_energy_scan_tab"), True)
         self.emit(QtCore.SIGNAL("hide_xrf_spectrum_tab"), True)
@@ -288,6 +288,10 @@ class Qt4_TreeBrick(BlissWidget):
 
                 self.connect(xml_rpc_server_hwobj, 'start_queue',
                              self.dc_tree_widget.collect_items)
+        elif property_name == 'scOneName':
+              self.sample_changer_widget.filter_cbox.setItemText(1, new_value)
+        elif property_name == 'scTwoName':
+              self.sample_changer_widget.filter_cbox.setItemText(2, new_value) 
         else:
             BlissWidget.propertyChanged(self, property_name, old_value, new_value)
 
@@ -314,25 +318,28 @@ class Qt4_TreeBrick(BlissWidget):
             self.dc_tree_widget.populate_free_pin()
           
             if self.sample_changer_hwobj: 
-                sc_basket_content, sc_sample_content = self.get_sc_content()
+                sc_basket_content, sc_sample_content = self.get_sc_content(\
+                    self.sample_changer_hwobj)
                 if sc_basket_content and sc_sample_content:
                     sc_basket_list, sc_sample_list = self.dc_tree_widget.\
                          samples_from_sc_content(sc_basket_content, sc_sample_content)
                     self.dc_tree_widget.sample_mount_method = 1
                     self.dc_tree_widget.populate_tree_widget(sc_basket_list, sc_sample_list, 
                          self.dc_tree_widget.sample_mount_method)
-                    self.sample_changer_widget.details_button.setText("Show SC-details")
    
-            if self.plate_manipulator_hwobj:
-                plate_row_content, plate_sample_content = self.get_plate_content()
-                self.dc_tree_widget.beamline_setup_hwobj.set_plate_mode(True)
-                if plate_sample_content:
-                     plate_row_list, plate_sample_list = self.dc_tree_widget.\
-                        samples_from_plate_content(plate_row_content, plate_sample_content)
-                     self.dc_tree_widget.sample_mount_method = 2
-                     self.dc_tree_widget.populate_tree_widget(plate_row_list, 
-                         plate_sample_list, self.dc_tree_widget.sample_mount_method)
-                     self.sample_changer_widget.details_button.setText("Show Plate-details")
+            if self.plate_manipulator_hwobj:        
+                sc_basket_content, sc_sample_content = self.get_sc_content(\
+                    self.plate_manipulator_hwobj)
+                if sc_basket_content and sc_sample_content:
+                    sc_basket_list, sc_sample_list = self.dc_tree_widget.\
+                         samples_from_sc_content(sc_basket_content, sc_sample_content)
+                    self.dc_tree_widget.sample_mount_method = 2
+                    self.dc_tree_widget.populate_tree_widget(sc_basket_list, sc_sample_list, 
+                         self.dc_tree_widget.sample_mount_method)    
+
+            #if self.dc_tree_widget.sample_mount_method > 0:
+            #self.sample_changer_widget.synch_combo.setEnabled()
+            #self.sample_changer_widget.synch_label.setEnabled(True)
 
             self.sample_changer_widget.filter_cbox.setCurrentIndex(\
                  self.dc_tree_widget.sample_mount_method)
@@ -392,7 +399,7 @@ class Qt4_TreeBrick(BlissWidget):
         l_samples = dict()            
    
         # TODO: add test for sample changer type, here code is for Robodiff only
-        for location, l_sample in location_samples.iteritems():
+        for location, l_sample in location_samples.items():
           if l_sample.lims_location != (None, None):
             basket, sample = l_sample.lims_location
             cell = int(round((basket+0.5)/3.0))
@@ -427,7 +434,8 @@ class Qt4_TreeBrick(BlissWidget):
             if samples and sample_changer:
                 (barcode_samples, location_samples) = \
                     self.dc_tree_widget.samples_from_lims(samples)
-                sc_basket_content, sc_sample_content = self.get_sc_content()
+                sc_basket_content, sc_sample_content = self.get_sc_content(\
+                  sample_changer)
                 sc_basket_list, sc_sample_list = self.dc_tree_widget.\
                   samples_from_sc_content(sc_basket_content, sc_sample_content)
 
@@ -488,7 +496,7 @@ class Qt4_TreeBrick(BlissWidget):
              self.dc_tree_widget.sample_tree_widget)
         self.tree_options_dialog.show()
 
-    def get_sc_content(self):
+    def get_sc_content(self, sample_changer):
         """
         Gets the 'raw' data from the sample changer.
         
@@ -497,14 +505,14 @@ class Qt4_TreeBrick(BlissWidget):
         sc_basket_content = []
         sc_sample_content = []
 
-        for basket in self.sample_changer_hwobj.getBasketList():
+        for basket in sample_changer.getBasketList():
             basket_index = basket.getIndex()
             basket_code = basket.getID() or ""
             basket_name = basket.getName()
             is_present = basket.isPresent()
             sc_basket_content.append((basket_index+1, basket, basket_name))
              
-        for sample in self.sample_changer_hwobj.getSampleList():
+        for sample in sample_changer.getSampleList():
             matrix = sample.getID() or ""
             basket_index = sample.getContainer().getIndex()
             sample_index = sample.getIndex()
@@ -513,31 +521,6 @@ class Qt4_TreeBrick(BlissWidget):
             sc_sample_content.append((matrix, basket_index + 1, sample_index + 1, sample_name))
         return sc_basket_content, sc_sample_content
 
-    def get_plate_content(self):
-        """
-        """
-        plate_row_content = []
-        plate_sample_content = []
-
-        for row in self.plate_manipulator_hwobj.getBasketList():
-            row_index = row.getIndex() 
-            row_code = row.getID() or ""
-            row_name = row.getName()
-            is_present = row.isPresent()
-            plate_row_content.append((row_index, row, row_name))
-
-        for sample in self.plate_manipulator_hwobj.getSampleList():
-            row_index = sample.getCell().getRowIndex()
-            col_index = sample.getCell().getCol()
-            drop_index = sample.getDrop().getWellNo()
-            sample_name = sample.getName()
-
-            coords = sample.getCoords()
-            matrix = sample.getID() or ""
-            vial_index = ":".join(map(str, coords[1:]))
-            plate_sample_content.append((matrix, row_index, col_index, drop_index, None, coords))
- 
-        return plate_row_content, plate_sample_content
 
     def status_msg_changed(self, msg, color):
         """
@@ -579,8 +562,8 @@ class Qt4_TreeBrick(BlissWidget):
         self.emit(QtCore.SIGNAL("hide_dcg_tab"), True)
         self.emit(QtCore.SIGNAL("hide_sample_centring_tab"), False)
         self.emit(QtCore.SIGNAL("hide_sample_tab"), True)
-        self.emit(QtCore.SIGNAL("hide_sample_changer_tab"), True)
-        self.emit(QtCore.SIGNAL("hide_plate_manipulator_tab"), True)
+        self.emit(QtCore.SIGNAL("hide_sample_changer_one_tab"), True)
+        self.emit(QtCore.SIGNAL("hide_sample_changer_two_tab"), True)
         self.emit(QtCore.SIGNAL("hide_char_parameters_tab"), True)
         self.emit(QtCore.SIGNAL("hide_energy_scan_tab"), True)
         self.emit(QtCore.SIGNAL("hide_xrf_spectrum_tab"), True)
@@ -597,8 +580,8 @@ class Qt4_TreeBrick(BlissWidget):
         self.emit(QtCore.SIGNAL("hide_dcg_tab"), True)
         self.emit(QtCore.SIGNAL("hide_sample_centring_tab"), False)
         self.emit(QtCore.SIGNAL("hide_sample_tab"), False)
-        self.emit(QtCore.SIGNAL("hide_sample_changer_tab"), True)
-        self.emit(QtCore.SIGNAL("hide_plate_manipulator_tab"), True)
+        self.emit(QtCore.SIGNAL("hide_sample_changer_one_tab"), True)
+        self.emit(QtCore.SIGNAL("hide_sample_changer_two_tab"), True)
         self.emit(QtCore.SIGNAL("hide_char_parameters_tab"), True)
         self.emit(QtCore.SIGNAL("hide_energy_scan_tab"), True)
         self.emit(QtCore.SIGNAL("hide_xrf_spectrum_tab"), True)
@@ -612,8 +595,8 @@ class Qt4_TreeBrick(BlissWidget):
         self.sample_changer_widget.details_button.setText("Show SC-details")
         self.emit(QtCore.SIGNAL("hide_dc_parameters_tab"), True)
         self.emit(QtCore.SIGNAL("hide_dcg_tab"), False)
-        self.emit(QtCore.SIGNAL("hide_sample_changer_tab"), True)
-        self.emit(QtCore.SIGNAL("hide_plate_manipulator_tab"), True)
+        self.emit(QtCore.SIGNAL("hide_sample_changer_one_tab"), True)
+        self.emit(QtCore.SIGNAL("hide_sample_changer_two_tab"), True)
         self.emit(QtCore.SIGNAL("hide_char_parameters_tab"), True)
         self.emit(QtCore.SIGNAL("hide_sample_tab"), True)
         self.emit(QtCore.SIGNAL("hide_energy_scan_tab"), True)
@@ -634,8 +617,8 @@ class Qt4_TreeBrick(BlissWidget):
         self.sample_changer_widget.details_button.setText("Show SC-details")
         self.emit(QtCore.SIGNAL("hide_dcg_tab"), True)
         self.emit(QtCore.SIGNAL("hide_dc_parameters_tab"), False)
-        self.emit(QtCore.SIGNAL("hide_sample_changer_tab"), True)
-        self.emit(QtCore.SIGNAL("hide_plate_manipulator_tab"), True)
+        self.emit(QtCore.SIGNAL("hide_sample_changer_one_tab"), True)
+        self.emit(QtCore.SIGNAL("hide_sample_changer_two_tab"), True)
         self.emit(QtCore.SIGNAL("hide_char_parameters_tab"), True)
         self.emit(QtCore.SIGNAL("hide_sample_tab"), True)
         self.emit(QtCore.SIGNAL("hide_energy_scan_tab"), True)
@@ -657,8 +640,8 @@ class Qt4_TreeBrick(BlissWidget):
         self.sample_changer_widget.details_button.setText("Show SC-details")
         self.emit(QtCore.SIGNAL("hide_dcg_tab"), True)
         self.emit(QtCore.SIGNAL("hide_dc_parameters_tab"), True)
-        self.emit(QtCore.SIGNAL("hide_sample_changer_tab"), True)
-        self.emit(QtCore.SIGNAL("hide_plate_manipulator_tab"), True)
+        self.emit(QtCore.SIGNAL("hide_sample_changer_one_tab"), True)
+        self.emit(QtCore.SIGNAL("hide_sample_changer_two_tab"), True)
         self.emit(QtCore.SIGNAL("hide_char_parameters_tab"), False)
         self.emit(QtCore.SIGNAL("hide_sample_tab"), True)
         self.emit(QtCore.SIGNAL("hide_energy_scan_tab"), True)
@@ -680,8 +663,8 @@ class Qt4_TreeBrick(BlissWidget):
         self.sample_changer_widget.details_button.setText("Show SC-details")
         self.emit(QtCore.SIGNAL("hide_dcg_tab"), True)
         self.emit(QtCore.SIGNAL("hide_dc_parameters_tab"), True)
-        self.emit(QtCore.SIGNAL("hide_sample_changer_tab"), True)
-        self.emit(QtCore.SIGNAL("hide_plate_manipulator_tab"), True)
+        self.emit(QtCore.SIGNAL("hide_sample_changer_one_tab"), True)
+        self.emit(QtCore.SIGNAL("hide_sample_changer_two_tab"), True)
         self.emit(QtCore.SIGNAL("hide_char_parameters_tab"), True)
         self.emit(QtCore.SIGNAL("hide_sample_tab"), True) 
         self.emit(QtCore.SIGNAL("hide_energy_scan_tab"), False)
@@ -703,8 +686,8 @@ class Qt4_TreeBrick(BlissWidget):
         self.sample_changer_widget.details_button.setText("Show SC")
         self.emit(QtCore.SIGNAL("hide_dcg_tab"), True)
         self.emit(QtCore.SIGNAL("hide_dc_parameters_tab"), True)
-        self.emit(QtCore.SIGNAL("hide_sample_changer_tab"), True)
-        self.emit(QtCore.SIGNAL("hide_plate_manipulator_tab"), True)
+        self.emit(QtCore.SIGNAL("hide_sample_changer_one_tab"), True)
+        self.emit(QtCore.SIGNAL("hide_sample_changer_two_tab"), True)
         self.emit(QtCore.SIGNAL("hide_char_parameters_tab"), True)
         self.emit(QtCore.SIGNAL("hide_sample_tab"), True)
         self.emit(QtCore.SIGNAL("hide_energy_scan_tab"), True)
@@ -726,8 +709,8 @@ class Qt4_TreeBrick(BlissWidget):
         self.sample_changer_widget.details_button.setText("Show SC")
         self.emit(QtCore.SIGNAL("hide_dcg_tab"), True)
         self.emit(QtCore.SIGNAL("hide_dc_parameters_tab"), True)
-        self.emit(QtCore.SIGNAL("hide_sample_changer_tab"), True)
-        self.emit(QtCore.SIGNAL("hide_plate_manipulator_tab"), True)
+        self.emit(QtCore.SIGNAL("hide_sample_changer_one_tab"), True)
+        self.emit(QtCore.SIGNAL("hide_sample_changer_two_tab"), True)
         self.emit(QtCore.SIGNAL("hide_char_parameters_tab"), True)
         self.emit(QtCore.SIGNAL("hide_sample_tab"), True)
         self.emit(QtCore.SIGNAL("hide_energy_scan_tab"), True)
@@ -755,8 +738,8 @@ class Qt4_TreeBrick(BlissWidget):
         self.sample_changer_widget.details_button.setText("Show SC-details")
         self.emit(QtCore.SIGNAL("hide_dcg_tab"), True)
         self.emit(QtCore.SIGNAL("hide_dc_parameters_tab"), True)
-        self.emit(QtCore.SIGNAL("hide_sample_changer_tab"), True)
-        self.emit(QtCore.SIGNAL("hide_plate_manipulator_tab"), True)
+        self.emit(QtCore.SIGNAL("hide_sample_changer_one_tab"), True)
+        self.emit(QtCore.SIGNAL("hide_sample_changer_two_tab"), True)
         self.emit(QtCore.SIGNAL("hide_char_parameters_tab"), True)
         self.emit(QtCore.SIGNAL("hide_sample_tab"), True) 
         self.emit(QtCore.SIGNAL("hide_energy_scan_tab"), True)
@@ -775,11 +758,6 @@ class Qt4_TreeBrick(BlissWidget):
 
     def mount_mode_combo_changed(self, index):
         self.dc_tree_widget.filter_sample_list(index)
-        self.sample_changer_widget.details_button.setEnabled(index > 0) 
-        self.sample_changer_widget.synch_ispyb_button.setEnabled(index > 0)
-        if index == 0:
-            self.emit(QtCore.SIGNAL("hide_sample_changer_tab"), True)
-            self.emit(QtCore.SIGNAL("hide_plate_manipulator_tab"), True)
         
     def toggle_sample_changer_tab(self): 
         """
@@ -787,23 +765,19 @@ class Qt4_TreeBrick(BlissWidget):
         """
         if self.current_view == self.sample_changer_widget:
             self.current_view = None
-            if self.dc_tree_widget.sample_mount_method == 1:
-                self.emit(QtCore.SIGNAL("hide_sample_changer_tab"), True)
-                self.sample_changer_widget.details_button.setText("Show SC-details")
-            else:
-                self.emit(QtCore.SIGNAL("hide_plate_manipulator_tab"), True)
-                self.sample_changer_widget.details_button.setText("Show Plate-details")
+            self.emit(QtCore.SIGNAL("hide_sample_changer_one_tab"), True)
+            self.emit(QtCore.SIGNAL("hide_sample_changer_two_tab"), True)
             self.dc_tree_widget.sample_tree_widget_selection()
+            self.sample_changer_widget.details_button.setText("Show SC-details")
         else:
             self.current_view = self.sample_changer_widget
             self.emit(QtCore.SIGNAL("hide_dc_parameters_tab"), True)
             self.emit(QtCore.SIGNAL("hide_dcg_tab"), True)
             if self.dc_tree_widget.sample_mount_method == 1:
-                self.emit(QtCore.SIGNAL("hide_sample_changer_tab"), False)
-                self.sample_changer_widget.details_button.setText("Hide SC-details")
+                self.emit(QtCore.SIGNAL("hide_sample_changer_one_tab"), False)
             else:
-                self.emit(QtCore.SIGNAL("hide_plate_manipulator_tab"), False)
-                self.sample_changer_widget.details_button.setText("Hide Plate-details")
+                self.emit(QtCore.SIGNAL("hide_sample_changer_two_tab"), False)
+            self.sample_changer_widget.details_button.setText("Hide SC-details")
             self.emit(QtCore.SIGNAL("hide_sample_tab"), True)
         
     def selection_changed(self, items):
@@ -1006,13 +980,13 @@ class Qt4_TreeBrick(BlissWidget):
         self.update_enable_collect()
 
     def update_enable_collect(self):
-        enable_collect = all(item == True for item in self.enable_collect_conditions.values())
+        enable_collect = all(item == True for item in list(self.enable_collect_conditions.values()))
         if enable_collect != self.dc_tree_widget.enable_collect_condition:
             if enable_collect:
                 logging.getLogger("user_level_log").info("Data collect is enabled")    
             else:
                 logging.getLogger("user_level_log").info("Data collect is disabled")
-                for key, value in self.enable_collect_conditions.iteritems():
+                for key, value in self.enable_collect_conditions.items():
                     if key == "diffractometer":
                         logging.getLogger("user_level_log").info("Diffractometer is in beam location phase")
                     elif key == "shutter":

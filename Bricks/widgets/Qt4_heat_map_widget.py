@@ -278,11 +278,11 @@ class HeatMapWidget(QtGui.QWidget):
         self._summary_textbrowser.append("Number of rows: %d" % \
              grid_properties["steps_y"])
         self._summary_textbrowser.append("Horizontal spacing: %.1f %sm" % \
-            (grid_properties["xOffset"], u"\u00B5"))
+            (grid_properties["xOffset"], "\u00B5"))
         self._summary_textbrowser.append("Vertical spacing: %.1f %sm" % \
-            (grid_properties["yOffset"], u"\u00B5"))
+            (grid_properties["yOffset"], "\u00B5"))
         self._summary_textbrowser.append("Beam size : %.1f x %.1f %sm" % \
-            (grid_properties["beam_x"], grid_properties["beam_y"], u"\u00B5"))
+            (grid_properties["beam_x"], grid_properties["beam_y"], "\u00B5"))
         self._summary_textbrowser.append("Scan range : %.1f x %.1f mm" % \
             (grid_properties["dx_mm"], grid_properties["dy_mm"]))
 

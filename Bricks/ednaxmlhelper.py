@@ -13,7 +13,7 @@ FIELD_PROPERTIES = [
 ]
 
 def get_field_containers(xml_root):
-    if type(xml_root) == types.StringType:
+    if type(xml_root) == bytes:
         xml_root = etree.fromstring(xml_root)
     return xml_root.xpath('//object[@class="org.dawb.passerelle.actors.ui.config.FieldContainer"]')
 
@@ -69,13 +69,13 @@ if __name__=='__main__':
     import sys
     f = sys.argv[1]
     doc = etree.parse(f).getroot()
-    print '**** containers ****'
+    print('**** containers ****')
     containers = get_field_containers(doc)
-    print containers
+    print(containers)
 
     for container in containers:
-        print '**** fields ****'
+        print('**** fields ****')
         fields = get_fields(container)
         for field in fields:
-            print field
+            print(field)
     

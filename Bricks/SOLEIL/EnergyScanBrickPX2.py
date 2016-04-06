@@ -29,7 +29,7 @@ class QSpecScan(QObject, SpecScan.SpecScanA):
         self.y.append(y)
 
     def scanFinished(self): 
-        self.graph_data = zip(self.x, self.y)
+        self.graph_data = list(zip(self.x, self.y))
 
 
 class shortLineEdit(QLineEdit):
@@ -477,7 +477,7 @@ class EnergyScanBrickPX2(BlissWidget):
 
 #    def scanFinished(self, *args):
     def scanFinished(self, scanData):
-        print "EnergyScanBrick : scanCommandFinished scanData = " , scanData
+        print("EnergyScanBrick : scanCommandFinished scanData = " , scanData)
         color=self.STATES['ok']
         self.scanStatusChanged("scan finished")
 

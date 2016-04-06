@@ -140,7 +140,7 @@ class CreateHelicalWidget(CreateTaskBase):
             self._path_template = qmo.PathTemplate()
 
     def add_clicked(self):
-        selected_shapes = self._shape_history.selected_shapes.values()
+        selected_shapes = list(self._shape_history.selected_shapes.values())
 
         if len(selected_shapes) == 2:
             p1 = selected_shapes[0]
@@ -184,7 +184,7 @@ class CreateHelicalWidget(CreateTaskBase):
         if isinstance(shape, shape_history.Point):
             items_to_remove = []
 
-            for (list_item, line) in self._list_item_map.iteritems():
+            for (list_item, line) in self._list_item_map.items():
                 for qub_object in shape.get_qub_objects():
                     if qub_object in line.get_qub_objects():
                         items_to_remove.append((list_item, line))
@@ -222,7 +222,7 @@ class CreateHelicalWidget(CreateTaskBase):
     def show_selected_lines(self):
         selected_items = self.selected_items()
 
-        for list_item in self._list_item_map.keys():
+        for list_item in list(self._list_item_map.keys()):
             line = self._list_item_map[list_item]
             if list_item in selected_items:
                 self._shape_history.select_shape(line)
@@ -265,7 +265,7 @@ class CreateHelicalWidget(CreateTaskBase):
 
         #de-select previous selected list items and
         #select the current shape (Line).
-        for (list_item, shape) in self._list_item_map.iteritems():
+        for (list_item, shape) in self._list_item_map.items():
 
             if selected_line is shape:
                 self._list_box.setSelected(list_item, True)

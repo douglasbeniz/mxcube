@@ -252,12 +252,12 @@ class Qt4_GraphicsManagerBrick(BlissWidget):
                 item.set_base_color(color)
 
     def display_all_button_clicked(self):
-        for shape, treewidget_item in self.__shape_map.iteritems():
+        for shape, treewidget_item in self.__shape_map.items():
             shape.show()
             treewidget_item.setData(3, QtCore.Qt.DisplayRole, "True")
 
     def hide_all_button_clicked(self):
-        for shape, treewidget_item in self.__shape_map.iteritems():
+        for shape, treewidget_item in self.__shape_map.items():
             shape.hide()
             treewidget_item.setData(3, QtCore.Qt.DisplayRole, "False")
 
@@ -304,7 +304,7 @@ class Qt4_GraphicsManagerBrick(BlissWidget):
              setEnabled(len(self.__shape_map) > 0)
  
     def shape_treewiget_item_clicked(self, current_item, column): 
-        for key, value in self.__shape_map.iteritems():
+        for key, value in self.__shape_map.items():
             if value == current_item:
                 key.toggle_selected()
         self.manager_widget.change_color_button.setEnabled(current_item is not None)
@@ -312,7 +312,7 @@ class Qt4_GraphicsManagerBrick(BlissWidget):
     def grid_spacing_changed(self, value):
         spacing = self.get_spacing()
         for grid_treewidget_item in self.manager_widget.grid_treewidget.selectedItems():
-            grid_item = self.__grid_map.keys()[self.__grid_map.values().\
+            grid_item = list(self.__grid_map.keys())[list(self.__grid_map.values()).\
                         index(grid_treewidget_item)]
             grid_item.set_spacing(spacing) 
 
@@ -331,6 +331,6 @@ class Qt4_GraphicsManagerBrick(BlissWidget):
     def move_selected_grids(self, direction):
         spacing = self.get_spacing()
         for grid_treewidget_item in self.manager_widget.grid_treewidget.selectedItems():
-            grid_item = self.__grid_map.keys()[self.__grid_map.values().\
+            grid_item = list(self.__grid_map.keys())[list(self.__grid_map.values()).\
                         index(grid_treewidget_item)]
             grid_item.move_by_pix(direction)

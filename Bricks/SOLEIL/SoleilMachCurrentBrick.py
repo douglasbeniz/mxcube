@@ -142,7 +142,7 @@ class SoleilMachCurrentBrick(BaseComponents.BlissWidget):
         try:
             #self.refillCountdown.display(str(refill))
             self.refillCountdown.setText(refill)
-        except TypeError,ValueError:
+        except TypeError as ValueError:
             pass        
         
         if opmsg is not None and opmsg!="" and opmsg!="unknown":

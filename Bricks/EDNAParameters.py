@@ -187,7 +187,7 @@ class EDNAParameters(BlissWidget):
         
     def workflow_state_changed(self, new_state):
         logging.debug('%s: new workflow state is %r', self.name(), new_state)
-        if type(new_state) == types.ListType or type(new_state) == types.TupleType:
+        if type(new_state) == list or type(new_state) == tuple:
             new_state = str(new_state[0])
         if new_state == "ON" and self.previous_workflow_state == "RUNNING":
             # workflow finished, open the output file and use an EDNACaracterize method to
@@ -223,7 +223,7 @@ class EDNAParameters(BlissWidget):
         self.workflows.clear()
         workflows = self.workflow.get_available_workflows()
         self.workflow_list.clear()
-        for (w,i) in zip(workflows, range(len(workflows))):
+        for (w,i) in zip(workflows, list(range(len(workflows)))):
             path = w['path']
             name = w['name']
             if name == previous_workflow:
@@ -240,7 +240,7 @@ class EDNAParameters(BlissWidget):
         name = str(self.workflow_list.currentText())
         params = ['modelpath', self.workflows[name]['path']]
         #blparams = XSDataMXCuBEParameters()
-        for k,v in self.beamline_params.iteritems():
+        for k,v in self.beamline_params.items():
             # we'll have to lookup how those are specified someday
             # it's a (bool, string, string) tuple
             if k in ['mad_1_energy', 'mad_2_energy', 'mad_3_energy', 'mad_4_energy']:
@@ -283,7 +283,7 @@ class EDNAParameters(BlissWidget):
 	# conversion, lest it will explode when we call marshal() on it       
         floats = ['exposure_time', 'resolution', 'resolution_at_corner', 'x_beam', 'y_beam', 'beam_size_x', 'beam_size_y', 'overlap', 'osc_start', 'osc_range', 'kappaStart', 'current_detdistance', 'current_wavelength', 'phiStart', 'current_energy', 'current_osc_start'] 
         ints = ['sessionId', 'blSampleId', 'first_image', 'number_images', 'run_number', 'number_passes'] 
-        for k,v in params.iteritems():
+        for k,v in params.items():
             value = v
             if k in floats:
                 logging.debug('converting %s (%r) to float', k, v)

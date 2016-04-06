@@ -54,7 +54,7 @@ class SnapshotBrick(BlissWidget):
         if not os.path.isdir(self.directory):
             try:
                 os.makedirs(self.directory)
-            except OSError,diag:
+            except OSError as diag:
                 logging.getLogger().error("SnapshotBrick: error trying to create the directory %s (%s)" % (self.directory,str(diag)))
                 return
             else:

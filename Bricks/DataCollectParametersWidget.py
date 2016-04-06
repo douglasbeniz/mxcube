@@ -527,7 +527,7 @@ class DataCollectParametersWidget(QWidget):
         if not self.labelDict["mad_energies"].isShown():
             return
 
-        mad_energy_order=map(string.strip,self.paramDict["mad_energies"].text().split("-"))
+        mad_energy_order=list(map(string.strip,self.paramDict["mad_energies"].text().split("-")))
         #print "MAD ENERGY ORDER",mad_energy_order
         mad_pk_order="mad_%s_energy" % (mad_energy_order.index("pk")+1)
         mad_ip_order="mad_%s_energy" % (mad_energy_order.index("ip")+1)
@@ -673,7 +673,7 @@ class DataCollectParametersWidget(QWidget):
             first_image=int(str(self.paramDict['first_image'].text()))
             number_images=int(str(self.paramDict['number_images'].text()))
             run_number=int(str(self.paramDict['run_number'].text()))
-        except Exception,diag:
+        except Exception as diag:
             template=""
         else:
             if (first_image+number_images-1)>999:
@@ -825,19 +825,19 @@ class DataCollectParametersWidget(QWidget):
         self.setMADEnergies(None)
 
     def mad_1_energyToggled(self,state):
-        mad_energy_order=map(string.strip,self.paramDict["mad_energies"].text().split("-"))
+        mad_energy_order=list(map(string.strip,self.paramDict["mad_energies"].text().split("-")))
         self.madEnergiesCheck[mad_energy_order[0]]=state
     
     def mad_2_energyToggled(self,state):
-        mad_energy_order=map(string.strip,self.paramDict["mad_energies"].text().split("-"))
+        mad_energy_order=list(map(string.strip,self.paramDict["mad_energies"].text().split("-")))
         self.madEnergiesCheck[mad_energy_order[1]]=state
 
     def mad_3_energyToggled(self,state):
-        mad_energy_order=map(string.strip,self.paramDict["mad_energies"].text().split("-"))
+        mad_energy_order=list(map(string.strip,self.paramDict["mad_energies"].text().split("-")))
         self.madEnergiesCheck[mad_energy_order[2]]=state
 
     def mad_4_energyToggled(self,state):
-        mad_energy_order=map(string.strip,self.paramDict["mad_energies"].text().split("-"))
+        mad_energy_order=list(map(string.strip,self.paramDict["mad_energies"].text().split("-")))
         self.madEnergiesCheck[mad_energy_order[3]]=state
 
     def prefixChanged(self,text):
@@ -864,7 +864,7 @@ class DataCollectParametersWidget(QWidget):
             if create_directory_dialog.exec_loop()==QMessageBox.Ok:
                 try:
                     os.makedirs(directory)
-                except OSError,diag:
+                except OSError as diag:
                     logging.getLogger().error("DataCollectBrick: error trying to create the directory %s (%s)" % (directory,str(diag)))
                 self.paramDict["directory"].validateDirectory(directory)
 

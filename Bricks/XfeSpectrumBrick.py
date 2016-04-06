@@ -354,7 +354,7 @@ class XfeSpectrumBrick(BlissWidget):
             a_dir = os.path.join('/data/pyarch/',a[4],a[3],*a[5:])
         if a_dir[-1]!=os.path.sep:
             a_dir+=os.path.sep
-        print "a_dir --------------------------->", a_dir
+        print("a_dir --------------------------->", a_dir)
         
         if not os.path.exists(os.path.dirname(a_dir)):
             os.makedirs(os.path.dirname(a_dir))
@@ -389,7 +389,7 @@ class XfeSpectrumBrick(BlissWidget):
         ax.set_title(filename)
         ax.grid(True)
         #ax.plot(*(zip(*mca_data)), **{"color":'black'})
-        ax.plot(*(zip(*calibrated_array)), **{"color":'black'})
+        ax.plot(*(list(zip(*calibrated_array))), **{"color":'black'})
         #ax.set_xlabel("MCA channel")
         #ax.set_ylabel("MCA counts")
         ax.set_xlabel("Energy")

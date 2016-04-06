@@ -128,7 +128,7 @@ class CreateWorkflowWidget(CreateTaskBase):
         beamline_params['sample_node_id'] = sample._node_id
         beamline_params['sample_lims_id'] = sample.lims_id
 
-        params_list = map(str, list(itertools.chain(*beamline_params.iteritems())))
+        params_list = list(map(str, list(itertools.chain(*iter(beamline_params.items())))))
         params_list.insert(0, self.workflows[wf_name]['path'])
         params_list.insert(0, 'modelpath')
         

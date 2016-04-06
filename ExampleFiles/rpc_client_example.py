@@ -1,11 +1,11 @@
 import jsonpickle
-import xmlrpclib
+import xmlrpc.client
 import time
 import sys
 import imp
 
-server = xmlrpclib.ServerProxy('http://localhost:8000')
-print "Serialisation methods available for native queue objects:", server.queue_get_available_serialisations()
+server = xmlrpc.client.ServerProxy('http://localhost:8000')
+print("Serialisation methods available for native queue objects:", server.queue_get_available_serialisations())
 server.queue_set_serialisation("json")
 BASE_DATA_DIRECTORY = '/data/id14eh1/inhouse/opid141/20130515/RAW_DATA/'
 
@@ -14,7 +14,7 @@ BASE_DATA_DIRECTORY = '/data/id14eh1/inhouse/opid141/20130515/RAW_DATA/'
 
 for (module_name, module_code) in server.queue_get_model_code():
     queue_model_objects = imp.new_module(module_name)
-    exec module_code in queue_model_objects.__dict__
+    exec(module_code, queue_model_objects.__dict__)
     sys.modules[module_name] = queue_model_objects
 
 

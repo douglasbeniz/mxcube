@@ -28,6 +28,7 @@ from PyQt4 import QtCore
 from BlissFramework import Qt4_Icons
 from BlissFramework.Utils import Qt4_widget_colors
 from BlissFramework.Qt4_BaseComponents import BlissWidget
+import collections
 
 
 __category__ = 'Qt4_General'
@@ -239,16 +240,16 @@ class Qt4_ProposalBrick2(BlissWidget):
                 try:
                     method = event.method
                     arguments = event.arguments
-                except Exception, diag:
+                except Exception as diag:
                     logging.getLogger().exception("Qt4_ProposalBrick2: problem in event! (%s)" % str(diag))
                 except:
                     logging.getLogger().exception("Qt4_ProposalBrick2: problem in event!")
                 else:
                     #logging.getLogger().debug("Qt4_ProposalBrick2: custom event method is %s" % method)
-                    if callable(method):
+                    if isinstance(method, collections.Callable):
                         try:
                             method(*arguments)
-                        except Exception, diag:
+                        except Exception as diag:
                             logging.getLogger().exception("Qt4_ProposalBrick2: uncaught exception! (%s)" % str(diag))
                         except:
                             logging.getLogger().exception("Qt4_ProposalBrick2: uncaught exception!")
@@ -824,7 +825,7 @@ def personFullName(person):
         name = ""
     except TypeError:
         return ""
-    if person.has_key('familyName') and person['familyName'] is not None:
+    if 'familyName' in person and person['familyName'] is not None:
         name = name + person['familyName']
     return name.strip()
 

@@ -344,7 +344,7 @@ def is_checked(node):
     return node.state() > 0
 
 def print_text(node):
-    print "Executing node: " + node.text()
+    print("Executing node: " + node.text())
 
 
 MODEL_VIEW_MAPPINGS = \

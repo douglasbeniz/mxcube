@@ -86,15 +86,14 @@ class Qt4_BeamFocusingBrick(BlissWidget):
         if property_name == "mnemonic":
             if self.beam_focusing_hwobj is not None:
                 self.disconnect(self.beam_focusing_hwobj, 
-                                QtCore.SIGNAL('focusingModeChanged'), 
+                                QtCore.SIGNAL('definerPosChanged'), 
                                 self.focus_mode_changed)
             self.beam_focusing_hwobj = self.getHardwareObject(new_value)
             if self.beam_focusing_hwobj is not None:
                 self.connect(self.beam_focusing_hwobj, 
-                             QtCore.SIGNAL('focusingModeChanged'), 
+                             QtCore.SIGNAL('definerPosChanged'), 
                              self.focus_mode_changed)
-                mode, beam_size = self.beam_focusing_hwobj.get_active_focus_mode()
-                self.focus_mode_changed(mode, beam_size)
+                self.focus_mode_changed(self.beam_focusing_hwobj.get_active_focus_mode())
         else:
             BlissWidget.propertyChanged(self, property_name, old_value, new_value)
     
@@ -102,28 +101,28 @@ class Qt4_BeamFocusingBrick(BlissWidget):
         self.beam_focusing_combo.blockSignals(True)
         self.beam_focusing_combo.clear()
         modes = self.beam_focusing_hwobj.get_focus_mode_names()
-        for mode in modes:
-            self.beam_focusing_combo.addItem(mode)
+        if len(modes) > 0:
+            for m in modes:
+                self.beam_focusing_combo.addItem(m)
         self.beam_focusing_combo.blockSignals(False)
 
     def change_focus_mode(self):
         focus_mode_name = str(self.beam_focusing_combo.currentText())
-        txt = self.beam_focusing_hwobj.get_focus_mode_message(focus_mode_name)
+        txt = self.beam_focus_hwobj.get_focus_mode_message(focus_mode_name)
 
+        return
         if len(txt) > 0:
             confDialog = QtGui.QMessageBox.warning(None, "Focus mode", txt,
                   QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
             if confDialog == QtGui.QMessageBox.Ok:
-                self.beam_focusing_hwobj.set_focus_mode(focus_mode_name)
+                self.beam_focus_hwobj.set_focus_mode(focus_mode_name)
             else:
-                self.beam_focusing_combo.setCurrentIndex(\
-                    self.beam_focusing_combo.findText(self.active_focus_mode))
+                self.beam_focusing_combo.setCurrentText(self.active_focus_mode)
         else:
-            self.beam_focusing_hwobj.set_focus_mode(focus_mode_name)
+            self.beam_focus_hwobj.set_focus_mode(focus_mode_name)
 
-    def focus_mode_changed(self, new_focus_mode, beam_size):
-        
-        self.active_focus_mode = new_focus_mode
+    def focus_mode_changed(self, new_focus_mode):
+        self.active_focus_mode = new_focus_mode[0]
         self.beam_focusing_combo.blockSignals(True)
         if self.active_focus_mode is None:
             self.beam_focusing_combo.clear()

@@ -121,7 +121,7 @@ class MinikappaBrick(BlissWidget):
                 self.currentMotor.setLineStep(laststep)
 
     def addMotor(self,mnemonic,username,ho):
-        i=len(self.motors.keys())
+        i=len(list(self.motors.keys()))
         col=i % self['maxMotorsPerLine']
         line=i / self['maxMotorsPerLine']
 

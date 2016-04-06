@@ -145,7 +145,7 @@ class GrobSampleChangerBrick(BlissWidget):
             self.baskets[basket].samplesView.vials[vial].setVial((SampleChangerBrick3.VialView.VIAL_NOBARCODE_LOADED, ''))
 
     def loadedSampleChanged(self, loaded_dict):
-        if "on_axis" in self.sampleChanger.getSamplesMap().values():
+        if "on_axis" in list(self.sampleChanger.getSamplesMap().values()):
           self.emit(PYSIGNAL("sampleGotLoaded"),())
 
         logging.info("loaded sample changed: %r", loaded_dict)

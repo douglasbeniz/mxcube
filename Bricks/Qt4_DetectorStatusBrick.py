@@ -119,7 +119,7 @@ class Qt4_DetectorStatusBrick(BlissWidget):
         self.setToolTip(status_message)
 
     def temperature_changed(self, value, status_ok):
-        unit = u'\N{DEGREE SIGN}'
+        unit = '\N{DEGREE SIGN}'
         self.temperature_label.setText("   Temperature : %0.1f%s" %(value, unit))
         if status_ok: 
             Qt4_widget_colors.set_widget_color(self.temperature_label,

@@ -145,10 +145,10 @@ class Qt4_BeamSizeBrick(BlissWidget):
             self.hor_size_ledit.setText("")
         else:
             size_str = self['formatString'] % (hor_size * 1000)
-            self.hor_size_ledit.setText('%s %sm' % (size_str, unichr(956)))
+            self.hor_size_ledit.setText('%s %sm' % (size_str, chr(956)))
         if ver_size is None:
             self.ver_size_ledit.setText("")
         else:
             #ver_size *= 1000
             size_str = self['formatString'] % (ver_size * 1000)
-            self.ver_size_ledit.setText('%s %sm' % (size_str, unichr(956)))
+            self.ver_size_ledit.setText('%s %sm' % (size_str, chr(956)))

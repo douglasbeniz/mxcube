@@ -5,6 +5,7 @@ import parameter_table_widget
 import logging
 import sys
 import pprint
+import imp
 pp = pprint.PrettyPrinter(indent=4, depth=10)
 
 __category__ = 'mxCuBE'
@@ -13,7 +14,7 @@ class MXParametersBrick(BaseComponents.BlissWidget):
     def __init__(self, *args):
         BaseComponents.BlissWidget.__init__(self, *args)
 
-        reload(parameter_table_widget)
+        imp.reload(parameter_table_widget)
     
 ##         self.defineSignal("add_data_collection", {})
 ##         self.defineSlot("create_collection",())

@@ -5,6 +5,7 @@ import logging
 import time
 import os
 from BlissFramework.Utils import widget_colors
+import collections
 
 __category__ = 'mxCuBE'
 
@@ -174,16 +175,16 @@ class SoleilLoginBrick(BlissWidget):
                 try:
                     method=event.method
                     arguments=event.arguments
-                except Exception,diag:
+                except Exception as diag:
                     logging.getLogger().exception("SoleilLoginBrick: problem in event! (%s)" % str(diag))
                 except:
                     logging.getLogger().exception("SoleilLoginBrick: problem in event!")
                 else:
                     #logging.getLogger().debug("SoleilLoginBrick: custom event method is %s" % method)
-                    if callable(method):
+                    if isinstance(method, collections.Callable):
                         try:
                             method(*arguments)
-                        except Exception,diag:
+                        except Exception as diag:
                             logging.getLogger().exception("SoleilLoginBrick: uncaught exception! (%s)" % str(diag))
                         except:
                             logging.getLogger().exception("SoleilLoginBrick: uncaught exception!")
@@ -287,7 +288,7 @@ class SoleilLoginBrick(BlissWidget):
             except KeyError:
                 comments=None
             person_name=personFullName(person)
-            if laboratory.has_key('name'):
+            if 'name' in laboratory:
                 person_name=person_name+" "+laboratory['name']
             localcontact_name=personFullName(localcontact)
             #title="<big><b>%s-%s %s</b></big>" % (proposal['code'],proposal['number'],title)
@@ -712,7 +713,7 @@ def personFullName(person):
         name=""
     except TypeError:
         return ""
-    if person.has_key('familyName') and person['familyName'] is not None:
+    if 'familyName' in person and person['familyName'] is not None:
         name=name+person['familyName']
     return name.strip()
 

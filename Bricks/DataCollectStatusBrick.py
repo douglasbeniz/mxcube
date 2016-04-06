@@ -8,6 +8,7 @@ import os,sys
 from Qub.Data.Source.QubADSC import QubADSC
 from Qub.Data.Source.QubMarCCD import QubMarCCD
 from Qub.CTools import pixmaptools
+import collections
 
 try:
     from Bruker import Bruker
@@ -270,16 +271,16 @@ class DataCollectStatusBrick(BlissWidget):
                 try:
                     method=event.method
                     arguments=event.arguments
-                except Exception,diag:
+                except Exception as diag:
                     logging.getLogger().exception("DataCollectStatusBrick: problem in event! (%s)" % str(diag))
                 except:
                     logging.getLogger().exception("DataCollectStatusBrick: problem in event!")
                 else:
                     #logging.getLogger().debug("DataCollectStatusBrick: custom event method is %s" % method)
-                    if callable(method):
+                    if isinstance(method, collections.Callable):
                         try:
                             method(*arguments)
-                        except Exception,diag:
+                        except Exception as diag:
                             logging.getLogger().exception("DataCollectStatusBrick: uncaught exception! (%s)" % str(diag))
                         except:
                             logging.getLogger().exception("DataCollectStatusBrick: uncaught exception!")
