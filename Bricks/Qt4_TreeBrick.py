@@ -202,26 +202,26 @@ class Qt4_TreeBrick(BlissWidget):
         elif property_name == 'queue':            
             self.queue_hwobj = self.getHardwareObject(new_value)
             self.dc_tree_widget.queue_hwobj = self.queue_hwobj
-            self.connect(self.queue_hwobj, 'show_workflow_tab',
+            self.connect(self.queue_hwobj, QtCore.SIGNAL('show_workflow_tab'),
                          self.show_workflow_tab_from_model)
 
-            self.connect(self.queue_hwobj, 'queue_execute_started',
+            self.connect(self.queue_hwobj, QtCore.SIGNAL('queue_execute_started'),
                          self.dc_tree_widget.queue_entry_execution_started)
 
-            self.connect(self.queue_hwobj, 'queue_paused', 
+            self.connect(self.queue_hwobj, QtCore.SIGNAL('queue_paused'), 
                          self.dc_tree_widget.queue_paused_handler)
 
-            self.connect(self.queue_hwobj, 'queue_execution_finished', 
+            self.connect(self.queue_hwobj, QtCore.SIGNAL('queue_execution_finished'), 
                          self.dc_tree_widget.queue_execution_completed)
 
-            self.connect(self.queue_hwobj, 'queue_stopped', 
+            self.connect(self.queue_hwobj, QtCore.SIGNAL('queue_stopped'), 
                          self.dc_tree_widget.queue_stop_handler)
         elif property_name == 'queue_model':
             self.queue_model_hwobj = self.getHardwareObject(new_value)
 
             self.dc_tree_widget.queue_model_hwobj = self.queue_model_hwobj
             self.dc_tree_widget.confirm_dialog.queue_model_hwobj = self.queue_model_hwobj
-            self.connect(self.queue_model_hwobj, 'child_added',
+            self.connect(self.queue_model_hwobj, QtCore.SIGNAL('child_added'),
                          self.dc_tree_widget.add_to_view)
         elif property_name == 'beamline_setup':
             bl_setup = self.getHardwareObject(new_value)
@@ -244,36 +244,36 @@ class Qt4_TreeBrick(BlissWidget):
 
             if self.sample_changer_hwobj is not None:
                 self.connect(self.sample_changer_hwobj, 
-                             SampleChanger.STATE_CHANGED_EVENT,
+                             QtCore.SIGNAL(SampleChanger.STATE_CHANGED_EVENT),
                              self.sample_load_state_changed)
                 self.connect(self.sample_changer_hwobj,
-                             SampleChanger.INFO_CHANGED_EVENT, 
+                             QtCore.SIGNAL(SampleChanger.INFO_CHANGED_EVENT), 
                              self.set_sample_pin_icon)
             if self.plate_manipulator_hwobj is not None:
                 self.connect(self.plate_manipulator_hwobj,
-                             SampleChanger.STATE_CHANGED_EVENT,
+                             QtCore.SIGNAL(SampleChanger.STATE_CHANGED_EVENT),
                              self.sample_load_state_changed)
                 self.connect(self.plate_manipulator_hwobj,
-                             SampleChanger.INFO_CHANGED_EVENT,
+                             QtCore.SIGNAL(SampleChanger.INFO_CHANGED_EVENT),
                              self.set_sample_pin_icon)
 
             #IK This is to enable/disable collection button
             # Could be much more generic
             if hasattr(bl_setup, "diffractometer_hwobj"):
                 self.connect(bl_setup.diffractometer_hwobj, 
-                             "minidiffPhaseChanged",
+                             QtCore.SIGNAL('minidiffPhaseChanged'),
                              self.diffractometer_phase_changed)
                 #self.diffractometer_phase_changed(\
                 #     bl_setup.diffractometer_hwobj.get_current_phase())
 
             if hasattr(bl_setup, "ppu_control_hwobj"):
                 self.connect(bl_setup.ppu_control_hwobj,
-                             'ppuStatusChanged',
+                             QtCore.SIGNAL('ppuStatusChanged'),
                              self.ppu_status_changed)
                 bl_setup.ppu_control_hwobj.update_values()
             if hasattr(bl_setup, "safety_shutter_hwobj"):
                 self.connect(bl_setup.safety_shutter_hwobj,
-                             'shutterStateChanged',
+                             QtCore.SIGNAL('shutterStateChanged'),
                              self.shutter_state_changed)
 
             has_shutter_less = bl_setup.detector_has_shutterless()
@@ -283,10 +283,10 @@ class Qt4_TreeBrick(BlissWidget):
             xml_rpc_server_hwobj = self.getHardwareObject(new_value)
 
             if xml_rpc_server_hwobj:
-                self.connect(xml_rpc_server_hwobj, 'add_to_queue',
+                self.connect(xml_rpc_server_hwobj, QtCore.SIGNAL('add_to_queue'),
                              self.add_to_queue)
 
-                self.connect(xml_rpc_server_hwobj, 'start_queue',
+                self.connect(xml_rpc_server_hwobj, QtCore.SIGNAL('start_queue'),
                              self.dc_tree_widget.collect_items)
         elif property_name == 'scOneName':
               self.sample_changer_widget.filter_cbox.setItemText(1, new_value)

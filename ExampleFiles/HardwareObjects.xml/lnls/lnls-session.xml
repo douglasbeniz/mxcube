@@ -1,4 +1,4 @@
-<object class="Session" role="session">  
+<object class="LNLSSession" role="session">  
   <synchrotron_name>LNLS</synchrotron_name>
   <endstation_name>MX1</endstation_name>
   <beamline_name>MX1</beamline_name>

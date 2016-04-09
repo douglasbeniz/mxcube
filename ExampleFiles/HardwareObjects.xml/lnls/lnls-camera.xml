@@ -8,6 +8,6 @@
     <channel type="epics" name="epicsAllied_acq">MX1:allied:Acquire</channel>
     <!-- Properties -->
     <username>Mockup Camera</username>
-    <source>/usr/local/src/mxcube-2/ExampleFiles/fakeimg.jpg</source>
+    <source>/usr/local/src/mxcube-3/ExampleFiles/fakeimg.jpg</source>
     <interval>60</interval>
 </device>
