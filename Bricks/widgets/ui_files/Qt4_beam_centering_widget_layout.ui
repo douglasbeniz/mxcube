@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>BeamCenteringWidgetLayout</class>
+ <widget class="QWidget" name="BeamCenteringWidgetLayout">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>912</width>
+    <height>533</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Beam Centering</string>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget_8">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>170</y>
+     <width>891</width>
+     <height>351</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="downControlBox">
+    <item>
+     <widget class="QTabWidget" name="graphicsTabs">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="translationHorTab">
+       <attribute name="title">
+        <string>Translation horizontal</string>
+       </attribute>
+       <widget class="QWidget" name="mplHorWindow" native="true">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>881</width>
+          <height>311</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <layout class="QVBoxLayout" name="mplHorVl"/>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="translationVerTab">
+       <attribute name="title">
+        <string>Translation vertical</string>
+       </attribute>
+       <widget class="QWidget" name="mplVerWindow" native="true">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>881</width>
+          <height>311</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <layout class="QVBoxLayout" name="mplVerVl"/>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="intensityByTimeTab">
+       <attribute name="title">
+        <string>Intensity by Time</string>
+       </attribute>
+       <widget class="QGraphicsView" name="graphIntensity">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>885</width>
+          <height>315</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_4">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>889</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="upControlsBox">
+    <item>
+     <layout class="QVBoxLayout" name="controlDistanceOperationBox">
+      <item>
+       <layout class="QHBoxLayout" name="inputDistanceBox">
+        <item>
+         <layout class="QVBoxLayout" name="colLabelDistanceBox">
+          <item>
+           <widget class="QLabel" name="distanceHorLabel">
+            <property name="text">
+             <string>Distance horizontal (mm):</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="distanceVerLabel">
+            <property name="text">
+             <string>Distance vertical (mm):</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="fullPathCheckBox">
+            <property name="text">
+             <string>Full path</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="colInputDistanceBox">
+          <item>
+           <widget class="QLineEdit" name="distanceHorEdit"/>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="distanceVerEdit"/>
+          </item>
+          <item>
+           <spacer name="colDistanceSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="frameUpButtonSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="buttonsCenteringBox">
+        <item>
+         <widget class="QPushButton" name="startCenterButton">
+          <property name="text">
+           <string>Start</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="cancelCenterButton">
+          <property name="text">
+           <string>Cancel</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="frameDownButtonSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="monitorBox">
+      <item>
+       <layout class="QHBoxLayout" name="monitorLabelsBox">
+        <item>
+         <layout class="QVBoxLayout" name="colMonitorLabelsBox">
+          <item>
+           <widget class="QLabel" name="positionHorLabel">
+            <property name="text">
+             <string>Horizontal position:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="positionVerLabel">
+            <property name="text">
+             <string>Vertical position:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="intensityLabel">
+            <property name="text">
+             <string>Intensity:</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="colMonitorOutputBox">
+          <item>
+           <widget class="QLabel" name="positionHorText">
+            <property name="frameShape">
+             <enum>QFrame::Box</enum>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="positionVerText">
+            <property name="frameShape">
+             <enum>QFrame::Box</enum>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="intensityText">
+            <property name="frameShape">
+             <enum>QFrame::Box</enum>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="monitorDownSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <spacer name="rightBoxesSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

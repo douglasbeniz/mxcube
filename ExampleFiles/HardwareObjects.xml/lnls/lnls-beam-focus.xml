@@ -1,0 +1,35 @@
+<equipment class="LNLSBeamFocus">
+    <!-- Channels for SlitBase X1-->
+    <channel type="epics" name="epicsSlitBaseX1_val">MXROB:DMC3:m1.VAL</channel>
+    <channel type="epics" name="epicsSlitBaseX1_rlv">MXROB:DMC3:m1.RLV</channel>
+    <channel type="epics" name="epicsSlitBaseX1_rbv">MXROB:DMC3:m1.RBV</channel>
+    <channel type="epics" name="epicsSlitBaseX1_dmov">MXROB:DMC3:m1.DMOV</channel>
+    <channel type="epics" name="epicsSlitBaseX1_stop">MXROB:DMC3:m1.STOP</channel>
+    <channel type="epics" name="epicsSlitBaseX1_hls">MXROB:DMC3:m1.HLS</channel>
+    <channel type="epics" name="epicsSlitBaseX1_lls">MXROB:DMC3:m1.LLS</channel>
+    <!-- Channels for SlitBase X2-->
+    <channel type="epics" name="epicsSlitBaseX2_val">MXROB:DMC3:m2.VAL</channel>
+    <channel type="epics" name="epicsSlitBaseX2_rlv">MXROB:DMC3:m2.RLV</channel>
+    <channel type="epics" name="epicsSlitBaseX2_rbv">MXROB:DMC3:m2.RBV</channel>
+    <channel type="epics" name="epicsSlitBaseX2_dmov">MXROB:DMC3:m2.DMOV</channel>
+    <channel type="epics" name="epicsSlitBaseX2_stop">MXROB:DMC3:m2.STOP</channel>
+    <channel type="epics" name="epicsSlitBaseX2_hls">MXROB:DMC3:m2.HLS</channel>
+    <channel type="epics" name="epicsSlitBaseX2_lls">MXROB:DMC3:m2.LLS</channel>
+    <!-- Channels for Keithley 6517A-->
+    <channel type="epics" name="epicsKeithley6517A_measure">MX1:K6517A:Measure</channel>
+
+    <focusModes>
+      <focusMode>
+           <modeName>Unfocused</modeName>
+           <message>'Set beam focusing to Unfocused mode'</message>
+           <size>100</size>
+           <divergence>5</divergence>
+      </focusMode>
+      <focusMode>
+           <modeName>Focused</modeName>
+           <message>'Set beam focusing to Focused mode'</message>
+           <size>10</size>
+           <divergence>1.2</divergence>
+      </focusMode>
+    </focusModes>
+</equipment>

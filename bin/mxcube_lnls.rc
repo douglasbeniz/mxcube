@@ -1,3 +1,4 @@
 #!/bin/bash
-export MXCUBE_ROOT=/usr/local/src/mxcube-3
+export MXCUBE_ROOT=/usr/local/src/mxcube
 export PYTHONPATH=$PYTHONPATH:$MXCUBE_ROOT:$MXCUBE_ROOT/HardwareObjects:$MXCUBE_ROOT/HardwareObjects/SOLEIL:$MXCUBE_ROOT/HardwareObjects/sample_changer:$MXCUBE_ROOT/HardwareObjects/LNLS:$MXCUBE_ROOT/BlissFramework/Utils:$MXCUBE_ROOT/Bricks/widgets:$MXCUBE_ROOT/HardwareRepository
+export PYTHONDONTWRITEBYTECODE=1
