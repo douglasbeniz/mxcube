@@ -108,18 +108,25 @@ class Qt4_BeamFocusingBrick(BlissWidget):
 
     def change_focus_mode(self):
         focus_mode_name = str(self.beam_focusing_combo.currentText())
-        txt = self.beam_focus_hwobj.get_focus_mode_message(focus_mode_name)
+        # LNLS
+        #txt = self.beam_focus_hwobj.get_focus_mode_message(focus_mode_name)
+        txt = self.beam_focusing_hwobj.get_focus_mode_message(focus_mode_name)
 
-        return
+        # LNLS
+        #return
         if len(txt) > 0:
             confDialog = QtGui.QMessageBox.warning(None, "Focus mode", txt,
                   QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
             if confDialog == QtGui.QMessageBox.Ok:
-                self.beam_focus_hwobj.set_focus_mode(focus_mode_name)
+                # LNLS
+                #self.beam_focus_hwobj.set_focus_mode(focus_mode_name)
+                self.beam_focusing_hwobj.set_focus_mode(focus_mode_name)
             else:
                 self.beam_focusing_combo.setCurrentText(self.active_focus_mode)
         else:
-            self.beam_focus_hwobj.set_focus_mode(focus_mode_name)
+            # LNLS 
+            #self.beam_focus_hwobj.set_focus_mode(focus_mode_name)
+            self.beam_focusing_hwobj.set_focus_mode(focus_mode_name)
 
     def focus_mode_changed(self, new_focus_mode):
         self.active_focus_mode = new_focus_mode[0]

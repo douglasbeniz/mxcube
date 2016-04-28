@@ -24,7 +24,8 @@ from PyQt4 import QtCore
 from PyQt4 import uic
 
 from matplotlib.figure import Figure
-from matplotlib.backends.backend_qt4agg import (FigureCanvasQTAgg as FigureCanvas)
+from matplotlib.backends.backend_qt4agg import (FigureCanvasQTAgg as FigureCanvas,
+    NavigationToolbar2QT as NavigationToolbar)
 import matplotlib.pyplot as Plot
 
 class BeamCenteringWidget(QtGui.QWidget):
@@ -46,22 +47,34 @@ class BeamCenteringWidget(QtGui.QWidget):
         self._beam_center_hwobj = None
 
         # Internal variables --------------------------------------------------
-        self._distanceHor = None
-        self._distanceVer = None
+        array = []
+        array.append([])
+        array.append([])
 
-        self._arrayHorX = []
-        self._arrayHorY = []
+        self._arraySlit1 = []
+        self._arraySlit1.append(array)
+        self._arraySlit1.append(array)
 
-        self._arrayVerX = []
-        self._arrayVerY = []       
+        self._arraySlit2 = []
+        self._arraySlit2.append(array)
+        self._arraySlit2.append(array)
 
-        self.figureHor = Figure()
-        self.axHorfigureHor = self.figureHor.add_subplot(111)
-        self.canvasHorizontal = FigureCanvas(self.figureHor)
+        self.figureHorSlit1 = Figure()
+        self.axHorSlit1 = self.figureHorSlit1.add_subplot(111)
+        self.canvasHorSlit1 = FigureCanvas(self.figureHorSlit1)
 
-        self.figureVer = Figure()
-        self.axVerfigureVer = self.figureVer.add_subplot(111)
-        self.canvasVertical = FigureCanvas(self.figureVer)
+        self.figureVerSlit1 = Figure()
+        self.axVerSlit1 = self.figureVerSlit1.add_subplot(111)
+        self.canvasVerSlit1 = FigureCanvas(self.figureVerSlit1)
+
+        self.figureHorSlit2 = Figure()
+        self.axHorSlit2 = self.figureHorSlit2.add_subplot(111)
+        self.canvasHorSlit2 = FigureCanvas(self.figureHorSlit2)
+
+        self.figureVerSlit2 = Figure()
+        self.axVerSlit2 = self.figureVerSlit2.add_subplot(111)
+        self.canvasVerSlit2 = FigureCanvas(self.figureVerSlit2)
+
 
         # Properties ---------------------------------------------------------- 
 
@@ -74,8 +87,28 @@ class BeamCenteringWidget(QtGui.QWidget):
              os.path.dirname(__file__),
              "ui_files/Qt4_beam_centering_widget_layout.ui"))
 
-        self.beam_center_widget_layout.mplHorVl.addWidget(self.canvasHorizontal)
-        self.beam_center_widget_layout.mplVerVl.addWidget(self.canvasVertical)
+        self.toolbarHorSlit1 = NavigationToolbar(self.canvasHorSlit1,
+                self.beam_center_widget_layout.mplHorSlit1Window, coordinates=True)
+        self.toolbarVerSlit1 = NavigationToolbar(self.canvasVerSlit1,
+                self.beam_center_widget_layout.mplVerSlit1Window, coordinates=True)
+        self.toolbarHorSlit2 = NavigationToolbar(self.canvasHorSlit2,
+                self.beam_center_widget_layout.mplHorSlit2Window, coordinates=True)
+        self.toolbarVerSlit2 = NavigationToolbar(self.canvasVerSlit2,
+                self.beam_center_widget_layout.mplVerSlit2Window, coordinates=True)
+
+        self.beam_center_widget_layout.mplHorVlSlit1.addWidget(self.canvasHorSlit1)
+        self.beam_center_widget_layout.mplHorVlSlit1.addWidget(self.toolbarHorSlit1)
+        self.beam_center_widget_layout.mplVerVlSlit1.addWidget(self.canvasVerSlit1)
+        self.beam_center_widget_layout.mplVerVlSlit1.addWidget(self.toolbarVerSlit1)
+
+        self.beam_center_widget_layout.mplHorVlSlit2.addWidget(self.canvasHorSlit2)
+        self.beam_center_widget_layout.mplHorVlSlit2.addWidget(self.toolbarHorSlit2)
+        self.beam_center_widget_layout.mplVerVlSlit2.addWidget(self.canvasVerSlit2)
+        self.beam_center_widget_layout.mplVerVlSlit2.addWidget(self.toolbarVerSlit2)
+
+        #Set enable/disable buttons
+        self.beam_center_widget_layout.startCenterButton.setEnabled(True)
+        self.beam_center_widget_layout.cancelCenterButton.setEnabled(False)
 
         # Layout --------------------------------------------------------------
         __main_vlayout = QtGui.QVBoxLayout(self)
@@ -86,38 +119,114 @@ class BeamCenteringWidget(QtGui.QWidget):
         # SizePolicies --------------------------------------------------------
 
         # Qt signal/slot connections ------------------------------------------
-        self.beam_center_widget_layout.distanceHorEdit.textChanged.connect(\
-             self.distanceHorEdit_change)
-        self.beam_center_widget_layout.distanceVerEdit.textChanged.connect(\
-             self.distanceVerEdit_change)
+        self.beam_center_widget_layout.distanceHorSlit1Edit.textChanged.connect(\
+             self.distanceHorSlit1Edit_change)
+        self.beam_center_widget_layout.distanceVerSlit1Edit.textChanged.connect(\
+             self.distanceVerSlit1Edit_change)
+        self.beam_center_widget_layout.stepSlit1Edit.textChanged.connect(\
+             self.stepSlit1Edit_change)
+        self.beam_center_widget_layout.fullPathSlit1Check.stateChanged.connect(\
+             self.fullPathSlit1Check_change)
+        self.beam_center_widget_layout.centerSlit1Check.stateChanged.connect(\
+             self.centerSlit1Check_change)
+        self.beam_center_widget_layout.distanceHorSlit2Edit.textChanged.connect(\
+             self.distanceHorSlit2Edit_change)
+        self.beam_center_widget_layout.distanceVerSlit2Edit.textChanged.connect(\
+             self.distanceVerSlit2Edit_change)
+        self.beam_center_widget_layout.stepSlit2Edit.textChanged.connect(\
+             self.stepSlit2Edit_change)
+        self.beam_center_widget_layout.fullPathSlit2Check.stateChanged.connect(\
+             self.fullPathSlit2Check_change)
+        self.beam_center_widget_layout.centerSlit2Check.stateChanged.connect(\
+             self.centerSlit2Check_change)
         self.beam_center_widget_layout.startCenterButton.clicked.connect(\
              self.startCenter)
         self.beam_center_widget_layout.cancelCenterButton.clicked.connect(\
              self.cancelCenter)
 
         # Other --------------------------------------------------------------- 
-        self.distanceHorEdit_validator = QtGui.QDoubleValidator(0, 30, 4, self)
-        self.distanceVerEdit_validator = QtGui.QDoubleValidator(0, 20, 4, self)
 
-    def distanceHorEdit_change(self, new_value):
+    def distanceHorSlit1Edit_change(self, new_value):
         """
         Descript. :
         """
-        #print('Value changed: %s' % (new_value))
-        self._distanceHor = new_value
-
         if (self._beam_center_hwobj != None):
-            self._beam_center_hwobj.setDistanceHorizontal(new_value)
+            self._beam_center_hwobj.setDistanceHorizontal(new_value, 1)
 
-    def distanceVerEdit_change(self, new_value):
+    def distanceVerSlit1Edit_change(self, new_value):
         """
         Descript. :
         """
-        #print('Value changed: %s' % (new_value))
-        self._distanceVer = new_value
-
         if (self._beam_center_hwobj != None):
-            self._beam_center_hwobj.setDistanceVertical(new_value)
+            self._beam_center_hwobj.setDistanceVertical(new_value, 1)
+
+    def stepSlit1Edit_change(self, new_value):
+        """
+        Descript. :
+        """
+        if (self._beam_center_hwobj != None):
+            self._beam_center_hwobj.setStep(new_value, 1)
+
+    def fullPathSlit1Check_change(self, state):
+        """
+        Descript. :
+        """
+        if (self._beam_center_hwobj != None):
+            self._beam_center_hwobj.setFullPathSlit((state == 2), 1)
+            if (state == 0):
+                self.beam_center_widget_layout.distanceHorSlit1Edit.setEnabled(True)
+                self.beam_center_widget_layout.distanceVerSlit1Edit.setEnabled(True)
+            else:
+                self.beam_center_widget_layout.distanceHorSlit1Edit.setEnabled(False)
+                self.beam_center_widget_layout.distanceVerSlit1Edit.setEnabled(False)
+
+    def centerSlit1Check_change(self, state):
+        """
+        Descript. :
+        """
+        if (self._beam_center_hwobj != None):
+            self._beam_center_hwobj.setCenterSlit((state == 2), 1)
+
+    def distanceHorSlit2Edit_change(self, new_value):
+        """
+        Descript. :
+        """
+        if (self._beam_center_hwobj != None):
+            self._beam_center_hwobj.setDistanceHorizontal(new_value, 2)
+
+    def distanceVerSlit2Edit_change(self, new_value):
+        """
+        Descript. :
+        """
+        if (self._beam_center_hwobj != None):
+            self._beam_center_hwobj.setDistanceVertical(new_value, 2)
+
+    def stepSlit2Edit_change(self, new_value):
+        """
+        Descript. :
+        """
+        if (self._beam_center_hwobj != None):
+            self._beam_center_hwobj.setStep(new_value, 2)
+
+    def fullPathSlit2Check_change(self, state):
+        """
+        Descript. :
+        """
+        if (self._beam_center_hwobj != None):
+            self._beam_center_hwobj.setFullPathSlit((state == 2), 2)
+            if (state == 0):
+                self.beam_center_widget_layout.distanceHorSlit2Edit.setEnabled(True)
+                self.beam_center_widget_layout.distanceVerSlit2Edit.setEnabled(True)
+            else:
+                self.beam_center_widget_layout.distanceHorSlit2Edit.setEnabled(False)
+                self.beam_center_widget_layout.distanceVerSlit2Edit.setEnabled(False)
+
+    def centerSlit2Check_change(self, state):
+        """
+        Descript. :
+        """
+        if (self._beam_center_hwobj != None):
+            self._beam_center_hwobj.setCenterSlit((state == 2), 2)
 
     def set_beamline_setup(self, beamline_setup):
         """
@@ -136,55 +245,103 @@ class BeamCenteringWidget(QtGui.QWidget):
                   QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
         if ((confDialog == QtGui.QMessageBox.Ok) and (self._beam_center_hwobj != None)):
             self._beam_center_hwobj.start()
+            # Configure buttons
+            self.beam_center_widget_layout.startCenterButton.setEnabled(False)
+            self.beam_center_widget_layout.cancelCenterButton.setEnabled(True)
+
 
     def cancelCenter(self):
         confDialog = QtGui.QMessageBox.warning(None, "Cancel centering beam", "Do you want to STOP the procedure to center beam?",
                   QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
         if ((confDialog == QtGui.QMessageBox.Ok) and (self._beam_center_hwobj != None)):
             self._beam_center_hwobj.cancel()
+            self.beam_center_widget_layout.startCenterButton.setEnabled(True)
+            self.beam_center_widget_layout.cancelCenterButton.setEnabled(False)
 
-    def positionHorChanged(self, new_hor_position):
-        self.beam_center_widget_layout.positionHorText.setText(str(round(new_hor_position, 3)))
+    def positionHorSlit1Changed(self, new_hor_position):
+        self.beam_center_widget_layout.positionHorSlit1Text.setText(str(round(new_hor_position, 3)))
 
-    def positionVerChanged(self, new_ver_position):
-        self.beam_center_widget_layout.positionVerText.setText(str(round(new_ver_position, 3)))
+    def positionVerSlit1Changed(self, new_ver_position):
+        self.beam_center_widget_layout.positionVerSlit1Text.setText(str(round(new_ver_position, 3)))
 
-    def intensityChanged(self, new_intensity):
-        self.beam_center_widget_layout.intensityText.setText(str(new_intensity))
+    def intensitySlit1Changed(self, new_intensity):
+        self.beam_center_widget_layout.intensitySlit1Text.setText(str(new_intensity))
+
+    def positionHorSlit2Changed(self, new_hor_position):
+        self.beam_center_widget_layout.positionHorSlit2Text.setText(str(round(new_hor_position, 3)))
+
+    def positionVerSlit2Changed(self, new_ver_position):
+        self.beam_center_widget_layout.positionVerSlit2Text.setText(str(round(new_ver_position, 3)))
+
+    def intensitySlit2Changed(self, new_intensity):
+        self.beam_center_widget_layout.intensitySlit2Text.setText(str(new_intensity))
 
     def centeringConcluded(self):
-        showDialog = QtGui.QMessageBox.warning(None, "Centered!", "Procedure to center beam concluded!",
+        showDialog = QtGui.QMessageBox.information(None, "Centered!", "Procedure to center beam concluded!",
+                  QtGui.QMessageBox.Ok)
+        self.beam_center_widget_layout.startCenterButton.setEnabled(True)
+        self.beam_center_widget_layout.cancelCenterButton.setEnabled(False)
+
+
+    def plotClearSlit1(self, orientation):
+        # orientation:
+        # 0: horizontal
+        # 1: vertical
+        for axis in range(2):
+            self._arraySlit1[orientation][axis] = []
+
+        if (orientation == 0):
+            self.axHorSlit1.clear()
+        else:
+            self.axVerSlit1.clear()
+
+    def plotClearSlit2(self, orientation):
+        # orientation:
+        # 0: horizontal
+        # 1: vertical
+        for axis in range(2):
+            self._arraySlit2[orientation][axis] = []
+
+        if (orientation == 0):
+            self.axHorSlit2.clear()
+        else:
+            self.axVerSlit2.clear()
+
+    def plotNewPointSlit1(self, x, y, orientation):
+        # orientation:
+        # 0: horizontal
+        # 1: vertical
+        self._arraySlit1[orientation][0].append(x)
+        self._arraySlit1[orientation][1].append(y)
+
+        if (orientation == 0):
+            self.axHorSlit1.plot(self._arraySlit1[orientation][0], self._arraySlit1[orientation][1], color='b')
+            self.canvasHorSlit1.draw()
+        else:
+            self.axVerSlit1.plot(self._arraySlit1[orientation][0], self._arraySlit1[orientation][1], color='g')
+            self.canvasVerSlit1.draw()
+
+    def plotNewPointSlit2(self, x, y, orientation):
+        # orientation:
+        # 0: horizontal
+        # 1: vertical
+        self._arraySlit2[orientation][0].append(x)
+        self._arraySlit2[orientation][1].append(y)
+
+        if (orientation == 0):
+            self.axHorSlit2.plot(self._arraySlit2[orientation][0], self._arraySlit2[orientation][1], color='b')
+            self.canvasHorSlit2.draw()
+        else:
+            self.axVerSlit2.plot(self._arraySlit2[orientation][0], self._arraySlit2[orientation][1], color='g')
+            self.canvasVerSlit2.draw()
+
+    def setTab(self, index):
+        if (self.beam_center_widget_layout != None):
+            self.beam_center_widget_layout.graphicsTabs.setCurrentIndex(index)
+
+    def errorCentering(self):
+        QtGui.QMessageBox.critical(None, "Error centering beam", "An error occurred when trying to certer. Do you informed valid parameters?",
                   QtGui.QMessageBox.Ok)
 
-    def plotNewPointHorizontal(self, x, y):
-        self._arrayHorX.append(x)
-        self._arrayHorY.append(y)
-
-        self.axHorfigureHor.plot(self._arrayHorX, self._arrayHorY, color='b')
-        self.canvasHorizontal.draw()
-
-
-    def plotClearHorizontal(self):
-        print(self._arrayHorX)
-        print(self._arrayHorY)
-        self._arrayHorX = []
-        self._arrayHorY = []
-
-        self.axHorfigureHor.clear()
-
-    def plotNewPointVertical(self, x, y):
-        self._arrayVerX.append(x)
-        self._arrayVerY.append(y)
-
-        self.axVerfigureVer.plot(self._arrayVerX, self._arrayVerY, color='g')
-        self.canvasVertical.draw()
-
-
-    def plotClearVertical(self):
-        print(self._arrayVerX)
-        print(self._arrayVerY)
-        self._arrayVerX = []
-        self._arrayVerY = []
-
-
-        self.axVerfigureVer.clear()
+        self.beam_center_widget_layout.startCenterButton.setEnabled(True)
+        self.beam_center_widget_layout.cancelCenterButton.setEnabled(False)

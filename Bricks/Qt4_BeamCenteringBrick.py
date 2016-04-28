@@ -84,35 +84,91 @@ class Qt4_BeamCenteringBrick(BlissWidget):
             self.beam_center_widget.set_beam_center(self.beam_center_hwobj)
 
             # Connect signals
-            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('positionHorChanged'), self.positionHorChanged)
-            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('positionVerChanged'), self.positionVerChanged)
-            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('intensityChanged'), self.intensityChanged)
+            self.connectSignals()
+        else:
+            BlissWidget.propertyChanged(self, property_name, old_value, new_value)
+
+
+    def connectSignals(self):
+        if (self.beam_center_hwobj != None):
+            # Connect signals
+            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('positionHorSlit1Changed'), self.positionHorSlit1Changed)
+            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('positionVerSlit1Changed'), self.positionVerSlit1Changed)
+            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('intensitySlit1Changed'), self.intensitySlit1Changed)
+            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('positionHorSlit2Changed'), self.positionHorSlit2Changed)
+            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('positionVerSlit2Changed'), self.positionVerSlit2Changed)
+            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('intensitySlit2Changed'), self.intensitySlit2Changed)
+            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('plotClearHorSlit1'), self.plotClearHorSlit1)
+            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('plotClearVerSlit1'), self.plotClearVerSlit1)
+            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('plotClearHorSlit2'), self.plotClearHorSlit2)
+            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('plotClearVerSlit2'), self.plotClearVerSlit2)
+            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('plotNewPointHorSlit1'), self.plotNewPointHorSlit1)
+            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('plotNewPointVerSlit1'), self.plotNewPointVerSlit1)
+            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('plotNewPointHorSlit2'), self.plotNewPointHorSlit2)
+            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('plotNewPointVerSlit2'), self.plotNewPointVerSlit2)
             self.connect(self.beam_center_hwobj, QtCore.SIGNAL('centeringConcluded'), self.centeringConcluded)
-            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('plotNewPointHorizontal'), self.plotNewPointHorizontal)
-            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('plotClearHorizontal'), self.plotClearHorizontal)
-            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('plotNewPointVertical'), self.plotNewPointVertical)
-            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('plotClearVertical'), self.plotClearVertical)
+            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('setTabHorSlit1'), self.setTabHorSlit1)
+            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('setTabVerSlit1'), self.setTabVerSlit1)
+            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('setTabHorSlit2'), self.setTabHorSlit2)
+            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('setTabVerSlit2'), self.setTabVerSlit2)
+            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('errorCentering'), self.errorCentering)
 
-    def positionHorChanged(self, new_hor_position):
-        self.beam_center_widget.positionHorChanged(new_hor_position)
+    def positionHorSlit1Changed(self, new_hor_position):
+        self.beam_center_widget.positionHorSlit1Changed(new_hor_position)
 
-    def positionVerChanged(self, new_ver_position):
-        self.beam_center_widget.positionVerChanged(new_ver_position)
+    def positionVerSlit1Changed(self, new_ver_position):
+        self.beam_center_widget.positionVerSlit1Changed(new_ver_position)
 
-    def intensityChanged(self, new_intensity):
-        self.beam_center_widget.intensityChanged(new_intensity)
+    def intensitySlit1Changed(self, new_intensity):
+        self.beam_center_widget.intensitySlit1Changed(new_intensity)
+
+    def positionHorSlit2Changed(self, new_hor_position):
+        self.beam_center_widget.positionHorSlit2Changed(new_hor_position)
+
+    def positionVerSlit2Changed(self, new_ver_position):
+        self.beam_center_widget.positionVerSlit2Changed(new_ver_position)
+
+    def intensitySlit2Changed(self, new_intensity):
+        self.beam_center_widget.intensitySlit2Changed(new_intensity)
+
+    def plotClearHorSlit1(self):
+        self.beam_center_widget.plotClearSlit1(0)
+
+    def plotClearVerSlit1(self):
+        self.beam_center_widget.plotClearSlit1(1)
+
+    def plotClearHorSlit2(self):
+        self.beam_center_widget.plotClearSlit2(0)
+
+    def plotClearVerSlit2(self):
+        self.beam_center_widget.plotClearSlit2(1)
+
+    def plotNewPointHorSlit1(self, x, y):
+        self.beam_center_widget.plotNewPointSlit1(x, y, 0)
+
+    def plotNewPointVerSlit1(self, x, y):
+        self.beam_center_widget.plotNewPointSlit1(x, y, 1)
+
+    def plotNewPointHorSlit2(self, x, y):
+        self.beam_center_widget.plotNewPointSlit2(x, y, 0)
+
+    def plotNewPointVerSlit2(self, x, y):
+        self.beam_center_widget.plotNewPointSlit2(x, y, 1)
 
     def centeringConcluded(self):
         self.beam_center_widget.centeringConcluded()
 
-    def plotNewPointHorizontal(self, x, y):
-        self.beam_center_widget.plotNewPointHorizontal(x, y)
+    def setTabHorSlit1(self):
+        self.beam_center_widget.setTab(0)
 
-    def plotClearHorizontal(self):
-        self.beam_center_widget.plotClearHorizontal()
+    def setTabVerSlit1(self):
+        self.beam_center_widget.setTab(1)
 
-    def plotNewPointVertical(self, x, y):
-        self.beam_center_widget.plotNewPointVertical(x, y)
+    def setTabHorSlit2(self):
+        self.beam_center_widget.setTab(2)
 
-    def plotClearVertical(self):
-        self.beam_center_widget.plotClearVertical()
+    def setTabVerSlit2(self):
+        self.beam_center_widget.setTab(3)
+
+    def errorCentering(self):
+        self.beam_center_widget.errorCentering()
