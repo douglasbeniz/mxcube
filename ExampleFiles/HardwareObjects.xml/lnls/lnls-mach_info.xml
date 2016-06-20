@@ -1,0 +1,47 @@
+<device class="LNLSMachineInfo">
+    <updateIntervalS>120</updateIntervalS>
+    <discPath>/home</discPath>
+    <limits>{'current':90, 'temp': 25, 'hum': 60, 'intens': 0.1, 
+             'discSizeGB': 20}</limits>
+
+    <channel type="epics" name="machCurrent" polling="500">LNLS:ANEL:corrente</channel>
+    <channel type="epics" name="machStateText" polling="500" read_as_str="True">LNLS:ANEL:gama_en</channel>
+
+    <!--P14-->
+    <!--
+    <hutchTempAddress>G47cS9:K:KL:P14EH1RaTIW_ai</hutchTempAddress>
+    <hutchHumAddress>G47cS9:K:KL:P14EH1RaF_ai</hutchHumAddress>
+    -->
+    <!--P13-->
+    <!-- <hutchTempAddress>G47cS9:K:KL:P13EH1RaTIW_ai</hutchTempAddress>
+    <hutchHumAddress>G47cS9:K:KL:P13EH1RaF_ai</hutchHumAddress> -->
+    <intensity>  
+        <shutterOpenValue>0</shutterOpenValue>
+        <valueOnClose>1e-9</valueOnClose>
+        <initialResolution>1</initialResolution>
+        <updateRelativeTolerance>0.1</updateRelativeTolerance>
+        <acqTimeOnCloseMs>1000</acqTimeOnCloseMs>
+        <acqTimeOnOpenMs>100</acqTimeOnOpenMs>
+        <ranges>
+            <range>
+                <CurMax>2.5e-9</CurMax>
+                <CurOffset>-7.53517e-12</CurOffset>
+                <CurIndex>2</CurIndex>
+            </range>
+        </ranges>
+    </intensity>
+    <safetyshutter>/ICSShutter</safetyshutter>
+    <amplChannelIndex>1</amplChannelIndex>
+    <!--
+    <channel type="tine" name="intensMean" tinename="/P14/QBPMs/QBPM2">
+             ChannelsMean.get</channel>
+    <channel type="tine" name="intensRange" tinename="/P14/QBPMs/QBPM2">
+             CurrentRange.set</channel>
+    <command type="tine" name="setIntensResolution" tinename="/P14/QBPMs/QBPM2">
+             ADCResolution.set</command>
+    <command type="tine" name="setIntensAcqTime" tinename="/P14/QBPMs/QBPM2">
+             AcquisitionTime.set</command>
+    <command type="tine" name="setIntensRange" tinename="/P14/QBPMs/QBPM2">
+             CurrentRange.set</command>
+    -->
+</device>
