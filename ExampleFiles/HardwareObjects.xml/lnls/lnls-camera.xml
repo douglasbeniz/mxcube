@@ -1,13 +1,12 @@
 <device class="LNLSCamera">
     <!-- Channels -->
-    <channel type="epics" name="epicsAllied_data">MX1:image_allied:ArrayData</channel>
-    <channel type="epics" name="epicsAllied_back">MX1:allied:ArrayCallbacks</channel>
-    <channel type="epics" name="epicsAllied_en_back">MX1:image_allied:EnableCallbacks</channel>
-    <channel type="epics" name="epicsAllied_acq_stop">MX1:allied:AcquisitionStop</channel>
-    <channel type="epics" name="epicsAllied_acq_start">MX1:allied:AcquisitionStart</channel>
-    <channel type="epics" name="epicsAllied_acq">MX1:allied:Acquire</channel>
+    <channel type="epics" name="epicsCameraSample_data" polling="100">MXROB:image_ueye:ArrayData</channel>
+    <channel type="epics" name="epicsCameraSample_back">MXROB:image_ueye:ArrayCallbacks</channel>
+    <channel type="epics" name="epicsCameraSample_en_back">MXROB:image_ueye:EnableCallbacks</channel>
+    <channel type="epics" name="epicsCameraSample_acq_stop">MXROB:ueye:AcquisitionStop</channel>
+    <channel type="epics" name="epicsCameraSample_acq_start">MXROB:ueye:AcquisitionStart</channel>
     <!-- Properties -->
     <username>Camera</username>
     <source>/usr/local/src/mxcube/ExampleFiles/fakeimg.jpg</source>
-    <interval>60</interval>
+    <interval>100</interval>
 </device>
