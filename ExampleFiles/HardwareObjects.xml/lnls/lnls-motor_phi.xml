@@ -1,0 +1,11 @@
+<device class="LNLSMotor">
+    <!-- Channels -->
+    <channel type="epics" name="epicsMotor_val">MXROB:DMC1:m6.VAL</channel>
+    <channel type="epics" name="epicsMotor_rlv">MXROB:DMC1:m6.RLV</channel>
+    <channel type="epics" name="epicsMotor_rbv" polling="500">MXROB:DMC1:m6.RBV</channel>
+    <channel type="epics" name="epicsMotor_dmov" polling="500">MXROB:DMC1:m6.DMOV</channel>
+    <channel type="epics" name="epicsMotor_stop">MXROB:DMC1:m6.STOP</channel>
+    <channel type="epics" name="epicsMotor_velo">MXROB:DMC1:m6.VELO</channel>
+    <!-- Properties -->
+    <motor_name>kappa_phi</motor_name>
+</device>

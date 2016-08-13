@@ -2,9 +2,10 @@
     <!-- Channels -->
     <channel type="epics" name="epicsMotor_val">MXROB:DMC3:m2.VAL</channel>
     <channel type="epics" name="epicsMotor_rlv">MXROB:DMC3:m2.RLV</channel>
-    <channel type="epics" name="epicsMotor_rbv">MXROB:DMC3:m2.RBV</channel>
-    <channel type="epics" name="epicsMotor_dmov">MXROB:DMC3:m2.DMOV</channel>
+    <channel type="epics" name="epicsMotor_rbv" polling="500">MXROB:DMC3:m2.RBV</channel>
+    <channel type="epics" name="epicsMotor_dmov" polling="500">MXROB:DMC3:m2.DMOV</channel>
     <channel type="epics" name="epicsMotor_stop">MXROB:DMC3:m2.STOP</channel>
+    <channel type="epics" name="epicsMotor_velo">MXROB:DMC3:m2.VELO</channel>
     <!-- Properties -->
     <motor_name>Slit1BaseZ</motor_name>
 </device>

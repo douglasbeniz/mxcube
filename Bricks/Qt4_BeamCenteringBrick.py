@@ -48,8 +48,8 @@ class Qt4_BeamCenteringBrick(BlissWidget):
 
         # Properties ----------------------------------------------------------
         self.addProperty("session", "string", "/session")
-        self.addProperty("beamline_setup", "string", "/Qt4_beamline-setup")
-        self.addProperty("mnemonic", "string", "/lnls/lnls-beam-center")
+        self.addProperty("beamline_setup", "string", "/lnls/lnls-beamline_setup")
+        self.addProperty("mnemonic", "string", "/lnls/lnls-beam_center")
 
         # Signals ------------------------------------------------------------
 

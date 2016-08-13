@@ -1,6 +1,6 @@
 <device class="LNLSCamera">
     <!-- Channels -->
-    <channel type="epics" name="epicsCameraSample_data" polling="100">MXROB:image_ueye:ArrayData</channel>
+    <channel type="epics" name="epicsCameraSample_data" auto_monitor="False">MXROB:image_ueye:ArrayData</channel>
     <channel type="epics" name="epicsCameraSample_back">MXROB:image_ueye:ArrayCallbacks</channel>
     <channel type="epics" name="epicsCameraSample_en_back">MXROB:image_ueye:EnableCallbacks</channel>
     <channel type="epics" name="epicsCameraSample_acq_stop">MXROB:ueye:AcquisitionStop</channel>
@@ -8,5 +8,5 @@
     <!-- Properties -->
     <username>Camera</username>
     <source>/usr/local/src/mxcube/ExampleFiles/fakeimg.jpg</source>
-    <interval>100</interval>
+    <interval>67</interval>
 </device>

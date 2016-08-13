@@ -1,5 +1,5 @@
 <object class="Qt4_GraphicsManager">
-   <object href="/Qt4_mini-diff-mockup" role="diffractometer"/>
-   <object href="/beam-info" role="beam_info"/>
+   <object href="/lnls/lnls-goniometer" role="diffractometer"/>
+   <object href="/lnls/lnls-beam_info" role="beam_info"/>
    <object href="/lnls/lnls-camera" role="camera"/>
 </object>

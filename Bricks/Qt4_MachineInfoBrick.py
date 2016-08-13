@@ -68,11 +68,15 @@ class Qt4_MachineInfoBrick(BlissWidget):
         self.state_text_label = QtGui.QLabel("Machine state text", self)
         self.state_text_value_label = QtGui.QLabel(self)
         self.state_text_value_label.setAlignment(QtCore.Qt.AlignCenter)
-        #Intensity
-        self.intensity_label = QtGui.QLabel("Intensity monitor", self)
+        #Intensity 1
+        self.intensity_label = QtGui.QLabel("Intensity monitor (1)", self)
         self.intensity_value_label = QtGui.QLabel(self)
         self.intensity_value_label.setAlignment(QtCore.Qt.AlignCenter)
-	#Hutch temperature
+        #Intensity 2
+        self.intensity_2_label = QtGui.QLabel("Intensity monitor (2)", self)
+        self.intensity_2_value_label = QtGui.QLabel(self)
+        self.intensity_2_value_label.setAlignment(QtCore.Qt.AlignCenter)
+        #Hutch temperature
         self.temperature_label = QtGui.QLabel("Hutch temperature", self)
         self.temperature_value_label = QtGui.QLabel(self)
         self.temperature_value_label.setAlignment(QtCore.Qt.AlignCenter)
@@ -96,6 +100,8 @@ class Qt4_MachineInfoBrick(BlissWidget):
         _main_vlayout.addWidget(self.state_text_value_label)
         _main_vlayout.addWidget(self.intensity_label)
         _main_vlayout.addWidget(self.intensity_value_label)
+        _main_vlayout.addWidget(self.intensity_2_label)
+        _main_vlayout.addWidget(self.intensity_2_value_label)
         _main_vlayout.addWidget(self.temperature_label)
         _main_vlayout.addWidget(self.temperature_value_label) 
         _main_vlayout.addWidget(self.humidity_label)
@@ -151,12 +157,16 @@ class Qt4_MachineInfoBrick(BlissWidget):
 	       str(self['formatString'] % abs(values[0]))
         self.current_value_label.setText(txt)
         self.state_text_value_label.setText(values[1])
-        txt = '??? A' if values[2] is None else '%1.2e A' % \
-	       (values[2] * 1.0)   	
+        # Ionization chamber 1
+        txt = '??? V' if values[2] is None else '%1.2e V' % (float(values[2]))
         self.intensity_value_label.setText(txt)
-        if values[3] == 1:
+        # Ionization chamber 2
+        txt = '??? V' if values[3] is None else '%1.2e V' % (float(values[3]))
+        self.intensity_2_value_label.setText(txt)
+
+        if values[4] == 1:
             self.cryo_value_label.setText(" In place ")
-        elif values[3] == None:
+        elif values[4] == None:
             self.cryo_value_label.setText("Unknown")
         else:
             self.cryo_value_label.setText("NOT IN PLACE")
@@ -174,12 +184,18 @@ class Qt4_MachineInfoBrick(BlissWidget):
         else:
             Qt4_widget_colors.set_widget_color(self.current_value_label, STATES['error'])
         Qt4_widget_colors.set_widget_color(self.state_text_value_label, STATES['ready'])
-        if value.get('intens') is None:
+        if value.get('intens1') is None:
             Qt4_widget_colors.set_widget_color(self.intensity_value_label, STATES['unknown'])
-        elif value.get('intens'):
+        elif value.get('intens1'):
             Qt4_widget_colors.set_widget_color(self.intensity_value_label, STATES['ready'])
         else:
             Qt4_widget_colors.set_widget_color(self.intensity_value_label, STATES['error'])
+        if value.get('intens2') is None:
+            Qt4_widget_colors.set_widget_color(self.intensity_2_value_label, STATES['unknown'])
+        elif value.get('intens2'):
+            Qt4_widget_colors.set_widget_color(self.intensity_2_value_label, STATES['ready'])
+        else:
+            Qt4_widget_colors.set_widget_color(self.intensity_2_value_label, STATES['error'])            
         self.cryo_value_label.setEnabled(True)
         if value.get('cryo') is None:
             self.cryo_value_label.setEnabled(False)

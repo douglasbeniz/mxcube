@@ -20,7 +20,7 @@
     <channel type="epics" name="slit1BaseZ1_hlm">MXROB:DMC3:m2.HLM</channel>
     <channel type="epics" name="slit1BaseZ1_llm">MXROB:DMC3:m2.LLM</channel>
     <!-- Channels for Counter 1 -->
-    <channel type="epics" name="counter1_val">MX1:K6517A:Measure</channel>
+    <channel type="epics" name="counter1_val">MX1:NI9215A:AI0.VAL</channel>
 
     <!-- Channels for SlitBase 2 X1-->
     <channel type="epics" name="slit2BaseX1_val">MXROB:DMC3:m3.VAL</channel>
@@ -43,5 +43,5 @@
     <channel type="epics" name="slit2BaseZ1_hlm">MXROB:DMC3:m4.HLM</channel>
     <channel type="epics" name="slit2BaseZ1_llm">MXROB:DMC3:m4.LLM</channel>
     <!-- Channels for Counter 2 -->
-    <channel type="epics" name="counter2_val">MX1:K6517A:Measure</channel>
+    <channel type="epics" name="counter2_val">MX1:NI9215A:AI1.VAL</channel>
 </equipment>

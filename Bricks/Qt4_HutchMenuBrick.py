@@ -189,7 +189,9 @@ class Qt4_HutchMenuBrick(BlissWidget):
             self, "Choose a filename to save under",
             current_file_name, "Image files (%s)" % " ".join(formats)))
 
-        if not filename.isEmpty():
+        # LNLS - python 3.4
+        #if not filename.isEmpty():
+        if filename:
             filename = str(filename)
             image_type = os.path.splitext(filename)[1].strip('.').upper()
             try:

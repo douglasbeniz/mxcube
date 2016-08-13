@@ -1,3 +1,4 @@
 <object class="ISPyBClient2">
    <object href="/lnls/lnls-session" role="session"/>
+   <ws_root></ws_root>
 </object>
