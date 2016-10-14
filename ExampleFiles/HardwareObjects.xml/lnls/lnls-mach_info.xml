@@ -1,6 +1,8 @@
 <device class="LNLSMachineInfo">
     <updateIntervalS>120</updateIntervalS>
-    <discPath>/home</discPath>
+    <discPath>/storage</discPath>
+    <diskThreshold>5</diskThreshold>
+
     <limits>{'current':90, 'temp': 25, 'hum': 60, 'intens': 0.1, 'discSizeGB': 20}</limits>
 
     <channel type="epics" name="machCurrent" polling="500">LNLS:ANEL:corrente</channel>
@@ -41,6 +43,7 @@
             </range>
         </ranges>
     </intensity2>
+
     <safetyshutter>/ICSShutter</safetyshutter>
     <amplChannelIndex>1</amplChannelIndex>
 
@@ -48,8 +51,8 @@
     <channel type="tine" name="intensMean" tinename="/P14/QBPMs/QBPM2">
              ChannelsMean.get</channel>
     -->
-    <channel type="epics" name="intensMean1" polling="500">MX1:NI9215A:AI0</channel>
-    <channel type="epics" name="intensMean2" polling="500">MX1:NI9215A:AI1</channel>
+    <channel type="epics" name="intensMean1" polling="500">MXROB2:NI9215A:AI0</channel>
+    <channel type="epics" name="intensMean2" polling="500">MXROB2:NI9215A:AI1</channel>
     <!--
     <channel type="tine" name="intensRange" tinename="/P14/QBPMs/QBPM2">
              CurrentRange.set</channel>

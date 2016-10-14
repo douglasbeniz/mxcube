@@ -10,13 +10,12 @@
   <object href="/lnls/lnls-motor_gonio_base_z" role="gonioz"/>
   <object href="/lnls/lnls-motor_zoom" role="zoom"/>
 
+  <!-- site specific properties -->
   <used_motors>("omega", "kappa_phi", "kappa", "sampx", "sampy", "goniox", "gonioz", "zoom")</used_motors>
-
   <beam_info>/lnls/lnls-beam_info</beam_info>
-
   <zoomcentre>{"x":50,"y":50}</zoomcentre>
-
   <omega_reference>{"motor_name": "phiz", "position":0.0, "camera_axis":"x"}</omega_reference>
-
   <phaseList>("Transfer", "Centring", "DataCollection", "BeamLocation")</phaseList>  
+  <defaultImageWidth>640</defaultImageWidth>
+  <defaultImageHeight>512</defaultImageHeight>
 </equipment>

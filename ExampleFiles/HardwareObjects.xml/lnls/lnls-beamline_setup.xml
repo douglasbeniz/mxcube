@@ -2,7 +2,7 @@
   <object href="/attenuators-mockup" role="transmission"/>
   <object href="/lnls/lnls-energy" role="energy"/>
   <object href="/attenuators-mockup" role="transmission"/>
-  <object href="/resolution-mockup" role="resolution"/>
+  <object href="/lnls/lnls-resolution" role="resolution"/>
   <object href="/lnls/lnls-detector" role="detector"/>
 
   <object href="/lnls/lnls-motor_omega" role="omega_axis"/>
@@ -13,8 +13,10 @@
   <object href="/Qt4_graphics-manager" role="shape_history"/>
   <object href="/lnls/lnls-mxcollect" role="collect"/>
 
+<!--
   <object href="/sc-mockup" role="sample_changer"/>
   <object href="/plate-manipulator" role="plate_manipulator"/> 
+-->
 
   <object href="/lnls/lnls-session" role="session"/>
   <object href="/lims-client-mockup" role="lims_client"/>

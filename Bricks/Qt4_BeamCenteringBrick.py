@@ -112,6 +112,8 @@ class Qt4_BeamCenteringBrick(BlissWidget):
             self.connect(self.beam_center_hwobj, QtCore.SIGNAL('setTabHorSlit2'), self.setTabHorSlit2)
             self.connect(self.beam_center_hwobj, QtCore.SIGNAL('setTabVerSlit2'), self.setTabVerSlit2)
             self.connect(self.beam_center_hwobj, QtCore.SIGNAL('errorCentering'), self.errorCentering)
+            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('errorStep'), self.errorStep)
+            self.connect(self.beam_center_hwobj, QtCore.SIGNAL('limitReached'), self.limitReached)
 
     def positionHorSlit1Changed(self, new_hor_position):
         self.beam_center_widget.positionHorSlit1Changed(new_hor_position)
@@ -172,3 +174,9 @@ class Qt4_BeamCenteringBrick(BlissWidget):
 
     def errorCentering(self):
         self.beam_center_widget.errorCentering()
+
+    def errorStep(self):
+        self.beam_center_widget.errorStep()
+
+    def limitReached(self):
+        self.beam_center_widget.limitReached()

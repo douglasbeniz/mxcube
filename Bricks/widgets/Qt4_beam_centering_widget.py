@@ -106,7 +106,15 @@ class BeamCenteringWidget(QtGui.QWidget):
         self.beam_center_widget_layout.mplVerVlSlit2.addWidget(self.canvasVerSlit2)
         self.beam_center_widget_layout.mplVerVlSlit2.addWidget(self.toolbarVerSlit2)
 
-        #Set enable/disable buttons
+        # Configure validator of input edit boxes
+        self.beam_center_widget_layout.distanceHorSlit1Edit.setValidator(QtGui.QDoubleValidator(0.99, 999.99, 2))
+        self.beam_center_widget_layout.distanceVerSlit1Edit.setValidator(QtGui.QDoubleValidator(0.99, 999.99, 2))
+        self.beam_center_widget_layout.stepSlit1Edit.setValidator(QtGui.QDoubleValidator(0.999, 9.999, 3))
+        self.beam_center_widget_layout.distanceHorSlit2Edit.setValidator(QtGui.QDoubleValidator(0.99, 999.99, 2))
+        self.beam_center_widget_layout.distanceVerSlit2Edit.setValidator(QtGui.QDoubleValidator(0.99, 999.99, 2))
+        self.beam_center_widget_layout.stepSlit2Edit.setValidator(QtGui.QDoubleValidator(0.999, 9.999, 3))
+
+        # Set enable/disable buttons
         self.beam_center_widget_layout.startCenterButton.setEnabled(True)
         self.beam_center_widget_layout.cancelCenterButton.setEnabled(False)
 
@@ -241,14 +249,24 @@ class BeamCenteringWidget(QtGui.QWidget):
         self._beam_center_hwobj = beam_center
 
     def startCenter(self):
-        confDialog = QtGui.QMessageBox.warning(None, "Start centering beam", "Do you want to START the procedure to center beam?",
-                  QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
-        if ((confDialog == QtGui.QMessageBox.Ok) and (self._beam_center_hwobj != None)):
-            self._beam_center_hwobj.start()
-            # Configure buttons
-            self.beam_center_widget_layout.startCenterButton.setEnabled(False)
-            self.beam_center_widget_layout.cancelCenterButton.setEnabled(True)
+        if (not self._beam_center_hwobj._centerSlit[0] and not self._beam_center_hwobj._centerSlit[0]):
+            confDialog = QtGui.QMessageBox.warning(None, "Start centering beam", "No one of the slits were selected...",
+                      QtGui.QMessageBox.Ok)
+        else:
+            confDialog = QtGui.QMessageBox.warning(None, "Start centering beam", "Do you want to START the procedure to center beam?",
+                      QtGui.QMessageBox.Ok, QtGui.QMessageBox.Cancel)
+            if ((confDialog == QtGui.QMessageBox.Ok) and (self._beam_center_hwobj != None)):
+                # Configure buttons
+                self.beam_center_widget_layout.startCenterButton.setEnabled(False)
+                self.beam_center_widget_layout.cancelCenterButton.setEnabled(True)
+                # Start the procedure
+                self._beam_center_hwobj.start()
 
+    def centeringConcluded(self):
+        showDialog = QtGui.QMessageBox.information(None, "Centered!", "Procedure to center beam concluded!",
+                  QtGui.QMessageBox.Ok)
+        self.beam_center_widget_layout.startCenterButton.setEnabled(True)
+        self.beam_center_widget_layout.cancelCenterButton.setEnabled(False)
 
     def cancelCenter(self):
         confDialog = QtGui.QMessageBox.warning(None, "Cancel centering beam", "Do you want to STOP the procedure to center beam?",
@@ -257,6 +275,24 @@ class BeamCenteringWidget(QtGui.QWidget):
             self._beam_center_hwobj.cancel()
             self.beam_center_widget_layout.startCenterButton.setEnabled(True)
             self.beam_center_widget_layout.cancelCenterButton.setEnabled(False)
+
+    def errorCentering(self):
+        QtGui.QMessageBox.critical(None, "Error centering beam", "An error occurred when trying to certer. Do you informed valid parameters?",
+                  QtGui.QMessageBox.Ok)
+
+        self.beam_center_widget_layout.startCenterButton.setEnabled(True)
+        self.beam_center_widget_layout.cancelCenterButton.setEnabled(False)
+
+        
+    def errorStep(self):
+        QtGui.QMessageBox.critical(None, "Error centering beam", "Informed step is invalid!", QtGui.QMessageBox.Ok)
+
+        self.beam_center_widget_layout.startCenterButton.setEnabled(True)
+        self.beam_center_widget_layout.cancelCenterButton.setEnabled(False)
+
+    def limitReached(self):
+        QtGui.QMessageBox.critical(None, "Error centering beam", "A motor reached some limit or stopped to move...",
+                  QtGui.QMessageBox.Ok)
 
     def positionHorSlit1Changed(self, new_hor_position):
         self.beam_center_widget_layout.positionHorSlit1Text.setText(str(round(new_hor_position, 3)))
@@ -275,13 +311,6 @@ class BeamCenteringWidget(QtGui.QWidget):
 
     def intensitySlit2Changed(self, new_intensity):
         self.beam_center_widget_layout.intensitySlit2Text.setText(str(new_intensity))
-
-    def centeringConcluded(self):
-        showDialog = QtGui.QMessageBox.information(None, "Centered!", "Procedure to center beam concluded!",
-                  QtGui.QMessageBox.Ok)
-        self.beam_center_widget_layout.startCenterButton.setEnabled(True)
-        self.beam_center_widget_layout.cancelCenterButton.setEnabled(False)
-
 
     def plotClearSlit1(self, orientation):
         # orientation:
@@ -338,10 +367,3 @@ class BeamCenteringWidget(QtGui.QWidget):
     def setTab(self, index):
         if (self.beam_center_widget_layout != None):
             self.beam_center_widget_layout.graphicsTabs.setCurrentIndex(index)
-
-    def errorCentering(self):
-        QtGui.QMessageBox.critical(None, "Error centering beam", "An error occurred when trying to certer. Do you informed valid parameters?",
-                  QtGui.QMessageBox.Ok)
-
-        self.beam_center_widget_layout.startCenterButton.setEnabled(True)
-        self.beam_center_widget_layout.cancelCenterButton.setEnabled(False)

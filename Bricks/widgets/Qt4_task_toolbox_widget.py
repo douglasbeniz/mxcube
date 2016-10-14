@@ -40,6 +40,9 @@ class TaskToolBoxWidget(QtGui.QWidget):
         QtGui.QWidget.__init__(self, parent)
         self.setObjectName = name
 
+        # LNLS
+        self.parent = parent
+
         # Hardware objects ----------------------------------------------------
         self.graphics_manager_hwobj = None
 
@@ -58,19 +61,20 @@ class TaskToolBoxWidget(QtGui.QWidget):
         self.tool_box.setFixedWidth(475)
         self.tool_box.setFont(font)
         
-        self.discrete_page = CreateDiscreteWidget(self.tool_box, "Discrete",)
-        self.char_page = CreateCharWidget(self.tool_box, "Characterise")
-        self.helical_page = CreateHelicalWidget(self.tool_box, "helical_page")
-        self.energy_scan_page = CreateEnergyScanWidget(self.tool_box, "energy_scan")
-        self.xrf_spectrum_page = CreateXRFSpectrumWidget(self.tool_box, "xrf_spectrum")  
-        self.advanced_page = CreateAdvancedWidget(self.tool_box, "advanced_scan")
+        self.discrete_page = CreateDiscreteWidget(self.tool_box, "Discrete", parent_class=self)
+        # LNLS
+        #self.char_page = CreateCharWidget(self.tool_box, "Characterise")
+        #self.helical_page = CreateHelicalWidget(self.tool_box, "helical_page")
+        #self.energy_scan_page = CreateEnergyScanWidget(self.tool_box, "energy_scan")
+        #self.xrf_spectrum_page = CreateXRFSpectrumWidget(self.tool_box, "xrf_spectrum")  
+        #self.advanced_page = CreateAdvancedWidget(self.tool_box, "advanced_scan")
         
         self.tool_box.addItem(self.discrete_page, "Standard Collection")
-        self.tool_box.addItem(self.char_page, "Characterisation")
-        self.tool_box.addItem(self.helical_page, "Helical Collection")
-        self.tool_box.addItem(self.energy_scan_page, "Energy Scan")
-        self.tool_box.addItem(self.xrf_spectrum_page, "XRF Spectrum")
-        self.tool_box.addItem(self.advanced_page, "Advanced")
+        #self.tool_box.addItem(self.char_page, "Characterisation")
+        #self.tool_box.addItem(self.helical_page, "Helical Collection")
+        #self.tool_box.addItem(self.energy_scan_page, "Energy Scan")
+        #self.tool_box.addItem(self.xrf_spectrum_page, "XRF Spectrum")
+        #self.tool_box.addItem(self.advanced_page, "Advanced")
 
         self.button_box = QtGui.QWidget(self)
         self.create_task_button = QtGui.QPushButton("  Add to queue", self.button_box)
@@ -122,14 +126,14 @@ class TaskToolBoxWidget(QtGui.QWidget):
             self.tool_box.widget(i).set_beamline_setup(beamline_setup_hwobj)
 
         self.graphics_manager_hwobj = beamline_setup_hwobj.shape_history_hwobj
-        self.energy_scan_page.set_energy_scan_hwobj(\
-             beamline_setup_hwobj.energyscan_hwobj)
+        # self.energy_scan_page.set_energy_scan_hwobj(\
+        #      beamline_setup_hwobj.energyscan_hwobj)
 
         # Remove energy scan page from non tunable wavelentgh beamlines
-        if not beamline_setup_hwobj.tunable_wavelength():
-            self.tool_box.removeItem(self.tool_box.indexOf(self.energy_scan_page))
-            self.energy_scan_page.hide()
-            logging.getLogger("user_level_log").info("Energy scan task not available")
+        # if not beamline_setup_hwobj.tunable_wavelength():
+        #     self.tool_box.removeItem(self.tool_box.indexOf(self.energy_scan_page))
+        #     self.energy_scan_page.hide()
+        #     logging.getLogger("user_level_log").info("Energy scan task not available")
         
         has_xrf_spectrum = False
         if hasattr(beamline_setup_hwobj, 'xrf_spectrum_hwobj'):
@@ -175,26 +179,27 @@ class TaskToolBoxWidget(QtGui.QWidget):
                     get_next_run_number(new_pt)
             elif isinstance(tree_item, Qt4_queue_item.DataCollectionQueueItem):
                 data_collection = tree_item.get_model()
-                if data_collection.experiment_type == EXPERIMENT_TYPE.HELICAL:
-                    if self.tool_box.currentWidget() == self.helical_page:
-                        self.create_task_button.setEnabled(True)
-                elif self.tool_box.currentWidget() == self.discrete_page:
+                # if data_collection.experiment_type == EXPERIMENT_TYPE.HELICAL:
+                #     if self.tool_box.currentWidget() == self.helical_page:
+                #         self.create_task_button.setEnabled(True)
+                # elif self.tool_box.currentWidget() == self.discrete_page:
+                if self.tool_box.currentWidget() == self.discrete_page:
                     self.create_task_button.setEnabled(True)
-            elif isinstance(tree_item, Qt4_queue_item.CharacterisationQueueItem):
-                if self.tool_box.currentWidget() == self.char_page:
-                    self.create_task_button.setEnabled(True)
-            elif isinstance(tree_item, Qt4_queue_item.EnergyScanQueueItem):
-                if self.tool_box.currentWidget() == self.energy_scan_page:
-                    self.create_task_button.setEnabled(True)
-            elif isinstance(tree_item, Qt4_queue_item.XRFSpectrumQueueItem):
-                if self.tool_box.currentWidget() == self.xrf_spectrum_page:
-                    self.create_task_button.setEnabled(True)
-            elif isinstance(tree_item, Qt4_queue_item.GenericWorkflowQueueItem):
-                if self.tool_box.currentWidget() == self.workflow_page:
-                    self.create_task_button.setEnabled(True)
-            elif isinstance(tree_item, Qt4_queue_item.AdvancedQueueItem):
-                if self.tool_box.currentWidget() == self.advanced_page:
-                    self.create_task_button.setEnabled(True)
+            # elif isinstance(tree_item, Qt4_queue_item.CharacterisationQueueItem):
+            #     if self.tool_box.currentWidget() == self.char_page:
+            #         self.create_task_button.setEnabled(True)
+            # elif isinstance(tree_item, Qt4_queue_item.EnergyScanQueueItem):
+            #     if self.tool_box.currentWidget() == self.energy_scan_page:
+            #         self.create_task_button.setEnabled(True)
+            # elif isinstance(tree_item, Qt4_queue_item.XRFSpectrumQueueItem):
+            #     if self.tool_box.currentWidget() == self.xrf_spectrum_page:
+            #         self.create_task_button.setEnabled(True)
+            # elif isinstance(tree_item, Qt4_queue_item.GenericWorkflowQueueItem):
+            #     if self.tool_box.currentWidget() == self.workflow_page:
+            #         self.create_task_button.setEnabled(True)
+            # elif isinstance(tree_item, Qt4_queue_item.AdvancedQueueItem):
+            #     if self.tool_box.currentWidget() == self.advanced_page:
+            #         self.create_task_button.setEnabled(True)
 
             self.tool_box.widget(page_index).selection_changed(tree_items)
             self.previous_page_index = page_index
@@ -208,22 +213,24 @@ class TaskToolBoxWidget(QtGui.QWidget):
                 self.create_task_button.setEnabled(False)
             else:
                 self.create_task_button.setEnabled(True)
+
             if isinstance(items[0], Qt4_queue_item.DataCollectionQueueItem):
                 data_collection = items[0].get_model()
-                if data_collection.experiment_type == EXPERIMENT_TYPE.HELICAL:
-                    self.tool_box.setCurrentWidget(self.helical_page)
-                else:
+                # if data_collection.experiment_type == EXPERIMENT_TYPE.HELICAL:
+                #     self.tool_box.setCurrentWidget(self.helical_page)
+                # else:
+                if data_collection.experiment_type == EXPERIMENT_TYPE.NATIVE:
                     self.tool_box.setCurrentWidget(self.discrete_page)
-            elif isinstance(items[0], Qt4_queue_item.CharacterisationQueueItem):
-                self.tool_box.setCurrentWidget(self.char_page)
-            elif isinstance(items[0], Qt4_queue_item.EnergyScanQueueItem):
-                self.tool_box.setCurrentWidget(self.energy_scan_page)
-            elif isinstance(items[0], Qt4_queue_item.XRFSpectrumQueueItem):
-                self.tool_box.setCurrentWidget(self.xrf_spectrum_page)
-            elif isinstance(items[0], Qt4_queue_item.GenericWorkflowQueueItem):
-                self.tool_box.setCurrentWidget(self.workflow_page)
-            elif isinstance(items[0], Qt4_queue_item.AdvancedQueueItem):
-                self.tool_box.setCurrentWidget(self.advanced_page)
+            # elif isinstance(items[0], Qt4_queue_item.CharacterisationQueueItem):
+            #     self.tool_box.setCurrentWidget(self.char_page)
+            # elif isinstance(items[0], Qt4_queue_item.EnergyScanQueueItem):
+            #     self.tool_box.setCurrentWidget(self.energy_scan_page)
+            # elif isinstance(items[0], Qt4_queue_item.XRFSpectrumQueueItem):
+            #     self.tool_box.setCurrentWidget(self.xrf_spectrum_page)
+            # elif isinstance(items[0], Qt4_queue_item.GenericWorkflowQueueItem):
+            #     self.tool_box.setCurrentWidget(self.workflow_page)
+            # elif isinstance(items[0], Qt4_queue_item.AdvancedQueueItem):
+            #     self.tool_box.setCurrentWidget(self.advanced_page)
 
         current_page = self.tool_box.currentWidget()
         current_page.selection_changed(items)
@@ -244,9 +251,10 @@ class TaskToolBoxWidget(QtGui.QWidget):
                     # Create a new group if sample is selected
                     if isinstance(task_model, queue_model_objects.Sample):
                         task_model = self.create_task_group(task_model)
-                        if self.tool_box.currentWidget() in (self.discrete_page, 
-                           self.char_page, self.energy_scan_page, 
-                           self.xrf_spectrum_page) and len(shapes):
+                        # if self.tool_box.currentWidget() in (self.discrete_page, 
+                        #    self.char_page, self.energy_scan_page, 
+                        #    self.xrf_spectrum_page) and len(shapes):
+                        if self.tool_box.currentWidget() == self.discrete_page and len(shapes):
                             #This could be done in more nicer way...
                             for shape in shapes:
                                 self.create_task(task_model, shape)
@@ -255,17 +263,19 @@ class TaskToolBoxWidget(QtGui.QWidget):
                     elif isinstance(task_model, queue_model_objects.Basket):
                         for sample_node in task_model.get_sample_list():
                             child_task_model = self.create_task_group(sample_node)
-                            if self.tool_box.currentWidget() in (self.discrete_page,
-                               self.char_page, self.energy_scan_page, 
-                               self.xrf_spectrum_page) and len(shapes):
+                            # if self.tool_box.currentWidget() in (self.discrete_page,
+                            #    self.char_page, self.energy_scan_page, 
+                            #    self.xrf_spectrum_page) and len(shapes):
+                            if self.tool_box.currentWidget() == self.discrete_page and len(shapes):
                                 for shape in shapes:
                                     self.create_task(child_task_model, shape)
                             else:
                                 self.create_task(child_task_model)
                     else:
-                        if self.tool_box.currentWidget() in (self.discrete_page,
-                           self.char_page, self.energy_scan_page, 
-                           self.xrf_spectrum_page) and len(shapes):
+                        # if self.tool_box.currentWidget() in (self.discrete_page,
+                        #    self.char_page, self.energy_scan_page, 
+                        #    self.xrf_spectrum_page) and len(shapes):
+                        if self.tool_box.currentWidget() == self.discrete_page and len(shapes):
                             for shape in shapes:
                                 self.create_task(task_model, shape)
                         else:

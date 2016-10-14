@@ -363,7 +363,7 @@ class CreateTaskBase(QtGui.QWidget):
 
     def single_item_selection(self, tree_item):
         sample_item = self.get_sample_item(tree_item)
-       
+
         if isinstance(tree_item, Qt4_queue_item.SampleQueueItem):
             sample_data_model = sample_item.get_model()
             self._path_template = copy.deepcopy(self._path_template)
@@ -546,7 +546,6 @@ class CreateTaskBase(QtGui.QWidget):
         try: 
             sample_is_mounted = self._beamline_setup_hwobj.sample_changer_hwobj.\
                                 getLoadedSample().getCoords() == sample.location
-
         except AttributeError:
             sample_is_mounted = False
 
@@ -635,7 +634,6 @@ class CreateTaskBase(QtGui.QWidget):
             copy.deepcopy(parameters)
         acq.acquisition_parameters.collect_agent = \
             queue_model_enumerables.COLLECTION_ORIGIN.MXCUBE
-        
         acq.path_template = self._create_path_template(sample, path_template)
 
         if bl_setup.diffractometer_hwobj.in_plate_mode():

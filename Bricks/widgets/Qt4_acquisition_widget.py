@@ -553,7 +553,7 @@ class AcquisitionWidget(QtGui.QWidget):
         Descript. :
         """
         self._acquisition_parameters = acquisition_parameters
-        self._path_template = path_template        
+        self._path_template = path_template
         self._acquisition_mib.set_model(acquisition_parameters)
         
         #Update mad widgets

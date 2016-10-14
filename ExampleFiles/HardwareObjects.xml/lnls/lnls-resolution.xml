@@ -1,0 +1,10 @@
+<equipment class="LNLSResolution">
+    <!-- generic devices -->
+    <object href="/lnls/lnls-energy" role="energy"/>
+    <object href="/lnls/lnls-detector" role="detector"/>
+
+    <!-- site specific properties -->
+    <defaultResolution>3.4783</defaultResolution>
+    <defaultWavelength>1.5955</defaultWavelength>    
+    <defaultEnergy>7.7709</defaultEnergy>
+</equipment>

@@ -38,7 +38,7 @@ class CreateDiscreteWidget(CreateTaskBase):
     """
     Descript. :
     """
-    def __init__(self, parent=None, name=None, fl=0):
+    def __init__(self, parent=None, name=None, fl=0, parent_class=None):
         """
         Descript. :
         """
@@ -49,6 +49,9 @@ class CreateDiscreteWidget(CreateTaskBase):
         if not name:
             self.setObjectName("Qt4_create_discrete_widget")
         self.init_models()
+
+        # LNLS
+        self.parent = parent_class
 
         # Hardware objects ----------------------------------------------------
 
@@ -246,6 +249,7 @@ class CreateDiscreteWidget(CreateTaskBase):
         processing_parameters = copy.deepcopy(self._processing_parameters)
         dc = queue_model_objects.DataCollection([acq], sample.crystals[0],
                                                 processing_parameters)
+
         dc.set_name(acq.path_template.get_prefix())
         dc.set_number(acq.path_template.run_number)
         dc.experiment_type = queue_model_enumerables.EXPERIMENT_TYPE.NATIVE

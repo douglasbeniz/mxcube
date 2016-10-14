@@ -6,7 +6,7 @@
   <object href="/lnls/lnls-energy" role="energy"/>
   <object href="/attenuators-mockup" role="transmission"/>
   <object href="/lnls/lnls-detector" role="detector"/>
-  <object href="/resolution-mockup" role="resolution"/>
+  <object href="/lnls/lnls-resolution" role="resolution"/>
   <object href="/lnls/lnls-lims_client" role="lims_client"/> 
   <object href="/lnls/lnls-beam_info" role="beam_info"/>
 

@@ -45,7 +45,7 @@ class DCParametersWidget(QtGui.QWidget):
 
         # Properties ----------------------------------------------------------
 
-        # Signals ------------------------------------------------------------
+        # Signals -------------------------------------------------------------
 
         # Slots ---------------------------------------------------------------
 
@@ -98,6 +98,7 @@ class DCParametersWidget(QtGui.QWidget):
                      self._prefix_ledit_change)
         self._data_path_widget.data_path_layout.run_number_ledit.textChanged.connect( 
                      self._run_number_ledit_change)
+
         self._acq_widget.madEnergySelectedSignal.connect(self.mad_energy_selected)
         self._acq_widget.acqParametersChangedSignal.connect(\
              self.acq_parameters_changed)
@@ -173,7 +174,6 @@ class DCParametersWidget(QtGui.QWidget):
         self._data_collection = data_collection
         self._acquisition_mib = DataModelInputBinder(self._data_collection.\
                                                          acquisitions[0].acquisition_parameters)
-
         # The acq_widget sends a signal to the path_widget, and it relies
         # on that both models upto date, we need to refactor this part
         # so that both models are set before taking ceratin actions.

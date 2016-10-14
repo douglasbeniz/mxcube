@@ -2,8 +2,8 @@
   <!-- Channels -->
   <channel type="epics" name="epicsMotor_val">MX1:Energy.VAL</channel>
   <channel type="epics" name="epicsMotor_rlv" >MX1:Energy.RLV</channel>
-  <channel type="epics" name="epicsMotor_rbv" polling="500">MX1:Energy_RBV</channel>
-  <channel type="epics" name="epicsMotor_dmov" polling="500">MX1:Energy.DMOV</channel>
+  <channel type="epics" name="epicsMotor_rbv" polling="200">MX1:Energy_RBV</channel>
+  <channel type="epics" name="epicsMotor_dmov" polling="200">MX1:Energy.DMOV</channel>
   <channel type="epics" name="epicsMotor_stop">MX1:Energy.STOP</channel>
   <channel type="epics" name="epicsMotor_dhlm">MX1:Energy.DHLM</channel>
   <channel type="epics" name="epicsMotor_dllm">MX1:Energy.DLLM</channel>

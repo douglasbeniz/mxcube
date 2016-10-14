@@ -17,9 +17,10 @@
   <!-- site specific properties -->
   <pilatusEpicsAddress>MXROB:cam1</pilatusEpicsAddress>
   <shutterEpicsAddress>MXROB:StaubliCS8:SetShutter</shutterEpicsAddress>
-  <pilatusServerIP>10.2.71.40</pilatusServerIP>
+  <pilatusServerIP>10.2.71.38</pilatusServerIP>
   <pilatusSshUser>det</pilatusSshUser>
   <pilatusSshPassword>Pilatus2</pilatusSshPassword>
   <pilatusServerStorageTemp>/MX1Temp</pilatusServerStorageTemp>
   <pilatusServerStorage>/storage</pilatusServerStorage>
+  <pilatusHalfOfHeight>49.896</pilatusHalfOfHeight>
 </equipment>

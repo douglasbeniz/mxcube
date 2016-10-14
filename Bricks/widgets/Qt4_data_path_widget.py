@@ -41,6 +41,9 @@ class DataPathWidget(QtGui.QWidget):
         if name is not None:
             self.setObjectName(name)
 
+        # LNLS 
+        self.parent = parent
+
         # Hardware objects ----------------------------------------------------
 
         # Internal variables --------------------------------------------------
@@ -88,14 +91,33 @@ class DataPathWidget(QtGui.QWidget):
         Descript. :
         """
         get_dir = QtGui.QFileDialog(self)
+
+        if (self._base_image_dir is None):
+            self._base_image_dir = self.parent.parent.parent.session_hwobj.get_base_image_directory()
+
         given_dir = self._base_image_dir
 
-        d = str(get_dir.getExistingDirectory(self, given_dir,
-                                             "Select a directory", 
-                                             QtGui.QFileDialog.ShowDirsOnly))
-        d = os.path.dirname(d)
+        # LNLS
+        baseExist = False
 
-        if d is not None and len(d) > 0:
+        while (not baseExist and (len(given_dir) > 0)):
+            if (os.path.exists(given_dir)):
+                baseExist = True
+            else:
+                given_dir = given_dir[:given_dir.rfind("/")]
+
+        d = str(get_dir.getExistingDirectory(self, "Select a directory", given_dir, QtGui.QFileDialog.ShowDirsOnly))
+
+        # LNLS
+        #d = os.path.dirname(d)
+
+        if d is not None and os.path.exists(d):
+            # Include default raw directory
+            d = os.path.join(d, self.parent.parent.parent.session_hwobj.raw_data_folder_name)
+            # Update _base_image_dir and _base_process_dir, so we can set it as current working directory
+            self._base_image_dir = d
+            self._base_process_dir = d
+            # Set the new working directory
             self.set_directory(d)
 
     def _prefix_ledit_change(self, new_value):
@@ -132,9 +154,16 @@ class DataPathWidget(QtGui.QWidget):
         """
         Descript. :
         """
+        if (self._base_image_dir is None):
+            self._base_image_dir = self.parent.parent.parent.session_hwobj.get_base_image_directory()
+
         base_image_dir = self._base_image_dir
+
+        if (self._base_process_dir is None):
+            self._base_process_dir = self.parent.parent.parent.session_hwobj.get_base_process_directory()
         base_proc_dir = self._base_process_dir
         new_sub_dir = str(new_value).strip(' ')
+
 
         if len(new_sub_dir) > 0:
             if new_sub_dir[0] == os.path.sep:
@@ -144,7 +173,7 @@ class DataPathWidget(QtGui.QWidget):
         else:
             new_image_directory = base_image_dir
             new_proc_dir = base_proc_dir
-            
+        
         self._data_model.directory = new_image_directory
         self._data_model.process_directory = new_proc_dir 
         Qt4_widget_colors.set_widget_color(self.data_path_layout.folder_ledit,
@@ -179,11 +208,15 @@ class DataPathWidget(QtGui.QWidget):
         """
         Descript. :
         """
+        if (self._base_image_dir is None):
+            self._base_image_dir = self.parent.parent.parent.session_hwobj.get_base_image_directory()
+
         base_image_dir = self._base_image_dir
+
         dir_parts = directory.split(base_image_dir)
 
         if len(dir_parts) > 1:
-            sub_dir = dir_parts[1]        
+            sub_dir = dir_parts[1]
             self._data_model.directory = directory
             self.data_path_layout.folder_ledit.setText(sub_dir)
         else:

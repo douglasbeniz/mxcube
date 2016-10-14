@@ -147,6 +147,9 @@ class Qt4_TaskToolBoxBrick(BlissWidget):
 
         self.setEnabled(logged_in)
         self.task_tool_box_widget.ispyb_logged_in(logged_in)
+
+        # LNLS 
+        self.task_tool_box_widget.discrete_page._data_path_widget._base_image_dir = None
     
     def propertyChanged(self, property_name, old_value, new_value):
         """
@@ -182,6 +185,11 @@ class Qt4_TaskToolBoxBrick(BlissWidget):
         Return    :
         """
         self.task_tool_box_widget.selection_changed(items)
+
+        # LNLS
+        #if (self.session_hwobj and self.session_hwobj.base_image_dir is not None):
+        if (self.session_hwobj):
+            self.session_hwobj.set_base_image_directory(self.task_tool_box_widget.discrete_page._data_path_widget._base_image_dir)
 
     def point_selected(self, selected_position):
         """
