@@ -6,8 +6,8 @@
      <axis>
         <motorname>phiy</motorname>
         <direction>[0, 1, 0]</direction>
-	<type>translation</type>
-	<motorHO>/eh1/diff-phiy</motorHO> 
+        <type>translation</type>
+        <motorHO>/eh1/diff-phiy</motorHO> 
      </axis>
 
      <!-- removing this axis (normal to Omega) will fix Omega position -->

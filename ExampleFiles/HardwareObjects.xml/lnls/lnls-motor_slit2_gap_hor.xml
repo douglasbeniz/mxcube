@@ -1,0 +1,11 @@
+<device class="LNLSMotor">
+    <!-- Channels -->
+    <channel type="epics" name="epicsMotor_val">MX1:SIM:m3.VAL</channel>
+    <channel type="epics" name="epicsMotor_rlv">MX1:SIM:m3.RLV</channel>
+    <channel type="epics" name="epicsMotor_rbv" polling="500">MX1:SIM:m3.RBV</channel>
+    <channel type="epics" name="epicsMotor_dmov" polling="500">MX1:SIM:m3.DMOV</channel>
+    <channel type="epics" name="epicsMotor_stop">MX1:SIM:m3.STOP</channel>
+    <channel type="epics" name="epicsMotor_velo">MX1:SIM:m3.VELO</channel>
+    <!-- Properties -->
+    <motor_name>Slit2GapHor</motor_name>
+</device>

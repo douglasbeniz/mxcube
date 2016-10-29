@@ -79,6 +79,8 @@ class Qt4_SlitsBrick(BlissWidget):
         # Properties ----------------------------------------------------------
         self.addProperty('mnemonic', 'string', '')
         self.addProperty('formatString','formatString','###')
+        # LNLS
+        self.addProperty('label', 'string', 'Slits')
 
         # Signals ------------------------------------------------------------
 
@@ -92,11 +94,12 @@ class Qt4_SlitsBrick(BlissWidget):
         boldFont = self.current_hor_pos_ledit.font()
         boldFont.setBold(True)
         self.current_hor_pos_ledit.setFont(boldFont)
-        self.current_hor_pos_ledit.setMaximumWidth(70)
+        self.current_hor_pos_ledit.setMaximumWidth(85)
         self.current_hor_pos_ledit.setEnabled(False)
         self.hor_pos_dspinbox = QtGui.QDoubleSpinBox(self.main_gbox)
-        self.hor_pos_dspinbox.setMaximumWidth(70)
+        self.hor_pos_dspinbox.setMaximumWidth(65)
         self.hor_pos_dspinbox.setEnabled(False)        
+        self.hor_pos_dspinbox.setDecimals(1)
         self.set_hor_gap_button = QtGui.QPushButton(\
              Qt4_Icons.load_icon("Draw"), "", self.main_gbox)
         self.set_hor_gap_button.setEnabled(False)
@@ -111,11 +114,12 @@ class Qt4_SlitsBrick(BlissWidget):
         self.current_ver_pos_ledit = QtGui.QLineEdit(self.main_gbox)
         self.current_ver_pos_ledit.setAlignment(QtCore.Qt.AlignRight)
         self.current_ver_pos_ledit.setFont(boldFont)
-        self.current_ver_pos_ledit.setMaximumWidth(70)
+        self.current_ver_pos_ledit.setMaximumWidth(85)
         self.current_ver_pos_ledit.setEnabled(False)
         self.ver_pos_dspinbox = QtGui.QDoubleSpinBox(self.main_gbox)
-        self.ver_pos_dspinbox.setMaximumWidth(70)
+        self.ver_pos_dspinbox.setMaximumWidth(65)
         self.ver_pos_dspinbox.setEnabled(False)
+        self.ver_pos_dspinbox.setDecimals(1)
         self.set_ver_gap_button = QtGui.QPushButton(\
              Qt4_Icons.load_icon("Draw"), "", self.main_gbox)
         self.set_ver_gap_button.setEnabled(False)
@@ -148,15 +152,25 @@ class Qt4_SlitsBrick(BlissWidget):
         # Qt signal/slot connections ------------------------------------------
         self.hor_pos_dspinbox.lineEdit().textChanged.\
              connect(self.hor_gap_edited)
-        self.hor_pos_dspinbox.lineEdit().returnPressed.\
-             connect(self.change_hor_gap)
+        # LNLS
+        # self.hor_pos_dspinbox.lineEdit().returnPressed.\
+        #      connect(self.change_hor_gap)
+        hor_spinbox_event = SpinBoxEvent(self.hor_pos_dspinbox) 
+        self.hor_pos_dspinbox.installEventFilter(hor_spinbox_event)
+        hor_spinbox_event.returnPressedSignal.connect(self.change_hor_gap) 
+
         self.set_hor_gap_button.clicked.connect(self.change_hor_gap)
         self.stop_hor_button.clicked.connect(self.stop_hor_clicked)
 
         self.ver_pos_dspinbox.lineEdit().textChanged.\
              connect(self.ver_gap_edited)
-        self.ver_pos_dspinbox.lineEdit().returnPressed.\
-             connect(self.change_ver_gap)
+        # LNLS
+        # self.ver_pos_dspinbox.lineEdit().returnPressed.\
+        #      connect(self.change_ver_gap)
+        ver_spinbox_event = SpinBoxEvent(self.ver_pos_dspinbox) 
+        self.ver_pos_dspinbox.installEventFilter(ver_spinbox_event)
+        ver_spinbox_event.returnPressedSignal.connect(self.change_ver_gap) 
+
         self.set_ver_gap_button.clicked.connect(self.change_ver_gap)
         self.stop_ver_button.clicked.connect(self.stop_ver_clicked)
 
@@ -179,7 +193,6 @@ class Qt4_SlitsBrick(BlissWidget):
                 self.disconnect(self.slitbox_hwobj, QtCore.SIGNAL('gapLimitsChanged'), self.gap_limits_changed)
 
             self.slitbox_hwobj = self.getHardwareObject(new_value)
-
             if self.slitbox_hwobj is not None:
                 self.connect(self.slitbox_hwobj, QtCore.SIGNAL('gapSizeChanged'), self.gap_value_changed)
                 self.connect(self.slitbox_hwobj, QtCore.SIGNAL('statusChanged'), self.gap_status_changed)
@@ -190,6 +203,9 @@ class Qt4_SlitsBrick(BlissWidget):
                 self.slitBoxReady()
             else:
                 self.slitBoxNotReady()
+        elif property_name == 'label':
+            if ((new_value is not None) and (len(new_value) > 0)):
+                self.main_gbox.setTitle(new_value)
         else:
             BlissWidget.propertyChanged(self, property_name, old_value, new_value)
     
@@ -234,12 +250,14 @@ class Qt4_SlitsBrick(BlissWidget):
     def change_hor_gap(self):
         val = self.hor_pos_dspinbox.value() / 1000.0
         self.slitbox_hwobj.set_gap('Hor', val)
-        self.hor_pos_dspinbox.clearFocus()
+        # LNLS
+        #self.hor_pos_dspinbox.clearFocus()
     
     def change_ver_gap(self):
         val = self.ver_pos_dspinbox.value() / 1000.0
         self.slitbox_hwobj.set_gap('Ver', val)
-        self.ver_pos_dspinbox.clearFocus()
+        # LNLS
+        #self.ver_pos_dspinbox.clearFocus()
 
     def slitBoxReady(self):
         self.main_gbox.setEnabled(True)
@@ -254,14 +272,19 @@ class Qt4_SlitsBrick(BlissWidget):
         #elif newGap[0] < 0:
         #     self.current_hor_pos_ledit.setText("-")
         else:
-             self.current_hor_pos_ledit.setText('%d %sm' % (newGap[0] * 1000, chr(956)))
+             self.current_hor_pos_ledit.setText('%.1f %sm' % (newGap[0] * 1000, chr(956)))
+             # LNLS
+             self.hor_pos_dspinbox.setValue(float('%.1f' % (newGap[0] * 1000)))
+
         if newGap[1] is None:
              self.current_ver_pos_ledit.setText("-")
         #elif newGap[1] < 0:
         #     self.current_ver_pos_ledit.setText("-")
         else:
              gap_str= str(newGap[1] * 1000)
-             self.current_ver_pos_ledit.setText('%d %sm' % (newGap[1] * 1000, chr(956)))
+             self.current_ver_pos_ledit.setText('%.1f %sm' % (newGap[1] * 1000, chr(956)))
+             # LNLS
+             self.ver_pos_dspinbox.setValue(float('%.1f' % (newGap[1] * 1000)))
 
     def gap_status_changed(self, gapHorStatus, gapVerStatus):
         if gapHorStatus == 'Move':  #Moving
@@ -298,3 +321,20 @@ class Qt4_SlitsBrick(BlissWidget):
               self.hor_pos_dspinbox.setMaxValue(int(newMaxLimits[0] * 1000)) 
            if newMaxLimits[1] > 0:
               self.ver_pos_dspinbox.setMaxValue(int(newMaxLimits[1] * 1000))
+
+
+class SpinBoxEvent(QtCore.QObject):
+    returnPressedSignal = QtCore.pyqtSignal()
+    contextMenuSignal = QtCore.pyqtSignal()
+
+    def eventFilter(self,  obj,  event):
+        if event.type() == QtCore.QEvent.KeyPress:
+            if event.key() in [QtCore.Qt.Key_Enter, 
+                               QtCore.Qt.Key_Return]:
+                self.returnPressedSignal.emit()
+            
+        elif event.type() == QtCore.QEvent.MouseButtonRelease:
+            self.returnPressedSignal.emit()
+        elif event.type() == QtCore.QEvent.ContextMenu:
+            self.contextMenuSignal.emit()
+        return False

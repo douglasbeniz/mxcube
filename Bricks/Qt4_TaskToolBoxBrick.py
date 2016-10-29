@@ -197,25 +197,29 @@ class Qt4_TaskToolBoxBrick(BlissWidget):
         Args.     :
         Return    :
         """
-        self.task_tool_box_widget.helical_page.\
-            centred_position_selection(selected_position)
+        # LNLS
+        # self.task_tool_box_widget.helical_page.\
+        #     centred_position_selection(selected_position)
         self.task_tool_box_widget.discrete_page.\
             centred_position_selection(selected_position)
-        self.task_tool_box_widget.char_page.\
-            centred_position_selection(selected_position)
-        self.task_tool_box_widget.energy_scan_page.\
-            centred_position_selection(selected_position)
-        self.task_tool_box_widget.xrf_spectrum_page.\
-            centred_position_selection(selected_position)
+        # self.task_tool_box_widget.char_page.\
+        #     centred_position_selection(selected_position)
+        # self.task_tool_box_widget.energy_scan_page.\
+        #     centred_position_selection(selected_position)
+        # self.task_tool_box_widget.xrf_spectrum_page.\
+        #     centred_position_selection(selected_position)
 
         self.task_tool_box_widget.discrete_page.refresh_current_item()
-        self.task_tool_box_widget.helical_page.refresh_current_item()
-        self.task_tool_box_widget.char_page.refresh_current_item()
-        self.task_tool_box_widget.energy_scan_page.refresh_current_item()
-        self.task_tool_box_widget.xrf_spectrum_page.refresh_current_item()
+        # LNLS
+        # self.task_tool_box_widget.helical_page.refresh_current_item()
+        # self.task_tool_box_widget.char_page.refresh_current_item()
+        # self.task_tool_box_widget.energy_scan_page.refresh_current_item()
+        # self.task_tool_box_widget.xrf_spectrum_page.refresh_current_item()
 
     def point_deleted(self, shape):
         """
         Callback for the DrawingEvent object called when a shape is deleted.
         """
-        self.task_tool_box_widget.helical_page.shape_deleted(shape) 
+        # LNLS
+        # self.task_tool_box_widget.helical_page.shape_deleted(shape) 
+        pass

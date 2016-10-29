@@ -50,8 +50,11 @@ class Qt4_LogBarBrick(BlissWidget):
         _main_hlayout.setContentsMargins(2, 2, 2, 2)
         self.setLayout(_main_hlayout)
 
-        self.setSizePolicy(QtGui.QSizePolicy.MinimumExpanding, 
-                           QtGui.QSizePolicy.Fixed)
+        # LNLS
+        #self.setSizePolicy(QtGui.QSizePolicy.MinimumExpanding, 
+        #                   QtGui.QSizePolicy.Fixed)
+        self.setSizePolicy(QtGui.QSizePolicy.Expanding, 
+                           QtGui.QSizePolicy.Expanding)
 
         Qt4_GUILogHandler.GUILogHandler().register(self)
 

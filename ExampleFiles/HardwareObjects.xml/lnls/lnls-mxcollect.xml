@@ -9,6 +9,7 @@
   <object href="/lnls/lnls-resolution" role="resolution"/>
   <object href="/lnls/lnls-lims_client" role="lims_client"/> 
   <object href="/lnls/lnls-beam_info" role="beam_info"/>
+  <object href="/lnls/lnls-shutter" role="safety_shutter"/>
 
   <auto_processing>
     <program>

@@ -1,2 +1,3 @@
 <device class = "LNLSShutter">
+    <channel type="epics" name="safetyShutter" polling="500">MXROB:StaubliCS8:SetShutter.VAL</channel>
 </device>
