@@ -636,6 +636,10 @@ class DataCollectTree(QtGui.QWidget):
                 self.queue_hwobj.set_pause(False)
 
     def queue_paused_handler(self, state):
+        print("----------------------------------------------------")
+        print("Qt4_dc_tree_wid - queue_paused_handler")
+        print("state: ", state)
+        print("----------------------------------------------------")
         """
         Descript. :
         """
@@ -644,6 +648,7 @@ class DataCollectTree(QtGui.QWidget):
             self.parent().enable_command_menu(True)
             self.parent().enable_task_toolbox(True)
             self.continue_button.setText('Continue')
+            print("Qt4_widget_colors.LIGHT_YELLOW: ", Qt4_widget_colors.LIGHT_YELLOW)
             Qt4_widget_colors.set_widget_color(self.continue_button, 
                                                Qt4_widget_colors.LIGHT_YELLOW, 
                                                QtGui.QPalette.Button)
@@ -652,6 +657,7 @@ class DataCollectTree(QtGui.QWidget):
             self.parent().enable_command_menu(False)
             self.parent().enable_task_toolbox(False)
             self.continue_button.setText('Pause')
+            print("Qt4_widget_colors.BUTTON_ORIGINAL: ", Qt4_widget_colors.BUTTON_ORIGINAL)
             Qt4_widget_colors.set_widget_color(
                               self.continue_button, 
                               Qt4_widget_colors.BUTTON_ORIGINAL, 

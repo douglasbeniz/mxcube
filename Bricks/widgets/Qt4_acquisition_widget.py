@@ -71,7 +71,7 @@ class AcquisitionWidget(QtGui.QWidget):
             self._acquisition_parameters = acq_params
 
         if path_template is None:
-           self._path_template = queue_model_objects.PathTemplate()
+            self._path_template = queue_model_objects.PathTemplate()
         else:
             self._path_template = path_template
 

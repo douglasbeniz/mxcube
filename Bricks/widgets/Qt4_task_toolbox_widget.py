@@ -59,6 +59,8 @@ class TaskToolBoxWidget(QtGui.QWidget):
         self.tool_box = QtGui.QToolBox(self.method_group_box)
         self.tool_box.setObjectName("tool_box")
         self.tool_box.setFixedWidth(475)
+        # LNLS
+        self.tool_box.setFixedHeight(705)
         self.tool_box.setFont(font)
         
         self.discrete_page = CreateDiscreteWidget(self.tool_box, "Discrete", parent_class=self)
