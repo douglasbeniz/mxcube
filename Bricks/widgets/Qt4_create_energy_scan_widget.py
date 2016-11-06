@@ -39,7 +39,7 @@ class CreateEnergyScanWidget(CreateTaskBase):
     Descript. :
     """ 
 
-    def __init__(self, parent = None,name = None, fl = 0):
+    def __init__(self, parent = None,name = None, fl = 0, parent_class=None):
         """
         Descript. :
         """

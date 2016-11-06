@@ -54,6 +54,9 @@ class Qt4_EnergyScanParametersBrick(BlissWidget):
             self.session_hwobj.get_base_image_directory()
         self.energy_scan_widget.data_path_widget._base_process_dir = \
             self.session_hwobj.get_base_process_directory()
+        # LNLS
+        self.energy_scan_widget.data_path_widget._base_snapshot_dir = \
+            self.session_hwobj.get_base_snapshot_directory()
         self.energy_scan_widget.populate_widget(item)
 
     def propertyChanged(self, property_name, old_value, new_value):

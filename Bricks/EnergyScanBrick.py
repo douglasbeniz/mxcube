@@ -373,7 +373,7 @@ class EnergyScanBrick(BlissWidget):
             self.startScanButton.commandFailed()
             return
 
-        if self.sessionId is not None and self.sessionId!="":
+        if self.sessionId is not None and self.sessionId != "":
             self.scanParameters["sessionId"] = self.sessionId
             self.scanParameters["element"] = self.element[0]
             self.scanParameters["edgeEnergy"] = self.element[1]

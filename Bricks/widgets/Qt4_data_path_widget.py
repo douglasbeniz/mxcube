@@ -27,7 +27,12 @@ from PyQt4 import uic
 
 import queue_model_objects_v1 as queue_model_objects
 
-from widgets.Qt4_widget_utils import DataModelInputBinder
+# LNLS
+# from widgets.Qt4_widget_utils import DataModelInputBinder
+from Qt4_widget_utils import DataModelInputBinder
+# LNLS
+# from widgets.Qt4_create_task_base import CreateTaskBase
+from Qt4_create_task_base import CreateTaskBase
 from BlissFramework.Utils import Qt4_widget_colors
 
 
@@ -95,7 +100,8 @@ class DataPathWidget(QtGui.QWidget):
         get_dir = QtGui.QFileDialog(self)
 
         if (self._base_image_dir is None):
-            self._base_image_dir = self.parent.parent.parent.session_hwobj.get_base_image_directory()
+            if (type(self.parent) in CreateTaskBase.__subclasses__()):
+                self._base_image_dir = self.parent._session_hwobj.get_base_image_directory()            
 
         given_dir = self._base_image_dir
 
@@ -115,10 +121,12 @@ class DataPathWidget(QtGui.QWidget):
 
         if d is not None and os.path.exists(d):
             # Include default raw directory
-            d = os.path.join(d, self.parent.parent.parent.session_hwobj.raw_data_folder_name)
+            if (type(self.parent) in CreateTaskBase.__subclasses__()):
+                d = os.path.join(d, self.parent._session_hwobj.raw_data_folder_name)
             # Update _base_image_dir and _base_process_dir, so we can set it as current working directory
             self._base_image_dir = d
             self._base_process_dir = d
+            self._base_snapshot_dir = d
             # Set the new working directory
             self.set_directory(d)
 
@@ -152,24 +160,26 @@ class DataPathWidget(QtGui.QWidget):
             self.update_file_name()
             self.pathTemplateChangedSignal.emit()
 
-    def _folder_ledit_change(self, new_value):        
+    def _folder_ledit_change(self, new_value):
         """
         Descript. :
         """
         if (self._base_image_dir is None):
-            self._base_image_dir = self.parent.parent.parent.session_hwobj.get_base_image_directory()
+            if (type(self.parent) in CreateTaskBase.__subclasses__()):
+                self._base_image_dir = self.parent._session_hwobj.get_base_image_directory()
         base_image_dir = self._base_image_dir
 
         if (self._base_process_dir is None):
-            self._base_process_dir = self.parent.parent.parent.session_hwobj.get_base_process_directory()
+            if (type(self.parent) in CreateTaskBase.__subclasses__()):
+                self._base_process_dir = self.parent._session_hwobj.get_base_process_directory()
         base_proc_dir = self._base_process_dir
 
         if (self._base_snapshot_dir is None):
-            self._base_snapshot_dir = self.parent.parent.parent.session_hwobj.get_base_snapshot_directory()
+            if (type(self.parent) in CreateTaskBase.__subclasses__()):
+                self._base_snapshot_dir = self.parent._session_hwobj.get_base_snapshot_directory()
         base_snap_dir = self._base_snapshot_dir
 
         new_sub_dir = str(new_value).strip(' ')
-
 
         if len(new_sub_dir) > 0:
             if new_sub_dir[0] == os.path.sep:
@@ -179,6 +189,7 @@ class DataPathWidget(QtGui.QWidget):
             new_proc_dir = os.path.join(base_proc_dir, str(new_sub_dir))
         else:
             new_image_directory = base_image_dir
+            new_snap_directory = base_snap_dir
             new_proc_dir = base_proc_dir
         
         self._data_model.directory = new_image_directory
@@ -217,8 +228,8 @@ class DataPathWidget(QtGui.QWidget):
         Descript. :
         """
         if (self._base_image_dir is None):
-            self._base_image_dir = self.parent.parent.parent.session_hwobj.get_base_image_directory()
-
+            if (type(self.parent) in CreateTaskBase.__subclasses__()):
+                self._base_image_dir = self.parent._session_hwobj.get_base_image_directory()
         base_image_dir = self._base_image_dir
 
         dir_parts = directory.split(base_image_dir)

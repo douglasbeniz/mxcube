@@ -1,0 +1,14 @@
+<equipment class="LNLSMotor">
+  <!-- Channels :: Mono_Theta_First_Xtal :: Real = MX2:DMC4:m1 -->
+  <channel type="epics" name="epicsMotor_val">MX1:SIM:m1.VAL</channel>
+  <channel type="epics" name="epicsMotor_rlv" >MX1:SIM:m1.RLV</channel>
+  <channel type="epics" name="epicsMotor_rbv" polling="200">MX1:SIM:m1.RBV</channel>
+  <channel type="epics" name="epicsMotor_dmov" polling="200">MX1:SIM:m1.DMOV</channel>
+  <channel type="epics" name="epicsMotor_stop">MX1:SIM:m1.STOP</channel>
+  <!-- To energy range between 4.5 KeV and 15.5 KeV, DLLM = 7.3286 and DHLM = 26.0638 -->
+  <channel type="epics" name="epicsMotor_dllm">MX1:SIM:m1.DLLM</channel>
+  <channel type="epics" name="epicsMotor_dhlm">MX1:SIM:m1.DHLM</channel>
+
+  <!-- Specific properties -->
+  <motor_name>mono_theta_first_xtal</motor_name>
+</equipment>

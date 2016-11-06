@@ -1,7 +1,6 @@
 <object class="BeamlineSetup" role="BeamlineSetup">
   <object href="/attenuators-mockup" role="transmission"/>
   <object href="/lnls/lnls-energy" role="energy"/>
-  <object href="/attenuators-mockup" role="transmission"/>
   <object href="/lnls/lnls-resolution" role="resolution"/>
   <object href="/lnls/lnls-detector" role="detector"/>
 
@@ -20,7 +19,7 @@
 
   <object href="/lnls/lnls-session" role="session"/>
   <object href="/lims-client-mockup" role="lims_client"/>
-  <object href="/energyscan-mockup" role="energyscan"/>
+  <object href="/lnls/lnls-energy_scan" role="energyscan"/>
   <object href="/xrf-spectrum-mockup" role="xrf_spectrum"/>
   <object href="/data-analysis" role="data_analysis"/>
   <object href="/lnls/lnls-parallel_processing" role="parallel_processing"/>

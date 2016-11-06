@@ -95,6 +95,9 @@ class CreateTaskBase(QtGui.QWidget):
                     self._session_hwobj.get_base_image_directory()
                 self._data_path_widget._base_process_dir = \
                     self._session_hwobj.get_base_process_directory()
+                # LNLS
+                self._data_path_widget._base_snapshot_dir = \
+                    self._session_hwobj.get_base_snapshot_directory()
 
                 # LNLS
                 #(data_directory, proc_directory) = self.get_default_directory()

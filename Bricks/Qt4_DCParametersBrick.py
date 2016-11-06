@@ -94,6 +94,9 @@ class Qt4_DCParametersBrick(BlissWidget):
             self.session_hwobj.get_base_image_directory()
         self.parameters_widget._data_path_widget._base_process_dir = \
             self.session_hwobj.get_base_process_directory()
+        # LNLS
+        self.parameters_widget._data_path_widget._base_snapshot_dir = \
+            self.session_hwobj.get_base_snapshot_directory()
 
         if data_collection.is_collected():
             self.parameters_widget.set_enabled(False)

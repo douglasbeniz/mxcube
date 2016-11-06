@@ -97,8 +97,6 @@ class Qt4_TaskToolBoxBrick(BlissWidget):
         if self.session_hwobj.session_id:
             self.setEnabled(True)
 
-
-
         tree_brick = {}
         self.emit(QtCore.SIGNAL("getTreeBrick"), tree_brick)
         self.tree_brick = tree_brick.get('tree_brick', None)
@@ -150,6 +148,7 @@ class Qt4_TaskToolBoxBrick(BlissWidget):
 
         # LNLS 
         self.task_tool_box_widget.discrete_page._data_path_widget._base_image_dir = None
+        self.task_tool_box_widget.energy_scan_page._data_path_widget._base_image_dir = None
     
     def propertyChanged(self, property_name, old_value, new_value):
         """
@@ -186,11 +185,6 @@ class Qt4_TaskToolBoxBrick(BlissWidget):
         """
         self.task_tool_box_widget.selection_changed(items)
 
-        # LNLS
-        #if (self.session_hwobj and self.session_hwobj.base_image_dir is not None):
-        if (self.session_hwobj):
-            self.session_hwobj.set_base_image_directory(self.task_tool_box_widget.discrete_page._data_path_widget._base_image_dir)
-
     def point_selected(self, selected_position):
         """
         Descript. : slot when point selected
@@ -204,8 +198,8 @@ class Qt4_TaskToolBoxBrick(BlissWidget):
             centred_position_selection(selected_position)
         # self.task_tool_box_widget.char_page.\
         #     centred_position_selection(selected_position)
-        # self.task_tool_box_widget.energy_scan_page.\
-        #     centred_position_selection(selected_position)
+        self.task_tool_box_widget.energy_scan_page.\
+            centred_position_selection(selected_position)
         # self.task_tool_box_widget.xrf_spectrum_page.\
         #     centred_position_selection(selected_position)
 
@@ -213,7 +207,7 @@ class Qt4_TaskToolBoxBrick(BlissWidget):
         # LNLS
         # self.task_tool_box_widget.helical_page.refresh_current_item()
         # self.task_tool_box_widget.char_page.refresh_current_item()
-        # self.task_tool_box_widget.energy_scan_page.refresh_current_item()
+        self.task_tool_box_widget.energy_scan_page.refresh_current_item()
         # self.task_tool_box_widget.xrf_spectrum_page.refresh_current_item()
 
     def point_deleted(self, shape):
