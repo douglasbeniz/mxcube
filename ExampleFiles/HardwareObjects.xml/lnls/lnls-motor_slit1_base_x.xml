@@ -1,13 +1,13 @@
 <device class="LNLSMotor">
     <!-- Channels -->
-    <channel type="epics" name="epicsMotor_val">MX1:SIM:m3.VAL</channel>
-    <channel type="epics" name="epicsMotor_rlv">MX1:SIM:m3.RLV</channel>
-    <channel type="epics" name="epicsMotor_rbv" polling="500">MX1:SIM:m3.RBV</channel>
-    <channel type="epics" name="epicsMotor_dmov" polling="500">MX1:SIM:m3.DMOV</channel>
-    <channel type="epics" name="epicsMotor_stop">MX1:SIM:m3.STOP</channel>
-    <channel type="epics" name="epicsMotor_velo">MX1:SIM:m3.VELO</channel>
-    <channel type="epics" name="epicsMotor_dllm">MX1:SIM:m3.DLLM</channel>
-    <channel type="epics" name="epicsMotor_dhlm">MX1:SIM:m3.DHLM</channel>
+    <channel type="epics" name="epicsMotor_val">MXROB:DMC3:m1.VAL</channel>
+    <channel type="epics" name="epicsMotor_rlv">MXROB:DMC3:m1.RLV</channel>
+    <channel type="epics" name="epicsMotor_rbv" polling="500">MXROB:DMC3:m1.RBV</channel>
+    <channel type="epics" name="epicsMotor_dmov" polling="500">MXROB:DMC3:m1.DMOV</channel>
+    <channel type="epics" name="epicsMotor_stop">MXROB:DMC3:m1.STOP</channel>
+    <channel type="epics" name="epicsMotor_velo">MXROB:DMC3:m1.VELO</channel>
+    <channel type="epics" name="epicsMotor_dllm">MXROB:DMC3:m1.DLLM</channel>
+    <channel type="epics" name="epicsMotor_dhlm">MXROB:DMC3:m1.DHLM</channel>
     <!-- Properties -->
     <motor_name>Slit1BaseX</motor_name>
 </device>

@@ -22,5 +22,5 @@
   <pilatusSshPassword>Pilatus2</pilatusSshPassword>
   <pilatusServerStorageTemp>/MX1Temp</pilatusServerStorageTemp>
   <pilatusServerStorage>/storage</pilatusServerStorage>
-  <pilatusHalfOfHeight>49.896</pilatusHalfOfHeight>
+  <pilatusHalfOfHeight>49.880</pilatusHalfOfHeight>
 </equipment>

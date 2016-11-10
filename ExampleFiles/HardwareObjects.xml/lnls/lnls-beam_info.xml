@@ -1,4 +1,2 @@
 <equipment class="LNLSBeamInfo">
-    <object href="/lnls/lnls-motor_slit2_gap_hor" role="slit_gap_hor"/>
-    <object href="/lnls/lnls-motor_slit2_gap_ver" role="slit_gap_ver"/>
 </equipment>

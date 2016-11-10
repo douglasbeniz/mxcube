@@ -18,6 +18,6 @@
   </apis>
 
   <object href="/lnls/lnls-beamline_setup" role="beamline_setup"/>
-  <object href="/lnls/lnls-queue" role="queue"/>
+  <object href="/lnls/lnls-ueue" role="queue"/>
   <object href="/lnls/lnls-queue_model" role="queue_model"/>
 </object>

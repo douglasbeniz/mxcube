@@ -1,6 +1,7 @@
 <object class="BeamlineSetup" role="BeamlineSetup">
   <object href="/attenuators-mockup" role="transmission"/>
   <object href="/lnls/lnls-energy" role="energy"/>
+  <object href="/attenuators-mockup" role="transmission"/>
   <object href="/lnls/lnls-resolution" role="resolution"/>
   <object href="/lnls/lnls-detector" role="detector"/>
 

@@ -1,47 +1,47 @@
 <equipment class="LNLSBeamCentering">
     <!-- Channels for SlitBase 1 X1-->
-    <channel type="epics" name="slit1BaseX1_val">MX1:SIM:m3.VAL</channel>
-    <channel type="epics" name="slit1BaseX1_rlv">MX1:SIM:m3.RLV</channel>
-    <channel type="epics" name="slit1BaseX1_rbv">MX1:SIM:m3.RBV</channel>
-    <channel type="epics" name="slit1BaseX1_dmov">MX1:SIM:m3.DMOV</channel>
-    <channel type="epics" name="slit1BaseX1_stop">MX1:SIM:m3.STOP</channel>
-    <channel type="epics" name="slit1BaseX1_hls">MX1:SIM:m3.HLS</channel>
-    <channel type="epics" name="slit1BaseX1_lls">MX1:SIM:m3.LLS</channel>
-    <channel type="epics" name="slit1BaseX1_hlm">MX1:SIM:m3.HLM</channel>
-    <channel type="epics" name="slit1BaseX1_llm">MX1:SIM:m3.LLM</channel>
+    <channel type="epics" name="slit1BaseX1_val">MXROB:DMC3:m1.VAL</channel>
+    <channel type="epics" name="slit1BaseX1_rlv">MXROB:DMC3:m1.RLV</channel>
+    <channel type="epics" name="slit1BaseX1_rbv">MXROB:DMC3:m1.RBV</channel>
+    <channel type="epics" name="slit1BaseX1_dmov">MXROB:DMC3:m1.DMOV</channel>
+    <channel type="epics" name="slit1BaseX1_stop">MXROB:DMC3:m1.STOP</channel>
+    <channel type="epics" name="slit1BaseX1_hls">MXROB:DMC3:m1.HLS</channel>
+    <channel type="epics" name="slit1BaseX1_lls">MXROB:DMC3:m1.LLS</channel>
+    <channel type="epics" name="slit1BaseX1_hlm">MXROB:DMC3:m1.HLM</channel>
+    <channel type="epics" name="slit1BaseX1_llm">MXROB:DMC3:m1.LLM</channel>
     <!-- Channels for SlitBase 1 Z1-->
-    <channel type="epics" name="slit1BaseZ1_val">MX1:SIM:m4.VAL</channel>
-    <channel type="epics" name="slit1BaseZ1_rlv">MX1:SIM:m4.RLV</channel>
-    <channel type="epics" name="slit1BaseZ1_rbv">MX1:SIM:m4.RBV</channel>
-    <channel type="epics" name="slit1BaseZ1_dmov">MX1:SIM:m4.DMOV</channel>
-    <channel type="epics" name="slit1BaseZ1_stop">MX1:SIM:m4.STOP</channel>
-    <channel type="epics" name="slit1BaseZ1_hls">MX1:SIM:m4.HLS</channel>
-    <channel type="epics" name="slit1BaseZ1_lls">MX1:SIM:m4.LLS</channel>
-    <channel type="epics" name="slit1BaseZ1_hlm">MX1:SIM:m4.HLM</channel>
-    <channel type="epics" name="slit1BaseZ1_llm">MX1:SIM:m4.LLM</channel>
+    <channel type="epics" name="slit1BaseZ1_val">MXROB:DMC3:m2.VAL</channel>
+    <channel type="epics" name="slit1BaseZ1_rlv">MXROB:DMC3:m2.RLV</channel>
+    <channel type="epics" name="slit1BaseZ1_rbv">MXROB:DMC3:m2.RBV</channel>
+    <channel type="epics" name="slit1BaseZ1_dmov">MXROB:DMC3:m2.DMOV</channel>
+    <channel type="epics" name="slit1BaseZ1_stop">MXROB:DMC3:m2.STOP</channel>
+    <channel type="epics" name="slit1BaseZ1_hls">MXROB:DMC3:m2.HLS</channel>
+    <channel type="epics" name="slit1BaseZ1_lls">MXROB:DMC3:m2.LLS</channel>
+    <channel type="epics" name="slit1BaseZ1_hlm">MXROB:DMC3:m2.HLM</channel>
+    <channel type="epics" name="slit1BaseZ1_llm">MXROB:DMC3:m2.LLM</channel>
     <!-- Channels for Counter 1 -->
-    <channel type="epics" name="counter1_val">MXROB2:NI9215A:AI0.VAL</channel>
+    <channel type="epics" name="counter1_val">MXROB:NI9215A:AI0.VAL</channel>
 
     <!-- Channels for SlitBase 2 X1-->
-    <channel type="epics" name="slit2BaseX1_val">MX1:SIM:m5.VAL</channel>
-    <channel type="epics" name="slit2BaseX1_rlv">MX1:SIM:m5.RLV</channel>
-    <channel type="epics" name="slit2BaseX1_rbv">MX1:SIM:m5.RBV</channel>
-    <channel type="epics" name="slit2BaseX1_dmov">MX1:SIM:m5.DMOV</channel>
-    <channel type="epics" name="slit2BaseX1_stop">MX1:SIM:m5.STOP</channel>
-    <channel type="epics" name="slit2BaseX1_hls">MX1:SIM:m5.HLS</channel>
-    <channel type="epics" name="slit2BaseX1_lls">MX1:SIM:m5.LLS</channel>
-    <channel type="epics" name="slit2BaseX1_hlm">MX1:SIM:m5.HLM</channel>
-    <channel type="epics" name="slit2BaseX1_llm">MX1:SIM:m5.LLM</channel>
+    <channel type="epics" name="slit2BaseX1_val">MXROB:DMC3:m3.VAL</channel>
+    <channel type="epics" name="slit2BaseX1_rlv">MXROB:DMC3:m3.RLV</channel>
+    <channel type="epics" name="slit2BaseX1_rbv">MXROB:DMC3:m3.RBV</channel>
+    <channel type="epics" name="slit2BaseX1_dmov">MXROB:DMC3:m3.DMOV</channel>
+    <channel type="epics" name="slit2BaseX1_stop">MXROB:DMC3:m3.STOP</channel>
+    <channel type="epics" name="slit2BaseX1_hls">MXROB:DMC3:m3.HLS</channel>
+    <channel type="epics" name="slit2BaseX1_lls">MXROB:DMC3:m3.LLS</channel>
+    <channel type="epics" name="slit2BaseX1_hlm">MXROB:DMC3:m3.HLM</channel>
+    <channel type="epics" name="slit2BaseX1_llm">MXROB:DMC3:m3.LLM</channel>
     <!-- Channels for SlitBase 2 Z1-->
-    <channel type="epics" name="slit2BaseZ1_val">MX1:VirtualBase:motor.VAL</channel>
-    <channel type="epics" name="slit2BaseZ1_rlv">MX1:VirtualBase:motor.RLV</channel>
-    <channel type="epics" name="slit2BaseZ1_rbv">MX1:VirtualBase:motor.RBV</channel>
-    <channel type="epics" name="slit2BaseZ1_dmov">MX1:VirtualBase:motor.DMOV</channel>
-    <channel type="epics" name="slit2BaseZ1_stop">MX1:VirtualBase:motor.STOP</channel>
-    <channel type="epics" name="slit2BaseZ1_hls">MX1:VirtualBase:motorHLS</channel>
-    <channel type="epics" name="slit2BaseZ1_lls">MX1:VirtualBase:motorLLS</channel>
-    <channel type="epics" name="slit2BaseZ1_hlm">MX1:VirtualBase:motor.HLM</channel>
-    <channel type="epics" name="slit2BaseZ1_llm">MX1:VirtualBase:motor.LLM</channel>
+    <channel type="epics" name="slit2BaseZ1_val">MXROB:SlitGonioBase:motor.VAL</channel>
+    <channel type="epics" name="slit2BaseZ1_rlv">MXROB:SlitGonioBase:motor.RLV</channel>
+    <channel type="epics" name="slit2BaseZ1_rbv">MXROB:SlitGonioBase:motor.RBV</channel>
+    <channel type="epics" name="slit2BaseZ1_dmov">MXROB:SlitGonioBase:motor.DMOV</channel>
+    <channel type="epics" name="slit2BaseZ1_stop">MXROB:SlitGonioBase:motor.STOP</channel>
+    <channel type="epics" name="slit2BaseZ1_hls">MXROB:SlitGonioBase:motorHLS</channel>
+    <channel type="epics" name="slit2BaseZ1_lls">MXROB:SlitGonioBase:motorLLS</channel>
+    <channel type="epics" name="slit2BaseZ1_hlm">MXROB:SlitGonioBase:motor.HLM</channel>
+    <channel type="epics" name="slit2BaseZ1_llm">MXROB:SlitGonioBase:motor.LLM</channel>
     <!-- Channels for Counter 2 -->
-    <channel type="epics" name="counter2_val">MXROB2:NI9215A:AI1.VAL</channel>
+    <channel type="epics" name="counter2_val">MXROB:NI9215A:AI1.VAL</channel>
 </equipment>
