@@ -51,6 +51,10 @@ class BeamCenteringWidget(QtGui.QWidget):
         array.append([])
         array.append([])
 
+        self._array2ndXtal = []
+        self._array2ndXtal.append([])
+        self._array2ndXtal.append([])
+
         self._arraySlit1 = []
         self._arraySlit1.append(array)
         self._arraySlit1.append(array)
@@ -58,6 +62,10 @@ class BeamCenteringWidget(QtGui.QWidget):
         self._arraySlit2 = []
         self._arraySlit2.append(array)
         self._arraySlit2.append(array)
+
+        self.figure2ndXtal = Figure()
+        self.ax2ndXtal = self.figure2ndXtal.add_subplot(111)
+        self.canvas2ndXtal = FigureCanvas(self.figure2ndXtal)
 
         self.figureHorSlit1 = Figure()
         self.axHorSlit1 = self.figureHorSlit1.add_subplot(111)
@@ -87,6 +95,8 @@ class BeamCenteringWidget(QtGui.QWidget):
              os.path.dirname(__file__),
              "ui_files/Qt4_beam_centering_widget_layout.ui"))
 
+        self.toolbar2ndXtal = NavigationToolbar(self.canvas2ndXtal,
+                self.beam_center_widget_layout.mplPitch2ndXtalWindow, coordinates=True)
         self.toolbarHorSlit1 = NavigationToolbar(self.canvasHorSlit1,
                 self.beam_center_widget_layout.mplHorSlit1Window, coordinates=True)
         self.toolbarVerSlit1 = NavigationToolbar(self.canvasVerSlit1,
@@ -95,6 +105,9 @@ class BeamCenteringWidget(QtGui.QWidget):
                 self.beam_center_widget_layout.mplHorSlit2Window, coordinates=True)
         self.toolbarVerSlit2 = NavigationToolbar(self.canvasVerSlit2,
                 self.beam_center_widget_layout.mplVerSlit2Window, coordinates=True)
+
+        self.beam_center_widget_layout.mpl2ndXtalVl.addWidget(self.canvas2ndXtal)
+        self.beam_center_widget_layout.mpl2ndXtalVl.addWidget(self.toolbar2ndXtal)
 
         self.beam_center_widget_layout.mplHorVlSlit1.addWidget(self.canvasHorSlit1)
         self.beam_center_widget_layout.mplHorVlSlit1.addWidget(self.toolbarHorSlit1)
@@ -107,9 +120,13 @@ class BeamCenteringWidget(QtGui.QWidget):
         self.beam_center_widget_layout.mplVerVlSlit2.addWidget(self.toolbarVerSlit2)
 
         # Configure validator of input edit boxes
+        self.beam_center_widget_layout.distance2ndXtalEdit.setValidator(QtGui.QDoubleValidator(0.9999, 9.9999, 4))
+        self.beam_center_widget_layout.step2ndXtalEdit.setValidator(QtGui.QDoubleValidator(0.999999, 9.999999, 6))
+
         self.beam_center_widget_layout.distanceHorSlit1Edit.setValidator(QtGui.QDoubleValidator(0.99, 999.99, 2))
         self.beam_center_widget_layout.distanceVerSlit1Edit.setValidator(QtGui.QDoubleValidator(0.99, 999.99, 2))
         self.beam_center_widget_layout.stepSlit1Edit.setValidator(QtGui.QDoubleValidator(0.999, 9.999, 3))
+
         self.beam_center_widget_layout.distanceHorSlit2Edit.setValidator(QtGui.QDoubleValidator(0.99, 999.99, 2))
         self.beam_center_widget_layout.distanceVerSlit2Edit.setValidator(QtGui.QDoubleValidator(0.99, 999.99, 2))
         self.beam_center_widget_layout.stepSlit2Edit.setValidator(QtGui.QDoubleValidator(0.999, 9.999, 3))
@@ -127,6 +144,18 @@ class BeamCenteringWidget(QtGui.QWidget):
         # SizePolicies --------------------------------------------------------
 
         # Qt signal/slot connections ------------------------------------------
+        self.beam_center_widget_layout.defaultParamCheck.stateChanged.connect(\
+             self.defaultParamCheck_change)
+
+        self.beam_center_widget_layout.distance2ndXtalEdit.textChanged.connect(\
+             self.distance2ndXtalEdit_change)
+        self.beam_center_widget_layout.step2ndXtalEdit.textChanged.connect(\
+             self.step2ndXtalEdit_change)
+        self.beam_center_widget_layout.fullPath2ndXtalCheck.stateChanged.connect(\
+             self.fullPath2ndXtalCheck_change)
+        self.beam_center_widget_layout.center2ndXtalCheck.stateChanged.connect(\
+             self.center2ndXtalCheck_change)
+
         self.beam_center_widget_layout.distanceHorSlit1Edit.textChanged.connect(\
              self.distanceHorSlit1Edit_change)
         self.beam_center_widget_layout.distanceVerSlit1Edit.textChanged.connect(\
@@ -137,6 +166,7 @@ class BeamCenteringWidget(QtGui.QWidget):
              self.fullPathSlit1Check_change)
         self.beam_center_widget_layout.centerSlit1Check.stateChanged.connect(\
              self.centerSlit1Check_change)
+
         self.beam_center_widget_layout.distanceHorSlit2Edit.textChanged.connect(\
              self.distanceHorSlit2Edit_change)
         self.beam_center_widget_layout.distanceVerSlit2Edit.textChanged.connect(\
@@ -147,6 +177,7 @@ class BeamCenteringWidget(QtGui.QWidget):
              self.fullPathSlit2Check_change)
         self.beam_center_widget_layout.centerSlit2Check.stateChanged.connect(\
              self.centerSlit2Check_change)
+
         self.beam_center_widget_layout.startCenterButton.clicked.connect(\
              self.startCenter)
         self.beam_center_widget_layout.cancelCenterButton.clicked.connect(\
@@ -154,33 +185,67 @@ class BeamCenteringWidget(QtGui.QWidget):
 
         # Other --------------------------------------------------------------- 
 
-    def distanceHorSlit1Edit_change(self, new_value):
+    # ----------------------------- 2ndXtal -----------------------------
+    def distance2ndXtalEdit_change(self, new_value):
         """
         Descript. :
         """
         if (self._beam_center_hwobj != None):
             self._beam_center_hwobj.setDistanceHorizontal(new_value, 1)
 
-    def distanceVerSlit1Edit_change(self, new_value):
-        """
-        Descript. :
-        """
-        if (self._beam_center_hwobj != None):
-            self._beam_center_hwobj.setDistanceVertical(new_value, 1)
-
-    def stepSlit1Edit_change(self, new_value):
+    def step2ndXtalEdit_change(self, new_value):
         """
         Descript. :
         """
         if (self._beam_center_hwobj != None):
             self._beam_center_hwobj.setStep(new_value, 1)
 
-    def fullPathSlit1Check_change(self, state):
+    def fullPath2ndXtalCheck_change(self, state):
         """
         Descript. :
         """
         if (self._beam_center_hwobj != None):
             self._beam_center_hwobj.setFullPathSlit((state == 2), 1)
+            if (state == 0):
+                self.beam_center_widget_layout.distance2ndXtalEdit.setEnabled(True)
+            else:
+                self.beam_center_widget_layout.distance2ndXtalEdit.setEnabled(False)
+
+    def center2ndXtalCheck_change(self, state):
+        """
+        Descript. :
+        """
+        if (self._beam_center_hwobj != None):
+            self._beam_center_hwobj.setCenterSlit((state == 2), 1)
+
+    # ----------------------------- SLIT 1 -----------------------------
+    def distanceHorSlit1Edit_change(self, new_value):
+        """
+        Descript. :
+        """
+        if (self._beam_center_hwobj != None):
+            self._beam_center_hwobj.setDistanceHorizontal(new_value, 2)
+
+    def distanceVerSlit1Edit_change(self, new_value):
+        """
+        Descript. :
+        """
+        if (self._beam_center_hwobj != None):
+            self._beam_center_hwobj.setDistanceVertical(new_value, 2)
+
+    def stepSlit1Edit_change(self, new_value):
+        """
+        Descript. :
+        """
+        if (self._beam_center_hwobj != None):
+            self._beam_center_hwobj.setStep(new_value, 2)
+
+    def fullPathSlit1Check_change(self, state):
+        """
+        Descript. :
+        """
+        if (self._beam_center_hwobj != None):
+            self._beam_center_hwobj.setFullPathSlit((state == 2), 2)
             if (state == 0):
                 self.beam_center_widget_layout.distanceHorSlit1Edit.setEnabled(True)
                 self.beam_center_widget_layout.distanceVerSlit1Edit.setEnabled(True)
@@ -193,35 +258,36 @@ class BeamCenteringWidget(QtGui.QWidget):
         Descript. :
         """
         if (self._beam_center_hwobj != None):
-            self._beam_center_hwobj.setCenterSlit((state == 2), 1)
+            self._beam_center_hwobj.setCenterSlit((state == 2), 2)
 
+    # ----------------------------- SLIT 2 -----------------------------
     def distanceHorSlit2Edit_change(self, new_value):
         """
         Descript. :
         """
         if (self._beam_center_hwobj != None):
-            self._beam_center_hwobj.setDistanceHorizontal(new_value, 2)
+            self._beam_center_hwobj.setDistanceHorizontal(new_value, 3)
 
     def distanceVerSlit2Edit_change(self, new_value):
         """
         Descript. :
         """
         if (self._beam_center_hwobj != None):
-            self._beam_center_hwobj.setDistanceVertical(new_value, 2)
+            self._beam_center_hwobj.setDistanceVertical(new_value, 3)
 
     def stepSlit2Edit_change(self, new_value):
         """
         Descript. :
         """
         if (self._beam_center_hwobj != None):
-            self._beam_center_hwobj.setStep(new_value, 2)
+            self._beam_center_hwobj.setStep(new_value, 3)
 
     def fullPathSlit2Check_change(self, state):
         """
         Descript. :
         """
         if (self._beam_center_hwobj != None):
-            self._beam_center_hwobj.setFullPathSlit((state == 2), 2)
+            self._beam_center_hwobj.setFullPathSlit((state == 2), 3)
             if (state == 0):
                 self.beam_center_widget_layout.distanceHorSlit2Edit.setEnabled(True)
                 self.beam_center_widget_layout.distanceVerSlit2Edit.setEnabled(True)
@@ -234,8 +300,9 @@ class BeamCenteringWidget(QtGui.QWidget):
         Descript. :
         """
         if (self._beam_center_hwobj != None):
-            self._beam_center_hwobj.setCenterSlit((state == 2), 2)
+            self._beam_center_hwobj.setCenterSlit((state == 2), 3)
 
+    # ----------------------------------------------------------------------
     def set_beamline_setup(self, beamline_setup):
         """
         Descript. :
@@ -249,7 +316,7 @@ class BeamCenteringWidget(QtGui.QWidget):
         self._beam_center_hwobj = beam_center
 
     def startCenter(self):
-        if (not self._beam_center_hwobj._centerSlit[0] and not self._beam_center_hwobj._centerSlit[0]):
+        if (not self._beam_center_hwobj._centerSlit[0] and not self._beam_center_hwobj._centerSlit[1] and not self._beam_center_hwobj._centerSlit[2]):
             confDialog = QtGui.QMessageBox.warning(None, "Start centering beam", "No one of the slits were selected...",
                       QtGui.QMessageBox.Ok)
         else:
@@ -283,7 +350,6 @@ class BeamCenteringWidget(QtGui.QWidget):
         self.beam_center_widget_layout.startCenterButton.setEnabled(True)
         self.beam_center_widget_layout.cancelCenterButton.setEnabled(False)
 
-        
     def errorStep(self):
         QtGui.QMessageBox.critical(None, "Error centering beam", "Informed step is invalid!", QtGui.QMessageBox.Ok)
 
@@ -291,8 +357,14 @@ class BeamCenteringWidget(QtGui.QWidget):
         self.beam_center_widget_layout.cancelCenterButton.setEnabled(False)
 
     def limitReached(self):
-        QtGui.QMessageBox.critical(None, "Error centering beam", "A motor reached some limit or stopped to move...",
+        QtGui.QMessageBox.critical(None, "Error centering beam", "A motor reached some limit or stopped to move... If necessary, please, Cancel this optimization process!",
                   QtGui.QMessageBox.Ok)
+
+    def position2ndXtalChanged(self, new_pitch_position):
+        self.beam_center_widget_layout.position2ndXtalText.setText(str(round(new_pitch_position, 5)))
+
+    def intensity2ndXtalChanged(self, new_intensity):
+        self.beam_center_widget_layout.intensity2ndXtalText.setText(str(new_intensity))
 
     def positionHorSlit1Changed(self, new_hor_position):
         self.beam_center_widget_layout.positionHorSlit1Text.setText(str(round(new_hor_position, 3)))
@@ -311,6 +383,12 @@ class BeamCenteringWidget(QtGui.QWidget):
 
     def intensitySlit2Changed(self, new_intensity):
         self.beam_center_widget_layout.intensitySlit2Text.setText(str(new_intensity))
+
+    def plotClear2ndXtal(self):
+        for axis in range(2):
+            self._array2ndXtal[axis] = []
+
+        self.ax2ndXtal.clear()
 
     def plotClearSlit1(self, orientation):
         # orientation:
@@ -335,6 +413,13 @@ class BeamCenteringWidget(QtGui.QWidget):
             self.axHorSlit2.clear()
         else:
             self.axVerSlit2.clear()
+
+    def plotNewPoint2ndXtal(self, x, y):
+        self._array2ndXtal[0].append(x)
+        self._array2ndXtal[1].append(y)
+
+        self.ax2ndXtal.plot(self._array2ndXtal[0], self._array2ndXtal[1], color='b')
+        self.canvas2ndXtal.draw()
 
     def plotNewPointSlit1(self, x, y, orientation):
         # orientation:
@@ -367,3 +452,68 @@ class BeamCenteringWidget(QtGui.QWidget):
     def setTab(self, index):
         if (self.beam_center_widget_layout != None):
             self.beam_center_widget_layout.graphicsTabs.setCurrentIndex(index)
+
+    def setDefaultPitchParams(self, angle, step):
+        self.beam_center_widget_layout.distance2ndXtalEdit.setText(str(round(float(angle), 4)))
+        self.beam_center_widget_layout.step2ndXtalEdit.setText(str(round(float(step), 6)))
+
+    def setDefaultSlitParams(self, hor, ver, step, slitNum):
+        if (slitNum == 0):
+            self.beam_center_widget_layout.distanceHorSlit1Edit.setText(str(round(float(hor), 2)))
+            self.beam_center_widget_layout.distanceVerSlit1Edit.setText(str(round(float(ver), 2)))
+            self.beam_center_widget_layout.stepSlit1Edit.setText(str(round(float(step), 3)))
+        elif (slitNum == 1):
+            self.beam_center_widget_layout.distanceHorSlit2Edit.setText(str(round(float(hor), 2)))
+            self.beam_center_widget_layout.distanceVerSlit2Edit.setText(str(round(float(ver), 2)))
+            self.beam_center_widget_layout.stepSlit2Edit.setText(str(round(float(step), 3)))
+
+    def defaultParamCheck_change(self, state):
+        """
+        Descript. :
+        """
+        if (state == 2):
+            # Checked, so disable input fields and set default parameters
+            if (self._beam_center_hwobj):
+                self._beam_center_hwobj.setDefaultParams()
+            # -:- 2nd Xtal -:-
+            self.beam_center_widget_layout.fullPath2ndXtalCheck.setChecked(False)
+            self.beam_center_widget_layout.distance2ndXtalEdit.setEnabled(False)
+            self.beam_center_widget_layout.step2ndXtalEdit.setEnabled(False)
+            self.beam_center_widget_layout.fullPath2ndXtalCheck.setEnabled(False)
+            self.beam_center_widget_layout.center2ndXtalCheck.setEnabled(False)
+            self.beam_center_widget_layout.center2ndXtalCheck.setChecked(True)
+            # -:- 1st Slits -:-
+            self.beam_center_widget_layout.fullPathSlit1Check.setChecked(False)
+            self.beam_center_widget_layout.distanceHorSlit1Edit.setEnabled(False)
+            self.beam_center_widget_layout.distanceVerSlit1Edit.setEnabled(False)
+            self.beam_center_widget_layout.stepSlit1Edit.setEnabled(False)
+            self.beam_center_widget_layout.fullPathSlit1Check.setEnabled(False)
+            self.beam_center_widget_layout.centerSlit1Check.setEnabled(False)
+            self.beam_center_widget_layout.centerSlit1Check.setChecked(True)
+            # -:- 2nd Slits -:-
+            self.beam_center_widget_layout.fullPathSlit2Check.setChecked(False)
+            self.beam_center_widget_layout.distanceHorSlit2Edit.setEnabled(False)
+            self.beam_center_widget_layout.distanceVerSlit2Edit.setEnabled(False)
+            self.beam_center_widget_layout.stepSlit2Edit.setEnabled(False)
+            self.beam_center_widget_layout.fullPathSlit2Check.setEnabled(False)
+            self.beam_center_widget_layout.centerSlit2Check.setEnabled(False)
+            self.beam_center_widget_layout.centerSlit2Check.setChecked(True)
+        else:
+            # Unchecked, so enable input fields
+            # -:- 2nd Xtal -:-
+            self.beam_center_widget_layout.distance2ndXtalEdit.setEnabled(True)
+            self.beam_center_widget_layout.step2ndXtalEdit.setEnabled(True)
+            self.beam_center_widget_layout.fullPath2ndXtalCheck.setEnabled(True)
+            self.beam_center_widget_layout.center2ndXtalCheck.setEnabled(True)
+            # -:- 1st Slits -:-
+            self.beam_center_widget_layout.distanceHorSlit1Edit.setEnabled(True)
+            self.beam_center_widget_layout.distanceVerSlit1Edit.setEnabled(True)
+            self.beam_center_widget_layout.stepSlit1Edit.setEnabled(True)
+            self.beam_center_widget_layout.fullPathSlit1Check.setEnabled(True)
+            self.beam_center_widget_layout.centerSlit1Check.setEnabled(True)
+            # -:- 2nd Slits -:-
+            self.beam_center_widget_layout.distanceHorSlit2Edit.setEnabled(True)
+            self.beam_center_widget_layout.distanceVerSlit2Edit.setEnabled(True)
+            self.beam_center_widget_layout.stepSlit2Edit.setEnabled(True)
+            self.beam_center_widget_layout.fullPathSlit2Check.setEnabled(True)
+            self.beam_center_widget_layout.centerSlit2Check.setEnabled(True)

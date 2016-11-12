@@ -141,6 +141,10 @@ class MplCanvas(FigureCanvas):
 
     def clear(self):
         self.curves = []
+        # LNLS
+        self._axis_x_array = np.empty(0)
+        self._axis_y_array = np.empty(0)
+        # ---
         self.axes.cla()
         self.axes.grid(True)
 

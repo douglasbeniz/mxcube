@@ -21,6 +21,10 @@
   <!-- Supported elements to perform energy scan -->
   <elements>
     <element>
+      <symbol>V</symbol>
+      <energy>K</energy>
+    </element>
+    <element>
       <symbol>Cr</symbol>
       <energy>K</energy>
     </element>
@@ -54,6 +58,26 @@
     </element>
     <element>
       <symbol>Ge</symbol>
+      <energy>K</energy>
+    </element>
+    <element>
+      <symbol>As</symbol>
+      <energy>K</energy>
+    </element>
+    <element>
+      <symbol>Se</symbol>
+      <energy>K</energy>
+    </element>
+    <element>
+      <symbol>Br</symbol>
+      <energy>K</energy>
+    </element>
+    <element>
+      <symbol>Kr</symbol>
+      <energy>K</energy>
+    </element>
+    <element>
+      <symbol>Rb</symbol>
       <energy>K</energy>
     </element>
   </elements>

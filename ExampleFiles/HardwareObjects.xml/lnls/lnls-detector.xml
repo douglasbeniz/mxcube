@@ -1,4 +1,4 @@
-<equipment class = "LNLSDetector">
+<equipment class="LNLSDetector">
   <!-- generic devices -->
   <device hwrid="/lnls/lnls-motor_detector_distance" role="distance_motor"/>
 

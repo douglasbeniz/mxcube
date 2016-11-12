@@ -1,5 +1,21 @@
 <equipment class="LNLSBeamCentering">
-    <!-- Channels for SlitBase 1 X1-->
+    <!-- ========================= MONO 2ND CRYSTAL PITCH  ========================= -->
+    <!-- Channels for mono 2nd crystal pitch -->
+    <!-- REAL MOTOR :: MX2:DMC4:m3 -->
+    <channel type="epics" name="mono2ndXtal_val">MX1:SIM:m8.VAL</channel>
+    <channel type="epics" name="mono2ndXtal_rlv">MX1:SIM:m8.RLV</channel>
+    <channel type="epics" name="mono2ndXtal_rbv">MX1:SIM:m8.RBV</channel>
+    <channel type="epics" name="mono2ndXtal_dmov">MX1:SIM:m8.DMOV</channel>
+    <channel type="epics" name="mono2ndXtal_stop">MX1:SIM:m8.STOP</channel>
+    <channel type="epics" name="mono2ndXtal_hls">MX1:SIM:m8.HLS</channel>
+    <channel type="epics" name="mono2ndXtal_lls">MX1:SIM:m8.LLS</channel>
+    <channel type="epics" name="mono2ndXtal_hlm">MX1:SIM:m8.HLM</channel>
+    <channel type="epics" name="mono2ndXtal_llm">MX1:SIM:m8.LLM</channel>
+    <!-- Channels for Intensity Counter -->
+    <channel type="epics" name="counterInt_val">MX2:IO:ai9</channel>
+
+    <!-- ========================= SLIT 1 ========================= -->
+    <!-- Channels for SlitBase 1 X1 -->
     <channel type="epics" name="slit1BaseX1_val">MXROB:DMC3:m1.VAL</channel>
     <channel type="epics" name="slit1BaseX1_rlv">MXROB:DMC3:m1.RLV</channel>
     <channel type="epics" name="slit1BaseX1_rbv">MXROB:DMC3:m1.RBV</channel>
@@ -20,9 +36,10 @@
     <channel type="epics" name="slit1BaseZ1_hlm">MXROB:DMC3:m2.HLM</channel>
     <channel type="epics" name="slit1BaseZ1_llm">MXROB:DMC3:m2.LLM</channel>
     <!-- Channels for Counter 1 -->
-    <channel type="epics" name="counter1_val">MXROB:NI9215A:AI0.VAL</channel>
+    <channel type="epics" name="counter1_val">MX2:IO:ai10</channel>
 
-    <!-- Channels for SlitBase 2 X1-->
+    <!-- ========================= SLIT 2 ========================= -->
+    <!-- Channels for SlitBase 2 X1 -->
     <channel type="epics" name="slit2BaseX1_val">MXROB:DMC3:m3.VAL</channel>
     <channel type="epics" name="slit2BaseX1_rlv">MXROB:DMC3:m3.RLV</channel>
     <channel type="epics" name="slit2BaseX1_rbv">MXROB:DMC3:m3.RBV</channel>
@@ -32,7 +49,7 @@
     <channel type="epics" name="slit2BaseX1_lls">MXROB:DMC3:m3.LLS</channel>
     <channel type="epics" name="slit2BaseX1_hlm">MXROB:DMC3:m3.HLM</channel>
     <channel type="epics" name="slit2BaseX1_llm">MXROB:DMC3:m3.LLM</channel>
-    <!-- Channels for SlitBase 2 Z1-->
+    <!-- Channels for SlitBase 2 Z1 -->
     <channel type="epics" name="slit2BaseZ1_val">MXROB:SlitGonioBase:motor.VAL</channel>
     <channel type="epics" name="slit2BaseZ1_rlv">MXROB:SlitGonioBase:motor.RLV</channel>
     <channel type="epics" name="slit2BaseZ1_rbv">MXROB:SlitGonioBase:motor.RBV</channel>
@@ -43,5 +60,12 @@
     <channel type="epics" name="slit2BaseZ1_hlm">MXROB:SlitGonioBase:motor.HLM</channel>
     <channel type="epics" name="slit2BaseZ1_llm">MXROB:SlitGonioBase:motor.LLM</channel>
     <!-- Channels for Counter 2 -->
-    <channel type="epics" name="counter2_val">MXROB:NI9215A:AI1.VAL</channel>
+    <channel type="epics" name="counter2_val">MX2:IO:ai11</channel>
+
+    <!-- Default values for optimization -->
+    <default_angle_pitch>0.002</default_angle_pitch>
+    <default_step_pitch>0.00002</default_step_pitch>
+    <default_hor_distance_slits>2.00</default_hor_distance_slits>
+    <default_ver_distance_slits>1.00</default_ver_distance_slits>
+    <default_step_slits>0.01</default_step_slits>
 </equipment>

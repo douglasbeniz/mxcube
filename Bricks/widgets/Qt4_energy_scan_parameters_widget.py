@@ -52,6 +52,7 @@ class EnergyScanParametersWidget(QtGui.QWidget):
         _top_widget = QtGui.QWidget(self) 
         _parameters_widget = QtGui.QWidget(_top_widget)  
         self.periodic_table_widget =  PeriodicTableWidget(_parameters_widget)
+        #self.data_path_widget = DataPathWidget(_parameters_widget, layout="vertical")
         self.data_path_widget = DataPathWidget(_parameters_widget)
         self.data_path_widget.data_path_layout.file_name_label.setText('')
         self.data_path_widget.data_path_layout.file_name_value_label.hide()

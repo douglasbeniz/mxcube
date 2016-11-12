@@ -48,8 +48,8 @@
     <channel type="tine" name="intensMean" tinename="/P14/QBPMs/QBPM2">
              ChannelsMean.get</channel>
     -->
-    <channel type="epics" name="intensMean1" polling="500">MXROB:NI9215A:AI0</channel>
-    <channel type="epics" name="intensMean2" polling="500">MXROB:NI9215A:AI1</channel>
+    <channel type="epics" name="intensMean1" polling="500">MX2:IO:ai10</channel>
+    <channel type="epics" name="intensMean2" polling="500">MX2:IO:ai11</channel>
     <!--
     <channel type="tine" name="intensRange" tinename="/P14/QBPMs/QBPM2">
              CurrentRange.set</channel>
