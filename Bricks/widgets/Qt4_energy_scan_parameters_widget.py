@@ -51,16 +51,28 @@ class EnergyScanParametersWidget(QtGui.QWidget):
         # Graphic elements ----------------------------------------------------
         _top_widget = QtGui.QWidget(self) 
         _parameters_widget = QtGui.QWidget(_top_widget)  
+
         self.periodic_table_widget =  PeriodicTableWidget(_parameters_widget)
-        #self.data_path_widget = DataPathWidget(_parameters_widget, layout="vertical")
+
         self.data_path_widget = DataPathWidget(_parameters_widget)
-        self.data_path_widget.data_path_layout.file_name_label.setText('')
-        self.data_path_widget.data_path_layout.file_name_value_label.hide()
+        # LNLS
+        # self.data_path_widget.data_path_layout.file_name_label.setText('')
+        # self.data_path_widget.data_path_layout.file_name_label.hide()
+        # self.data_path_widget.data_path_layout.file_name_value_label.hide()
+
+        # ---------------------------------------------------------------------
+        # LNLS
+        self.data_path_widget.setFixedHeight(140)
+        # ---------------------------------------------------------------------
+
         _snapshot_widget = QtGui.QWidget(self)
+
+        # Snapshot of current position
         self.position_widget = uic.loadUi(os.path.join(os.path.dirname(__file__),
                                           'ui_files/Qt4_snapshot_widget_layout.ui'))
         self.position_widget.setFixedSize(450, 340)        
 
+        # Graphics
         self.scan_plot_widget = TwoAxisPlotWidget(self, True)
         self.result_plot_widget = TwoAxisPlotWidget(self, False)
  
@@ -78,6 +90,8 @@ class EnergyScanParametersWidget(QtGui.QWidget):
         _snapshots_vlayout.setContentsMargins(0, 0, 0, 0)
         _snapshots_vlayout.setSpacing(2)
         _snapshots_vlayout.addStretch(0)
+        # LNLS
+        _snapshot_widget.setLayout(_snapshots_vlayout)
 
         _top_widget_hlayout = QtGui.QHBoxLayout(self)
         _top_widget_hlayout.addWidget(_parameters_widget)
@@ -91,7 +105,7 @@ class EnergyScanParametersWidget(QtGui.QWidget):
         _main_vlayout.addWidget(_top_widget)
         _main_vlayout.addWidget(self.scan_plot_widget)
         _main_vlayout.addWidget(self.result_plot_widget)
-        _main_vlayout.setSpacing(2)
+        _main_vlayout.setSpacing(5)
         _main_vlayout.setContentsMargins(2, 2, 2, 2)
         _main_vlayout.addStretch(0)
 
@@ -132,7 +146,6 @@ class EnergyScanParametersWidget(QtGui.QWidget):
         self._tree_view_item = item
         self.energy_scan_model = item.get_model()
         executed = self.energy_scan_model.is_executed()
-
         self.data_path_widget.setEnabled(not executed)
         self.periodic_table_widget.setEnabled(not executed)
         self.scan_plot_widget.setEnabled(not executed)
@@ -142,6 +155,13 @@ class EnergyScanParametersWidget(QtGui.QWidget):
                 self.position_widget.width()
         self.scan_plot_widget.setFixedWidth(width)
         self.result_plot_widget.setFixedWidth(width)
+
+        # ---------------------------------------------------------------------
+        # LNLS
+        height = 185
+        self.scan_plot_widget.setFixedHeight(height)
+        self.result_plot_widget.setFixedHeight(height)
+        # ---------------------------------------------------------------------
 
         if executed:
             result = self.energy_scan_model.get_scan_result()
@@ -163,7 +183,7 @@ class EnergyScanParametersWidget(QtGui.QWidget):
         image = self.energy_scan_model.centred_position.snapshot_image
         if image is not None:
             try:
-               image = image.scaled(427, 320, QtCore.Qt.KeepAspectRatio)
+               image = image.scaled(450, 360, QtCore.Qt.KeepAspectRatio)
                self.position_widget.svideo.setPixmap(QtGui.QPixmap(image))
             except:
                pass
@@ -176,13 +196,15 @@ class EnergyScanParametersWidget(QtGui.QWidget):
         self.energy_scan_hwobj = energy_scan_hwobj
         if self.energy_scan_hwobj:
             self.energy_scan_hwobj.connect("energyScanStarted", self.energy_scan_started)
-            self.energy_scan_hwobj.connect("scanNewPoint", self.energy_scan_new_point) 
+            self.energy_scan_hwobj.connect("scanNewPoint", self.energy_scan_new_point)
             self.energy_scan_hwobj.connect("choochFinished", self.chooch_finished)
 
     def energy_scan_started(self):
         self.scan_plot_widget.start_new_scan()
         self.data_path_widget.setEnabled(False)
         self.periodic_table_widget.setEnabled(False)
+        # LNLS
+        self.result_plot_widget.clear()
 
     def energy_scan_new_point(self, x, y):
         self.scan_plot_widget.add_new_plot_value(x, y)

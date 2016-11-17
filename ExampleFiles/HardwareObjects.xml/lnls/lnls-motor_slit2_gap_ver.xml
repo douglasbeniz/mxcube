@@ -8,6 +8,7 @@
     <channel type="epics" name="epicsMotor_velo">MXROB:DMC2:m8.VELO</channel>
     <channel type="epics" name="epicsMotor_dllm">MXROB:DMC2:m8.DLLM</channel>
     <channel type="epics" name="epicsMotor_dhlm">MXROB:DMC2:m8.DHLM</channel>
+    <channel type="epics" name="epicsMotor_egu">MXROB:DMC2:m8.EGU</channel>
     <!-- Properties -->
     <motor_name>Slit2GapVer</motor_name>
 </device>

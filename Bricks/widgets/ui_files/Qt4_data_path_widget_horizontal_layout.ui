@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>956</width>
-    <height>143</height>
+    <width>904</width>
+    <height>142</height>
    </rect>
   </property>
   <property name="palette">
@@ -86,6 +86,24 @@
    </property>
    <item>
     <widget class="QGroupBox" name="data_path_gb">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>250</width>
+       <height>100</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>32767</width>
+       <height>140</height>
+      </size>
+     </property>
      <property name="title">
       <string>Data location</string>
      </property>
@@ -398,7 +416,7 @@
    </item>
   </layout>
  </widget>
- <layoutdefault spacing="6" margin="11"/>
+ <layoutdefault spacing="0" margin="1"/>
  <resources/>
  <connections/>
 </ui>

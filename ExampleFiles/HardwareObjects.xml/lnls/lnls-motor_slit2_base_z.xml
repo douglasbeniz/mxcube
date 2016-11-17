@@ -8,6 +8,7 @@
     <channel type="epics" name="epicsMotor_velo">MXROB:SlitGonioBase:motorVELO</channel>
     <channel type="epics" name="epicsMotor_dllm">MXROB:SlitGonioBase:motor.DLLM</channel>
     <channel type="epics" name="epicsMotor_dhlm">MXROB:SlitGonioBase:motor.DHLM</channel>
+    <channel type="epics" name="epicsMotor_egu">MXROB:SlitGonioBase:motor.EGU</channel>
     <!-- Properties -->
     <motor_name>Slit2BaseZ</motor_name>
 </device>

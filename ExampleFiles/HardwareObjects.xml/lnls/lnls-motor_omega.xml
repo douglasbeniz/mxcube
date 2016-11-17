@@ -8,6 +8,7 @@
     <channel type="epics" name="epicsMotor_velo">MXROB:S300:m1.VELO</channel>
     <channel type="epics" name="epicsMotor_dllm">MXROB:S300:m1.DLLM</channel>
     <channel type="epics" name="epicsMotor_dhlm">MXROB:S300:m1.DHLM</channel>
+    <channel type="epics" name="epicsMotor_egu">MXROB:S300:m1.EGU</channel>
     <!-- Properties -->
     <motor_name>Omega</motor_name>
 </device>

@@ -8,6 +8,7 @@
     <channel type="epics" name="epicsMotor_velo">MXROB:DMC1:m5.VELO</channel>
     <channel type="epics" name="epicsMotor_dllm">MXROB:DMC1:m5.DLLM</channel>
     <channel type="epics" name="epicsMotor_dhlm">MXROB:DMC1:m5.DHLM</channel>
+    <channel type="epics" name="epicsMotor_egu">MXROB:DMC1:m5.EGU</channel>
     <!-- Properties -->
     <motor_name>XtalBaseY</motor_name>
 </device>

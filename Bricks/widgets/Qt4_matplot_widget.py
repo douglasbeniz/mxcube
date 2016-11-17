@@ -91,6 +91,11 @@ class TwoAxisPlotWidget(QtGui.QWidget):
 
     def plot_energy_scan_results(self, pk, fppPeak, fpPeak, ip, fppInfl, fpInfl, rm, \
                      chooch_graph_x, chooch_graph_y1, chooch_graph_y2, title):
+
+        # -------------------------------------------------------------
+        # LNLS
+        self._two_axis_figure_canvas.clear()
+        # -------------------------------------------------------------
         self._two_axis_figure_canvas.add_curve(\
              chooch_graph_y1, chooch_graph_x, 'spline', 'blue')
         self._two_axis_figure_canvas.add_curve(\
@@ -136,17 +141,26 @@ class MplCanvas(FigureCanvas):
 
     def set_real_time(self, real_time):
         self.real_time = real_time
+
         #clear all axes after plot is called
         self.axes.hold(not real_time)
 
     def clear(self):
         self.curves = []
+
+        # ----------------------------------------------------------------
         # LNLS
         self._axis_x_array = np.empty(0)
         self._axis_y_array = np.empty(0)
-        # ---
+        # ----------------------------------------------------------------
+
         self.axes.cla()
         self.axes.grid(True)
+
+        # ----------------------------------------------------------------
+        # LNLS
+        self.draw()
+        # ----------------------------------------------------------------
 
     def add_curve(self, y_axis_array, x_axis_array=None, curve_name=None, color='blue'):
         if x_axis_array is None:
@@ -155,6 +169,17 @@ class MplCanvas(FigureCanvas):
         else:
             self.curves.append(self.axes.plot(x_axis_array, y_axis_array, 
                  label = curve_name, linewidth = 2, color = color))
+
+        # ----------------------------------------------------------------
+        # LNLS
+        self.axes.grid(True)
+
+        try:
+            self.fig.tight_layout()
+        except:
+            pass
+        # ----------------------------------------------------------------
+
         self.draw()
 
     def append_new_point(self, x, y):
@@ -171,6 +196,15 @@ class MplCanvas(FigureCanvas):
     def set_title(self, title):
         self.axes.set_title(title, fontsize = 14)
         self.axes.grid(True)
+
+        # ----------------------------------------------------------------
+        # LNLS
+        try:
+            self.fig.tight_layout()
+        except:
+            pass
+        # ----------------------------------------------------------------
+
         self.draw()
 
     def get_mouse_coord(self):

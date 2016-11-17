@@ -8,6 +8,7 @@
     <channel type="epics" name="epicsMotor_velo">MXROB:DMC3:m1.VELO</channel>
     <channel type="epics" name="epicsMotor_dllm">MXROB:DMC3:m1.DLLM</channel>
     <channel type="epics" name="epicsMotor_dhlm">MXROB:DMC3:m1.DHLM</channel>
+    <channel type="epics" name="epicsMotor_egu">MXROB:DMC3:m1.EGU</channel>
     <!-- Properties -->
     <motor_name>Slit1BaseX</motor_name>
 </device>

@@ -81,7 +81,6 @@ class CreateEnergyScanWidget(CreateTaskBase):
         """
         Descript. :
         """
-       
         CreateTaskBase.init_models(self)
         self.enery_scan = queue_model_objects.EnergyScan()
         self._path_template.start_num = 1
@@ -112,6 +111,13 @@ class CreateEnergyScanWidget(CreateTaskBase):
                 self._path_template = escan_model.get_path_template()
 
             self._data_path_widget.update_data_model(self._path_template)
+
+            # -----------------------------------------------------------------
+            # LNLS
+            self._periodic_table_widget.set_current_element_edge(\
+                 tree_item.get_model().element_symbol,
+                 tree_item.get_model().edge)
+            # -----------------------------------------------------------------
         elif not(isinstance(tree_item, Qt4_queue_item.SampleQueueItem) or \
                      isinstance(tree_item, Qt4_queue_item.DataCollectionGroupQueueItem)):
             self.setDisabled(True)

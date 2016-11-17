@@ -7,6 +7,7 @@
   <channel type="epics" name="epicsMotor_stop">MX1:SIM:m8.STOP</channel>
   <channel type="epics" name="epicsMotor_dllm">MX1:SIM:m8.DLLM</channel>
   <channel type="epics" name="epicsMotor_dhlm">MX1:SIM:m8.DHLM</channel>
+  <channel type="epics" name="epicsMotor_egu">MX1:SIM:m8.EGU</channel>
 
   <!-- Specific properties -->
   <motor_name>mono_theta_second_xtal_pitch</motor_name>

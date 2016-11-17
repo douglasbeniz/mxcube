@@ -55,7 +55,13 @@ class TaskToolBoxWidget(QtGui.QWidget):
         font = self.method_group_box.font()
         font.setPointSize(10)
         self.method_group_box.setFont(font)
-    
+
+        # -------------------------------------------------------
+        # LNLS
+        style_string = """QToolBox { background-color: rgb(0,128,255); }"""
+        self.setStyleSheet(style_string)
+        # -------------------------------------------------------
+
         self.tool_box = QtGui.QToolBox(self.method_group_box)
         self.tool_box.setObjectName("tool_box")
         self.tool_box.setFixedWidth(475)
@@ -71,10 +77,10 @@ class TaskToolBoxWidget(QtGui.QWidget):
         #self.xrf_spectrum_page = CreateXRFSpectrumWidget(self.tool_box, "xrf_spectrum")  
         #self.advanced_page = CreateAdvancedWidget(self.tool_box, "advanced_scan")
         
-        self.tool_box.addItem(self.discrete_page, "Standard Collection")
+        self.tool_box.addItem(self.discrete_page, QtGui.QIcon(Qt4_Icons.load("down_small.png")), "Standard Collection")
         #self.tool_box.addItem(self.char_page, "Characterisation")
         #self.tool_box.addItem(self.helical_page, "Helical Collection")
-        self.tool_box.addItem(self.energy_scan_page, "Energy Scan")
+        self.tool_box.addItem(self.energy_scan_page, QtGui.QIcon(Qt4_Icons.load("down_small.png")), "Energy Scan")
         #self.tool_box.addItem(self.xrf_spectrum_page, "XRF Spectrum")
         #self.tool_box.addItem(self.advanced_page, "Advanced")
 

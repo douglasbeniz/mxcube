@@ -243,6 +243,9 @@ class ConfirmDialog(QtGui.QDialog):
             elif isinstance(item_model, queue_model_objects.Advanced):
                 acq_parameters = item_model.reference_image_collection.\
                      acquisitions[0].acquisition_parameters 
+            elif isinstance(item_model, queue_model_objects.EnergyScan):
+                item_model.set_take_snapshots(int(self.conf_dialog_layout.\
+                    take_snapshots_combo.currentText()))
             elif isinstance(item_model, queue_model_objects.TaskGroup):
                 try:
                     item_model.interleave_num_images = \
@@ -250,7 +253,7 @@ class ConfirmDialog(QtGui.QDialog):
                       interleave_images_num_ledit.text())
                 except:
                     pass
-            
+
             if acq_parameters: 
                 acq_parameters.take_snapshots = int(self.conf_dialog_layout.\
                     take_snapshots_combo.currentText())

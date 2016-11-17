@@ -1,5 +1,6 @@
 <object class="LNLSMultiCollect">
   <object href="/lnls/lnls-goniometer" role="diffractometer"/>
+  <object href="/lnls/lnls-camera" role="camera"/>
   <object href="/lnls/lnls-mxlocal" role="beamline_configuration"/>
   <object href="/lnls/lnls-mach_info" role="machine_current"/>
   <object href="/sc-mockup" role="sample_changer"/>
@@ -10,6 +11,7 @@
   <object href="/lnls/lnls-lims_client" role="lims_client"/> 
   <object href="/lnls/lnls-beam_info" role="beam_info"/>
   <object href="/lnls/lnls-shutter" role="safety_shutter"/>
+  <object href="/lnls/lnls-motor_omega" role="omega"/>
 
   <auto_processing>
     <program>

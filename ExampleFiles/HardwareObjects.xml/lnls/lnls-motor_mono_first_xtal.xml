@@ -8,6 +8,7 @@
   <!-- To energy range between 4.5 KeV and 15.5 KeV, DLLM = 7.3286 and DHLM = 26.0638 -->
   <channel type="epics" name="epicsMotor_dllm">MX1:SIM:m1.DLLM</channel>
   <channel type="epics" name="epicsMotor_dhlm">MX1:SIM:m1.DHLM</channel>
+  <channel type="epics" name="epicsMotor_egu">MX1:SIM:m1.EGU</channel>
 
   <!-- Specific properties -->
   <motor_name>mono_theta_first_xtal</motor_name>
