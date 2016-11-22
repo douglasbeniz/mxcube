@@ -91,7 +91,6 @@ class TwoAxisPlotWidget(QtGui.QWidget):
 
     def plot_energy_scan_results(self, pk, fppPeak, fpPeak, ip, fppInfl, fpInfl, rm, \
                      chooch_graph_x, chooch_graph_y1, chooch_graph_y2, title):
-
         # -------------------------------------------------------------
         # LNLS
         self._two_axis_figure_canvas.clear()
