@@ -59,7 +59,9 @@ class DCGroupWidget(QtGui.QWidget):
         _snapshot_widget = QtGui.QWidget(self)
         self.position_widget = uic.loadUi(os.path.join(os.path.dirname(__file__),
                                           'ui_files/Qt4_snapshot_widget_layout.ui'))
-        
+        # LNLS
+        self.position_widget.setFixedSize(450, 340)
+
         # Layout --------------------------------------------------------------
         _subwedge_widget_vlayout = QtGui.QVBoxLayout(_subwedge_widget)
         _subwedge_widget_vlayout.addWidget(self.polar_scater_widget)
@@ -73,6 +75,9 @@ class DCGroupWidget(QtGui.QWidget):
         _snapshots_vlayout.setContentsMargins(0, 0, 0, 0)
         _snapshots_vlayout.setSpacing(6)
         _snapshots_vlayout.addStretch(0)
+        # LNLS
+        _snapshot_widget.setLayout(_snapshots_vlayout)
+        # ----
 
         _main_hlayout = QtGui.QHBoxLayout(self)
         _main_hlayout.addWidget(_subwedge_widget)
@@ -121,6 +126,15 @@ class DCGroupWidget(QtGui.QWidget):
                     sw_list.append((len(sw_list), 0, acq_par.first_image, 
                        acq_par.num_images, acq_par.osc_start, 
                        acq_par.osc_range * acq_par.num_images)) 
+                    # LNLS
+                    # At least show the centered position of last one....
+                    if acq_par.centred_position.snapshot_image:
+                        image = acq_par.centred_position.snapshot_image
+                        # LNLS
+                        #ration = image.height() / float(image.width())
+                        #image = image.scaled(450, 360 * ration, QtCore.Qt.KeepAspectRatio)
+                        image = image.scaled(450, 360, QtCore.Qt.KeepAspectRatio)
+                        self.position_widget.svideo.setPixmap(QtGui.QPixmap(image))
 
         self.subwedge_table.setRowCount(0) 
         for sw in sw_list: 

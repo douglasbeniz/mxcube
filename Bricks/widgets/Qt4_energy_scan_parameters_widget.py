@@ -70,7 +70,8 @@ class EnergyScanParametersWidget(QtGui.QWidget):
         # Snapshot of current position
         self.position_widget = uic.loadUi(os.path.join(os.path.dirname(__file__),
                                           'ui_files/Qt4_snapshot_widget_layout.ui'))
-        self.position_widget.setFixedSize(450, 340)        
+        # LNLS
+        self.position_widget.setFixedSize(450, 340)
 
         # Graphics
         self.scan_plot_widget = TwoAxisPlotWidget(self, True)
@@ -89,9 +90,11 @@ class EnergyScanParametersWidget(QtGui.QWidget):
         _snapshots_vlayout.addWidget(self.position_widget)
         _snapshots_vlayout.setContentsMargins(0, 0, 0, 0)
         _snapshots_vlayout.setSpacing(2)
-        _snapshots_vlayout.addStretch(0)
         # LNLS
+        # _snapshots_vlayout.addStretch(10)
+        _snapshots_vlayout.addStretch(0)
         _snapshot_widget.setLayout(_snapshots_vlayout)
+        # ----
 
         _top_widget_hlayout = QtGui.QHBoxLayout(self)
         _top_widget_hlayout.addWidget(_parameters_widget)

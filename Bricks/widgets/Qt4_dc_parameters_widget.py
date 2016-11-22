@@ -67,7 +67,9 @@ class DCParametersWidget(QtGui.QWidget):
         _snapshot_widget = QtGui.QWidget(self)
         self.position_widget = uic.loadUi(os.path.join(os.path.dirname(__file__),
                                           'ui_files/Qt4_snapshot_widget_layout.ui'))
-        
+        # LNLS
+        self.position_widget.setFixedSize(450, 340)
+
         # Layout --------------------------------------------------------------
         _dc_parameters_widget_layout = QtGui.QVBoxLayout(_dc_parameters_widget)
         _dc_parameters_widget_layout.addWidget(self._data_path_widget)
@@ -81,7 +83,11 @@ class DCParametersWidget(QtGui.QWidget):
         _snapshots_vlayout.addWidget(self.position_widget)
         _snapshots_vlayout.setContentsMargins(0, 0, 0, 0)
         _snapshots_vlayout.setSpacing(2)
-        _snapshots_vlayout.addStretch(10)
+        # LNLS
+        # _snapshots_vlayout.addStretch(10)
+        _snapshots_vlayout.addStretch(0)
+        _snapshot_widget.setLayout(_snapshots_vlayout)
+        # ----
 
         _main_hlayout = QtGui.QHBoxLayout(self)
         _main_hlayout.addWidget(_dc_parameters_widget)
@@ -195,8 +201,10 @@ class DCParametersWidget(QtGui.QWidget):
                 centred_position.snapshot_image:
             image = data_collection.acquisitions[0].\
                 acquisition_parameters.centred_position.snapshot_image
-            ration = image.height() / float(image.width())
-            image = image.scaled(400, 400 * ration, QtCore.Qt.KeepAspectRatio)
+            # LNLS
+            #ration = image.height() / float(image.width())
+            #image = image.scaled(450, 360 * ration, QtCore.Qt.KeepAspectRatio)
+            image = image.scaled(450, 360, QtCore.Qt.KeepAspectRatio)
             self.position_widget.svideo.setPixmap(QtGui.QPixmap(image))
 
         invalid = self._acquisition_mib.validate_all()

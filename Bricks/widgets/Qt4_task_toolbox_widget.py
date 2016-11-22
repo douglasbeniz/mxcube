@@ -191,13 +191,17 @@ class TaskToolBoxWidget(QtGui.QWidget):
                 #         self.create_task_button.setEnabled(True)
                 # elif self.tool_box.currentWidget() == self.discrete_page:
                 if self.tool_box.currentWidget() == self.discrete_page:
-                    self.create_task_button.setEnabled(True)
+                    # LNLS
+                    #self.create_task_button.setEnabled(True)
+                    self.create_task_button.setEnabled(False)
             # elif isinstance(tree_item, Qt4_queue_item.CharacterisationQueueItem):
             #     if self.tool_box.currentWidget() == self.char_page:
             #         self.create_task_button.setEnabled(True)
             elif isinstance(tree_item, Qt4_queue_item.EnergyScanQueueItem):
                 if self.tool_box.currentWidget() == self.energy_scan_page:
-                    self.create_task_button.setEnabled(True)
+                    # LNLS
+                    #self.create_task_button.setEnabled(True)
+                    self.create_task_button.setEnabled(False)
             # elif isinstance(tree_item, Qt4_queue_item.XRFSpectrumQueueItem):
             #     if self.tool_box.currentWidget() == self.xrf_spectrum_page:
             #         self.create_task_button.setEnabled(True)
@@ -216,10 +220,17 @@ class TaskToolBoxWidget(QtGui.QWidget):
         Called by the parent widget when selection in the tree changes.
         """
         if len(items) == 1:
-            if isinstance(items[0], Qt4_queue_item.DataCollectionGroupQueueItem):
-                self.create_task_button.setEnabled(False)
-            else:
+            # ----------------------------------
+            # LNLS
+            # if (isinstance(items[0], Qt4_queue_item.DataCollectionGroupQueueItem):
+            #     self.create_task_button.setEnabled(False)
+            # else:
+            #     self.create_task_button.setEnabled(True)
+            if (isinstance(items[0], Qt4_queue_item.SampleQueueItem)):
                 self.create_task_button.setEnabled(True)
+            else:
+                self.create_task_button.setEnabled(False)
+            # ----------------------------------
 
             if isinstance(items[0], Qt4_queue_item.DataCollectionQueueItem):
                 data_collection = items[0].get_model()
@@ -315,19 +326,14 @@ class TaskToolBoxWidget(QtGui.QWidget):
 
     def create_task(self, task_node, shape = None):
         # Selected item is a task group
-        print("Qt4_task_toolbox_widget - create_task...")
         if isinstance(task_node, queue_model_objects.TaskGroup):
-            print("isinstance(task_node, queue_model_objects.TaskGroup)")
             sample = task_node.get_parent()
             task_list = self.tool_box.currentWidget().create_task(sample, shape)
 
             for child_task_node in task_list:
-                print("child_task_node: ", child_task_node)
                 self.tree_brick.queue_model_hwobj.add_child(task_node, child_task_node)
         # The selected item is a task, make a copy.
         else:
-            print("else")
             # LNLS
             new_node = self.tree_brick.queue_model_hwobj.copy_node(task_node)
-            print("new_node: ", new_node)
             self.tree_brick.queue_model_hwobj.add_child(task_node.get_parent(), new_node)

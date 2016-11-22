@@ -486,10 +486,10 @@ class CreateTaskBase(QtGui.QWidget):
             # Sample with lims information, use values from lims
             # to set the data path.
             # LNLS
-            #(data_directory, proc_directory, snap_directory) = self.get_default_directory(\
-            #     sub_dir = '<acronym>%s<sample_name>%s' % (os.path.sep, os.path.sep))
-            (data_directory, proc_directory) = self.get_default_directory(\
+            (data_directory, proc_directory, snap_directory) = self.get_default_directory(\
                  sub_dir = '<acronym>%s<sample_name>%s' % (os.path.sep, os.path.sep))
+            #(data_directory, proc_directory) = self.get_default_directory(\
+            #     sub_dir = '<acronym>%s<sample_name>%s' % (os.path.sep, os.path.sep))
             self._path_template.directory = data_directory
             self._path_template.process_directory = proc_directory
             # LNLS

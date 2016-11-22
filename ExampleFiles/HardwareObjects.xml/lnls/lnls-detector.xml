@@ -20,7 +20,7 @@
   <pilatusServerIP>10.2.71.38</pilatusServerIP>
   <pilatusSshUser>det</pilatusSshUser>
   <pilatusSshPassword>Pilatus2</pilatusSshPassword>
-  <pilatusServerStorageTemp>/MX1Temp</pilatusServerStorageTemp>
+  <pilatusServerStorageTemp>/MX2Temp</pilatusServerStorageTemp>
   <pilatusServerStorage>/storage</pilatusServerStorage>
   <pilatusHalfOfHeight>49.880</pilatusHalfOfHeight>
 </equipment>

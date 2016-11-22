@@ -27,6 +27,9 @@ from PyQt4 import QtCore
 from PyQt4 import QtGui
 from PyQt4 import uic
 
+import logging
+import cbf
+
 class ImageTrackingWidget(QtGui.QWidget):
     def __init__(self, parent = None, name = "image_tracking_widget"):
         QtGui.QWidget.__init__(self, parent)
@@ -39,6 +42,7 @@ class ImageTrackingWidget(QtGui.QWidget):
         # Internal values -----------------------------------------------------
         self.image_path = None
         self.data_collection = None
+        self.full_image_path = None
 
         # Signals ------------------------------------------------------------
 
@@ -74,16 +78,20 @@ class ImageTrackingWidget(QtGui.QWidget):
         value = self.image_tracking_widget_layout.\
              image_num_spinbox.value() - 1 
         self.image_tracking_widget_layout.image_num_spinbox.setValue(value)
-        self.image_tracking_widget_layout.current_path_ledit.setText(\
-             self.image_path % value)
+        #
+        self.full_image_path = self.image_path % value
+        #
+        self.image_tracking_widget_layout.current_path_ledit.setText(self.full_image_path)
         self.view_current_image()
 
     def next_button_clicked(self):
         value = self.image_tracking_widget_layout.\
              image_num_spinbox.value() + 1
         self.image_tracking_widget_layout.image_num_spinbox.setValue(value)
-        self.image_tracking_widget_layout.current_path_ledit.setText(\
-            self.image_path % value)        
+        #
+        self.full_image_path = self.image_path % value
+        #
+        self.image_tracking_widget_layout.current_path_ledit.setText(self.full_image_path)
         self.view_current_image()
 
     def open_in_viewer_clicked(self):
@@ -92,7 +100,7 @@ class ImageTrackingWidget(QtGui.QWidget):
     def view_current_image(self):
         if self.image_tracking_hwobj is not None:
             self.image_tracking_hwobj.load_image(self.image_path % \
-                 self.image_tracking_widget_layout.image_num_spinbox.value())    
+                 self.image_tracking_widget_layout.image_num_spinbox.value())
 
     def image_num_changed(self, value):
         self.image_tracking_widget_layout.current_path_ledit.\

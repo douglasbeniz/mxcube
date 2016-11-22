@@ -22,14 +22,14 @@ import html_template
 from PyQt4 import QtGui
 
 from widgets.Qt4_dc_parameters_widget import DCParametersWidget
-from widgets.Qt4_image_tracking_widget import ImageTrackingWidget
+from widgets.Qt4_image_tracking_graphic_widget import ImageTrackingGraphicWidget
 from BlissFramework.Qt4_BaseComponents import BlissWidget
 
 
 __category__ = 'Task'
 
 
-class Qt4_DCParametersBrick(BlissWidget):
+class Qt4_DCParametersGraphicImageBrick(BlissWidget):
     """
     Descript. :
     """
@@ -60,9 +60,9 @@ class Qt4_DCParametersBrick(BlissWidget):
         # Graphic elements ---------------------------------------------------- 
         self.parameters_widget = DCParametersWidget(self, "parameters_widget")
         self.toggle_page_button = QtGui.QPushButton('View Results', self)
-        self.toggle_page_button.setFixedWidth(120)
+        self.toggle_page_button.setFixedWidth(135)
         self.results_static_view = QtGui.QTextBrowser(self)
-        self.results_dynamic_view = ImageTrackingWidget(self) 
+        self.results_dynamic_view = ImageTrackingGraphicWidget(self) 
         self.stacked_widget = QtGui.QStackedWidget(self)
         self.stacked_widget.addWidget(self.parameters_widget)
         self.stacked_widget.addWidget(self.results_static_view) 
@@ -94,8 +94,12 @@ class Qt4_DCParametersBrick(BlissWidget):
             self.session_hwobj.get_base_image_directory()
         self.parameters_widget._data_path_widget._base_process_dir = \
             self.session_hwobj.get_base_process_directory()
+        # LNLS
+        self.parameters_widget._data_path_widget._base_snapshot_dir = \
+            self.session_hwobj.get_base_snapshot_directory()
 
-        if data_collection.is_collected():
+        # LNLS
+        if (data_collection.is_collected() or data_collection.get_has_cbf_to_view()):
             self.parameters_widget.set_enabled(False)
             if self.use_image_tracking:
                 self.results_dynamic_view.set_data_collection(data_collection)
@@ -105,6 +109,7 @@ class Qt4_DCParametersBrick(BlissWidget):
                 self.stacked_widget.setCurrentWidget(self.results_static_view)
             self.toggle_page_button.setText("View parameters")
         else:
+            self.results_dynamic_view.set_data_collection(None)
             self.parameters_widget.set_enabled(True)
             self.stacked_widget.setCurrentWidget(self.parameters_widget)
             self.toggle_page_button.setText("View Results")

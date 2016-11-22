@@ -25,7 +25,7 @@
   <object href="/data-analysis" role="data_analysis"/>
   <object href="/lnls/lnls-parallel_processing" role="parallel_processing"/>
 
-  <!-- advanced methods are defined as a list with method names.
+    <!-- advanced methods are defined as a list with method names.
        Each name is then converted to class name.
        For example Mesh scan -> MeshScan, Xray centring -> XrayCentring
        and used as a queue_entry. If queue entry is missing
