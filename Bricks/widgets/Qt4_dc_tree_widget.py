@@ -172,8 +172,10 @@ class DataCollectTree(QtGui.QWidget):
 
         # Other ---------------------------------------------------------------    
         self.sample_tree_widget.setColumnCount(2)
-        #self.sample_tree_widget.setColumnWidth(0, 150)
-        self.sample_tree_widget.setColumnWidth(1, 130)
+        # LNLS
+        self.sample_tree_widget.header().setResizeMode(0, QtGui.QHeaderView.Interactive)
+         #self.sample_tree_widget.setColumnWidth(0, 130)
+        self.sample_tree_widget.setColumnWidth(1, 150)
         self.sample_tree_widget.header().setDefaultSectionSize(250)
         self.sample_tree_widget.header().hide()
         self.sample_tree_widget.setRootIsDecorated(1)

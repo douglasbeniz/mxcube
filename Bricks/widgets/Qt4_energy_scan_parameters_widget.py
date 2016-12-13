@@ -149,7 +149,9 @@ class EnergyScanParametersWidget(QtGui.QWidget):
         self._tree_view_item = item
         self.energy_scan_model = item.get_model()
         executed = self.energy_scan_model.is_executed()
-        self.data_path_widget.setEnabled(not executed)
+        # LNLS
+        #self.data_path_widget.setEnabled(not executed)
+        self.data_path_widget.setEnabled(False)
         self.periodic_table_widget.setEnabled(not executed)
         self.scan_plot_widget.setEnabled(not executed)
         self.result_plot_widget.setEnabled(not executed)

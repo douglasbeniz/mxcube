@@ -196,7 +196,7 @@
         <number>-1</number>
        </property>
        <property name="maximum">
-        <number>2500</number>
+        <number>250000</number>
        </property>
        <property name="singleStep">
         <number>50</number>
@@ -213,7 +213,7 @@
      <item>
       <widget class="QSpinBox" name="vmax_spinbox">
        <property name="maximum">
-        <number>2500</number>
+        <number>1000000</number>
        </property>
        <property name="singleStep">
         <number>50</number>

@@ -15,12 +15,13 @@
   <fileSuffix>cbf</fileSuffix>
 
   <!-- site specific properties -->
-  <pilatusEpicsAddress>MXROB:cam1</pilatusEpicsAddress>
+  <pilatusEpicsAddress>MX2:cam1</pilatusEpicsAddress>
   <shutterEpicsAddress>MXROB:StaubliCS8:SetShutter</shutterEpicsAddress>
-  <pilatusServerIP>10.2.71.38</pilatusServerIP>
+  <pilatusServerIP>10.2.48.33</pilatusServerIP>
   <pilatusSshUser>det</pilatusSshUser>
   <pilatusSshPassword>Pilatus2</pilatusSshPassword>
   <pilatusServerStorageTemp>/MX2Temp</pilatusServerStorageTemp>
   <pilatusServerStorage>/storage</pilatusServerStorage>
-  <pilatusHalfOfHeight>49.880</pilatusHalfOfHeight>
+  <!-- upper height (Beam center * 0.172) -->
+  <pilatusHalfOfHeight>145.684</pilatusHalfOfHeight>
 </equipment>
