@@ -2,15 +2,15 @@
     <!-- ========================= MONO 2ND CRYSTAL PITCH  ========================= -->
     <!-- Channels for mono 2nd crystal pitch -->
     <!-- REAL MOTOR :: MX2:DMC4:m3 -->
-    <channel type="epics" name="mono2ndXtal_val">MX1:SIM:m8.VAL</channel>
-    <channel type="epics" name="mono2ndXtal_rlv">MX1:SIM:m8.RLV</channel>
-    <channel type="epics" name="mono2ndXtal_rbv">MX1:SIM:m8.RBV</channel>
-    <channel type="epics" name="mono2ndXtal_dmov">MX1:SIM:m8.DMOV</channel>
-    <channel type="epics" name="mono2ndXtal_stop">MX1:SIM:m8.STOP</channel>
-    <channel type="epics" name="mono2ndXtal_hls">MX1:SIM:m8.HLS</channel>
-    <channel type="epics" name="mono2ndXtal_lls">MX1:SIM:m8.LLS</channel>
-    <channel type="epics" name="mono2ndXtal_hlm">MX1:SIM:m8.HLM</channel>
-    <channel type="epics" name="mono2ndXtal_llm">MX1:SIM:m8.LLM</channel>
+    <channel type="epics" name="mono2ndXtal_val">MX2:DMC4:m3.VAL</channel>
+    <channel type="epics" name="mono2ndXtal_rlv">MX2:DMC4:m3.RLV</channel>
+    <channel type="epics" name="mono2ndXtal_rbv">MX2:DMC4:m3.RBV</channel>
+    <channel type="epics" name="mono2ndXtal_dmov">MX2:DMC4:m3.DMOV</channel>
+    <channel type="epics" name="mono2ndXtal_stop">MX2:DMC4:m3.STOP</channel>
+    <channel type="epics" name="mono2ndXtal_hls">MX2:DMC4:m3.HLS</channel>
+    <channel type="epics" name="mono2ndXtal_lls">MX2:DMC4:m3.LLS</channel>
+    <channel type="epics" name="mono2ndXtal_hlm">MX2:DMC4:m3.HLM</channel>
+    <channel type="epics" name="mono2ndXtal_llm">MX2:DMC4:m3.LLM</channel>
     <!-- Channels for Intensity Counter -->
     <channel type="epics" name="counterInt_val">MX2:IO:ai9</channel>
 
@@ -63,9 +63,9 @@
     <channel type="epics" name="counter2_val">MX2:IO:ai11</channel>
 
     <!-- Default values for optimization -->
-    <default_angle_pitch>0.002</default_angle_pitch>
-    <default_step_pitch>0.00002</default_step_pitch>
-    <default_hor_distance_slits>2.00</default_hor_distance_slits>
-    <default_ver_distance_slits>1.00</default_ver_distance_slits>
+    <default_angle_pitch>0.0005</default_angle_pitch>
+    <default_step_pitch>0.000035</default_step_pitch>
+    <default_hor_distance_slits>1.00</default_hor_distance_slits>
+    <default_ver_distance_slits>0.40</default_ver_distance_slits>
     <default_step_slits>0.01</default_step_slits>
 </equipment>
