@@ -48,7 +48,11 @@ import logging
 from PyQt4 import QtGui
 from PyQt4 import QtCore
 
-import numpy.oldnumeric as Numeric
+# ----------
+# LNLS
+#import numpy.oldnumeric as Numeric
+import numpy as np
+# ----------
 from PyMca import McaAdvancedFit
 from PyMca import ConfigDict
 

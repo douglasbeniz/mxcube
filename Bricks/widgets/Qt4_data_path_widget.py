@@ -56,6 +56,7 @@ class DataPathWidget(QtGui.QWidget):
         self._base_process_dir = None
         # LNLS 
         self._base_snapshot_dir = None
+        self._base_log_dir = None
         self.path_conflict_state = False
         
         if data_model is None:
@@ -127,6 +128,7 @@ class DataPathWidget(QtGui.QWidget):
             self._base_image_dir = d
             self._base_process_dir = d
             self._base_snapshot_dir = d
+            self._base_log_dir = d
             # Set the new working directory
             self.set_directory(d)
 
@@ -179,6 +181,11 @@ class DataPathWidget(QtGui.QWidget):
                 self._base_snapshot_dir = self.parent._session_hwobj.get_base_snapshot_directory()
         base_snap_dir = self._base_snapshot_dir
 
+        if (self._base_log_dir is None):
+            if (type(self.parent) in CreateTaskBase.__subclasses__()):
+                self._base_log_dir = self.parent._session_hwobj.get_base_log_directory()
+        base_log_dir = self._base_log_dir
+
         new_sub_dir = str(new_value).strip(' ')
 
         if len(new_sub_dir) > 0:
@@ -186,14 +193,17 @@ class DataPathWidget(QtGui.QWidget):
                 new_sub_dir = new_sub_dir[1:]
             new_image_directory = os.path.join(base_image_dir, str(new_sub_dir))
             new_snap_directory = os.path.join(base_snap_dir, str(new_sub_dir))
+            new_log_directory = os.path.join(base_log_dir, str(new_sub_dir))
             new_proc_dir = os.path.join(base_proc_dir, str(new_sub_dir))
         else:
             new_image_directory = base_image_dir
             new_snap_directory = base_snap_dir
+            new_log_directory = base_log_dir
             new_proc_dir = base_proc_dir
         
         self._data_model.directory = new_image_directory
         self._data_model.snapshot_directory = new_snap_directory
+        self._data_model.log_directory = new_log_directory
         self._data_model.process_directory = new_proc_dir 
         Qt4_widget_colors.set_widget_color(self.data_path_layout.folder_ledit,
                                            Qt4_widget_colors.WHITE)

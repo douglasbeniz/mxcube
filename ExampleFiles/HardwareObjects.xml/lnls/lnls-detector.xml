@@ -22,6 +22,14 @@
   <pilatusSshPassword>Pilatus2</pilatusSshPassword>
   <pilatusServerStorageTemp>/MX2Temp</pilatusServerStorageTemp>
   <pilatusServerStorage>/storage</pilatusServerStorage>
+  <camserverXpraDisplay>10002</camserverXpraDisplay>
+  <camserverXpraPath>/home/det/p2_det</camserverXpraPath>
+  <camserverXpraPort>1200</camserverXpraPort>
+  <camserverXpraProgram>xpra</camserverXpraProgram>
+  <camserverCamonlyProgram>/home/det/run_camonly.sh</camserverCamonlyProgram>
+  <camserverExitCommand>exit</camserverExitCommand>
+  <camserverScreenshotName>CamServer_Screenshot</camserverScreenshotName>
+  <camserverUniqueName>camserver</camserverUniqueName>
   <!-- upper height (Beam center * 0.172) -->
   <pilatusHalfOfHeight>145.684</pilatusHalfOfHeight>
 </equipment>

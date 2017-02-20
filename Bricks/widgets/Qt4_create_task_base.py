@@ -98,15 +98,18 @@ class CreateTaskBase(QtGui.QWidget):
                 # LNLS
                 self._data_path_widget._base_snapshot_dir = \
                     self._session_hwobj.get_base_snapshot_directory()
+                self._data_path_widget._base_log_dir = \
+                    self._session_hwobj.get_base_log_directory()
 
                 # LNLS
                 #(data_directory, proc_directory) = self.get_default_directory()
-                (data_directory, proc_directory, snap_directory) = self.get_default_directory()
+                (data_directory, proc_directory, snap_directory, log_directory) = self.get_default_directory()
                 self._path_template = bl_setup.get_default_path_template()
                 self._path_template.directory = data_directory
                 self._path_template.process_directory = proc_directory
                 #LNLS
                 self._path_template.snapshot_directory = snap_directory
+                self._path_template.log_directory = log_directory
                 self._path_template.base_prefix = self.get_default_prefix()
                 self._path_template.run_number = bl_setup.queue_model_hwobj.\
                     get_next_run_number(self._path_template)
@@ -339,10 +342,11 @@ class CreateTaskBase(QtGui.QWidget):
 
         # LNLS
         snap_directory = os.path.join(self._session_hwobj.get_base_snapshot_directory(), sub_dir)
+        log_directory = os.path.join(self._session_hwobj.get_base_log_directory(), sub_dir)
 
         # LNLS
         #return (data_directory, proc_directory)
-        return (data_directory, proc_directory, snap_directory)
+        return (data_directory, proc_directory, snap_directory, log_directory)
 
     def ispyb_logged_in(self, logged_in):
         self.init_models()
@@ -388,12 +392,13 @@ class CreateTaskBase(QtGui.QWidget):
                 # LNLS
                 #(data_directory, proc_directory) = self.get_default_directory(\
                 #  tree_item, sub_dir = "%s%s" % (prefix.split("-")[0], os.path.sep))
-                (data_directory, proc_directory, snap_directory) = self.get_default_directory(\
+                (data_directory, proc_directory, snap_directory, log_directory) = self.get_default_directory(\
                   tree_item, sub_dir = "%s%s" % (prefix.split("-")[0], os.path.sep))
                 self._path_template.directory = data_directory
                 self._path_template.process_directory = proc_directory
                 # LNLS
                 self._path_template.snapshot_directory = snap_directory
+                self._path_template.log_directory = log_directory
                 self._path_template.base_prefix = prefix
             elif self._session_hwobj.get_group_name() != '':
                 base_dir = self._session_hwobj.get_base_image_directory()
@@ -402,11 +407,12 @@ class CreateTaskBase(QtGui.QWidget):
                 if base_dir == self._path_template.directory:
                     # LNLS
                     #(data_directory, proc_directory) = self.get_default_directory()
-                    (data_directory, proc_directory, snap_directory) = self.get_default_directory()
+                    (data_directory, proc_directory, snap_directory, log_directory) = self.get_default_directory()
                     self._path_template.directory = data_directory
                     self._path_template.process_directory = proc_directory
                     # LNLS
                     self._path_template.snapshot_directory = snap_directory
+                    self._path_template.log_directory = log_directory
                     self._path_template.base_prefix = self.get_default_prefix()
 
             #If no information from lims then add basket/sample info
@@ -486,7 +492,7 @@ class CreateTaskBase(QtGui.QWidget):
             # Sample with lims information, use values from lims
             # to set the data path.
             # LNLS
-            (data_directory, proc_directory, snap_directory) = self.get_default_directory(\
+            (data_directory, proc_directory, snap_directory, log_directory) = self.get_default_directory(\
                  sub_dir = '<acronym>%s<sample_name>%s' % (os.path.sep, os.path.sep))
             #(data_directory, proc_directory) = self.get_default_directory(\
             #     sub_dir = '<acronym>%s<sample_name>%s' % (os.path.sep, os.path.sep))
@@ -494,6 +500,7 @@ class CreateTaskBase(QtGui.QWidget):
             self._path_template.process_directory = proc_directory
             # LNLS
             self._path_template.snapshot_directory = snap_directory
+            self._path_template.log_directory = log_directory
             self._path_template.base_prefix = self.get_default_prefix(generic_name = True)
 
             # Get the next available run number at this level of the model.

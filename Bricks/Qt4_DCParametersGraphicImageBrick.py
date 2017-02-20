@@ -97,6 +97,8 @@ class Qt4_DCParametersGraphicImageBrick(BlissWidget):
         # LNLS
         self.parameters_widget._data_path_widget._base_snapshot_dir = \
             self.session_hwobj.get_base_snapshot_directory()
+        self.parameters_widget._data_path_widget._base_log_dir = \
+            self.session_hwobj.get_base_log_directory()
 
         # LNLS
         if (data_collection.is_collected() or data_collection.get_has_cbf_to_view()):
