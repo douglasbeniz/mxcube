@@ -1,13 +1,14 @@
 <equipment class="LNLSMotor">
   <!-- Channels :: Mono_Theta_Second_Xtal :: Real = MX2:DMC4:m4 -->
-  <channel type="epics" name="epicsMotor_val">MX1:SIM:m2.VAL</channel>
-  <channel type="epics" name="epicsMotor_rlv" >MX1:SIM:m2.RLV</channel>
-  <channel type="epics" name="epicsMotor_rbv" polling="200">MX1:SIM:m2.RBV</channel>
-  <channel type="epics" name="epicsMotor_dmov" polling="200">MX1:SIM:m2.DMOV</channel>
-  <channel type="epics" name="epicsMotor_stop">MX1:SIM:m2.STOP</channel>
-  <channel type="epics" name="epicsMotor_dllm">MX1:SIM:m2.DLLM</channel>
-  <channel type="epics" name="epicsMotor_dhlm">MX1:SIM:m2.DHLM</channel>
-  <channel type="epics" name="epicsMotor_egu">MX1:SIM:m2.EGU</channel>
+  <!-- Channels :: Mono_Theta_Second_Xtal :: Sim = MX1:SIM:m2 -->
+  <channel type="epics" name="epicsMotor_val">MX2:DMC4:m4.VAL</channel>
+  <channel type="epics" name="epicsMotor_rlv">MX2:DMC4:m4.RLV</channel>
+  <channel type="epics" name="epicsMotor_rbv" polling="200">MX2:DMC4:m4.RBV</channel>
+  <channel type="epics" name="epicsMotor_dmov" polling="200">MX2:DMC4:m4.DMOV</channel>
+  <channel type="epics" name="epicsMotor_stop">MX2:DMC4:m4.STOP</channel>
+  <channel type="epics" name="epicsMotor_dllm">MX2:DMC4:m4.DLLM</channel>
+  <channel type="epics" name="epicsMotor_dhlm">MX2:DMC4:m4.DHLM</channel>
+  <channel type="epics" name="epicsMotor_egu">MX2:DMC4:m4.EGU</channel>
 
   <!-- Specific properties -->
   <motor_name>mono_theta_second_xtal</motor_name>

@@ -8,8 +8,9 @@
   <!-- <device hwrid="/dbconnection" role="dbserver"/> -->
 
   <!-- Specific properties -->
-  <!-- Used by Py4Syn library :: real = MX2:SCALER, channel 2 -->
-  <epics_scaler>MXROB:SCALER</epics_scaler>
+  <!-- Used by Py4Syn library :: Real = MX2:SCALER, channel 2 -->
+  <!-- Used by Py4Syn library :: Sim = MXROB:SCALER, channel 2 -->
+  <epics_scaler>MX2:SCALER</epics_scaler>
   <epics_scaler_channel>2</epics_scaler_channel>
   <epics_scaler_name>mxrobScaler</epics_scaler_name>
 

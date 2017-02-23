@@ -1,2 +1,6 @@
 <equipment class="LNLSBeamInfo">
+  <beam_crystal_position_x>320</beam_crystal_position_x>
+  <beam_crystal_position_y>256</beam_crystal_position_y>
+  <beam_det_position_x>760</beam_det_position_x>
+  <beam_det_position_y>847</beam_det_position_y>
 </equipment>

@@ -1,4 +1,4 @@
-<object class="LNLSSession" role="session">  
+<object class="LNLSSession" role="session">
   <!-- generic devices -->
   <device hwrid="/lnls/lnls-detector" role="detector"/>
 

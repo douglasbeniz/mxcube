@@ -10,16 +10,16 @@
 
     <gapH>
        <modesAllowed>['Unfocused', 'Vertical']</modesAllowed> - used modes
-       <stepSize>0.0050</stepSize>                   - step size used in spinbox
-       <minGap>0.001</minGap>                        - min gap
-       <maxGap>2.000</maxGap>                        - max max gap
-       <updateTolerance>0.0005</updateTolerance>     - gap update tolerance
+       <stepSize>0.0050</stepSize>                            - step size used in spinbox
+       <minGap>0.001</minGap>                                 - min gap
+       <maxGap>5.000</maxGap>                                 - max max gap
+       <updateTolerance>0.0005</updateTolerance>              - gap update tolerance
     </gapH>
     <gapV>                                              
        <modesAllowed>['Unfocused', 'Horizontal']</modesAllowed>
        <stepSize>0.0050</stepSize>
        <minGap>0.001</minGap>
-       <maxGap>2.000</maxGap>
+       <maxGap>5.000</maxGap>
        <updateTolerance>0.0005</updateTolerance>
     </gapV>
 </equipment>
