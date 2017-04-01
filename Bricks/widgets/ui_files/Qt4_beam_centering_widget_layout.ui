@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1082</width>
+    <width>1109</width>
     <height>703</height>
    </rect>
   </property>
@@ -72,8 +72,8 @@
          <rect>
           <x>0</x>
           <y>-1</y>
-          <width>351</width>
-          <height>221</height>
+          <width>353</width>
+          <height>240</height>
          </rect>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout">
@@ -205,6 +205,17 @@ angle (mrad):</string>
                   </size>
                  </property>
                 </spacer>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="centroid2ndXtalCheck">
+                 <property name="text">
+                  <string>Go to
+centroid</string>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
                </item>
               </layout>
              </item>
@@ -579,7 +590,7 @@ position:</string>
           <x>0</x>
           <y>-1</y>
           <width>351</width>
-          <height>251</height>
+          <height>277</height>
          </rect>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -697,6 +708,17 @@ distance (mm):</string>
                 </widget>
                </item>
                <item>
+                <widget class="QCheckBox" name="centroidSlit1Check">
+                 <property name="text">
+                  <string>Go to
+centroid</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
                 <spacer name="verticalSpacer_5">
                  <property name="orientation">
                   <enum>Qt::Vertical</enum>
@@ -727,7 +749,7 @@ distance (mm):</string>
                  <property name="sizeHint" stdset="0">
                   <size>
                    <width>20</width>
-                   <height>15</height>
+                   <height>5</height>
                   </size>
                  </property>
                 </spacer>
@@ -783,7 +805,7 @@ distance (mm):</string>
                  <property name="sizeHint" stdset="0">
                   <size>
                    <width>20</width>
-                   <height>15</height>
+                   <height>7</height>
                   </size>
                  </property>
                 </spacer>
@@ -830,7 +852,7 @@ distance (mm):</string>
                  <property name="sizeHint" stdset="0">
                   <size>
                    <width>20</width>
-                   <height>15</height>
+                   <height>7</height>
                   </size>
                  </property>
                 </spacer>
@@ -1202,10 +1224,10 @@ position:</string>
        <widget class="QWidget" name="horizontalLayoutWidget_3">
         <property name="geometry">
          <rect>
-          <x>-1</x>
+          <x>1</x>
           <y>-1</y>
           <width>351</width>
-          <height>251</height>
+          <height>277</height>
          </rect>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -1323,6 +1345,17 @@ distance (mm):</string>
                 </widget>
                </item>
                <item>
+                <widget class="QCheckBox" name="centroidSlit2Check">
+                 <property name="text">
+                  <string>Go to
+centroid</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
                 <spacer name="verticalSpacer_10">
                  <property name="orientation">
                   <enum>Qt::Vertical</enum>
@@ -1353,7 +1386,7 @@ distance (mm):</string>
                  <property name="sizeHint" stdset="0">
                   <size>
                    <width>20</width>
-                   <height>15</height>
+                   <height>5</height>
                   </size>
                  </property>
                 </spacer>
@@ -1400,7 +1433,7 @@ distance (mm):</string>
                  <property name="sizeHint" stdset="0">
                   <size>
                    <width>20</width>
-                   <height>15</height>
+                   <height>7</height>
                   </size>
                  </property>
                 </spacer>
@@ -1447,7 +1480,7 @@ distance (mm):</string>
                  <property name="sizeHint" stdset="0">
                   <size>
                    <width>20</width>
-                   <height>15</height>
+                   <height>7</height>
                   </size>
                  </property>
                 </spacer>

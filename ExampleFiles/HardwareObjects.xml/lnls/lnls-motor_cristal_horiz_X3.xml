@@ -2,8 +2,8 @@
     <!-- Channels -->
     <channel type="epics" name="epicsMotor_val">MXROB:DMC3:m5.VAL</channel>
     <channel type="epics" name="epicsMotor_rlv">MXROB:DMC3:m5.RLV</channel>
-    <channel type="epics" name="epicsMotor_rbv">MXROB:DMC3:m5.RBV</channel>
-    <channel type="epics" name="epicsMotor_dmov">MXROB:DMC3:m5.DMOV</channel>
+    <channel type="epics" name="epicsMotor_rbv" polling="500">MXROB:DMC3:m5.RBV</channel>
+    <channel type="epics" name="epicsMotor_dmov" polling="500">MXROB:DMC3:m5.DMOV</channel>
     <channel type="epics" name="epicsMotor_stop">MXROB:DMC3:m5.STOP</channel>
     <channel type="epics" name="epicsMotor_velo">MXROB:DMC3:m5.VELO</channel>
     <!-- Specifically for this motor use LLM and HLM instead of DLLM and DHLM -->
@@ -11,5 +11,5 @@
     <channel type="epics" name="epicsMotor_dhlm">MXROB:DMC3:m5.HLM</channel>
     <channel type="epics" name="epicsMotor_egu">MXROB:DMC3:m5.EGU</channel>
     <!-- Properties -->
-    <motor_name>GonioBaseX</motor_name>
+    <motor_name>CristalHorizontalX3</motor_name>
 </device>

@@ -63,9 +63,12 @@
     <channel type="epics" name="counter2_val">MX2:IO:ai11</channel>
 
     <!-- Default values for optimization -->
-    <default_angle_pitch>0.0005</default_angle_pitch>
+    <default_angle_pitch>0.005</default_angle_pitch>
     <default_step_pitch>0.000035</default_step_pitch>
-    <default_hor_distance_slits>1.00</default_hor_distance_slits>
-    <default_ver_distance_slits>0.40</default_ver_distance_slits>
-    <default_step_slits>0.01</default_step_slits>
+    <default_hor_distance_slit1>3.00</default_hor_distance_slit1>
+    <default_ver_distance_slit1>1.25</default_ver_distance_slit1>
+    <default_hor_distance_slit2>1.75</default_hor_distance_slit2>
+    <default_ver_distance_slit2>0.50</default_ver_distance_slit2>
+    <default_step_slit1>0.025</default_step_slit1>
+    <default_step_slit2>0.010</default_step_slit2>
 </equipment>

@@ -80,7 +80,7 @@ class ConfirmDialog(QtGui.QDialog):
         if plate_mode:
             snapshot_count = [0, 1]
         else:
-            snapshot_count = [0, 1, 2, 4]
+            snapshot_count = [0, 2, 4, 6]
         self.conf_dialog_layout.take_snapshots_combo.clear()
         for item in snapshot_count:
             self.conf_dialog_layout.take_snapshots_combo.addItem(str(item))        
@@ -237,9 +237,10 @@ class ConfirmDialog(QtGui.QDialog):
         for item in self.checked_items:
             item_model = item.get_model()
             acq_parameters = None 
-          
+
             if isinstance(item_model, queue_model_objects.DataCollection):
                 acq_parameters = item_model.acquisitions[0].acquisition_parameters
+
             elif isinstance(item_model, queue_model_objects.Advanced):
                 acq_parameters = item_model.reference_image_collection.\
                      acquisitions[0].acquisition_parameters 
@@ -264,6 +265,7 @@ class ConfirmDialog(QtGui.QDialog):
                 
         self.continueClickedSignal.emit(self.sample_items, self.checked_items)
         self.accept()
+
 
     def cancel_button_click(self):
         """

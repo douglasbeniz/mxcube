@@ -3,6 +3,7 @@
   <device hwrid="/lnls/lnls-beam_info" role="beam_info"/>
   <device hwrid="/lnls/lnls-energy" role="energy"/>
   <device hwrid="/lnls/lnls-camera" role="camera"/>
+  <object hwrid="/lnls/lnls-shutter" role="safety_shutter"/>
 
   <!-- <device hwrid="/attenuators" role="transmission"/> -->
   <!-- <device hwrid="/dbconnection" role="dbserver"/> -->

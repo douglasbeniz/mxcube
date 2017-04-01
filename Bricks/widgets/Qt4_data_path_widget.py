@@ -140,7 +140,7 @@ class DataPathWidget(QtGui.QWidget):
             available_chars = string.ascii_lowercase + string.ascii_uppercase + \
                               string.digits + "-_"
             new_value = ''.join(i for i in str(new_value) if i in available_chars)
-        self.data_path_layout.prefix_ledit.setText(new_value)
+        #self.data_path_layout.prefix_ledit.setText(new_value)
 
         self._data_model.base_prefix = str(new_value)
         """file_name = self._data_model.get_image_file_name()

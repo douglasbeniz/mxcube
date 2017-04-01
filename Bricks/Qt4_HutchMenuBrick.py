@@ -88,6 +88,16 @@ class Qt4_HutchMenuBrick(BlissWidget):
         self.clear_all_button = MonoStateButton(self, "Clear all", "Delete")
         self.auto_center_button = MonoStateButton(self, "Auto", "VCRPlay2")
 
+        # --------------------------------------------------------------------
+        # LNLS
+        # --------------------------------------------------------------------
+        self.accept_button.setEnabled(False)
+        self.create_line_button.setEnabled(False)
+        self.draw_grid_button.setEnabled(False)
+        self.auto_focus_button.setEnabled(False)
+        self.visual_align_button.setEnabled(False)
+        self.auto_center_button.setEnabled(False)
+
         # Layout -------------------------------------------------------------- 
         _main_vlayout = QtGui.QVBoxLayout(self)
         _main_vlayout.addWidget(self.centre_button)
@@ -331,10 +341,12 @@ class Qt4_HutchMenuBrick(BlissWidget):
         self.setEnabled(is_ready)
 
     def auto_focus_clicked(self):
-        self.graphics_manager_hwobj.auto_focus()
+        #self.graphics_manager_hwobj.auto_focus()
+        pass
 
     def auto_center_clicked(self):
-        self.graphics_manager_hwobj.start_auto_centring()
+        #self.graphics_manager_hwobj.start_auto_centring()
+        pass
 
 class MonoStateButton(QtGui.QToolButton):
 

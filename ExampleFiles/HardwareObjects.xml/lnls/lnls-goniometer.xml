@@ -18,4 +18,6 @@
   <phaseList>("Transfer", "Centring", "DataCollection", "BeamLocation")</phaseList>  
   <defaultImageWidth>640</defaultImageWidth>
   <defaultImageHeight>512</defaultImageHeight>
+  <!-- velocity in RPMs -->
+  <defaultOmegaVelocity>2.0</defaultOmegaVelocity>
 </equipment>

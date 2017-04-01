@@ -385,6 +385,7 @@ class EnergyScanBrick(BlissWidget):
         self.remoteInput.setText("")
         self.remote2Input.setText("")
 
+        #print("Calling self.energyScan.startEnergyScan...")
         scan_result=self.energyScan.startEnergyScan(self.element[0],self.element[1],\
             str(self.directoryInput.text()),\
             str(self.prefixInput.text()),\
