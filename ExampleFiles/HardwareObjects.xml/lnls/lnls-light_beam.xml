@@ -1,0 +1,4 @@
+<equipment class="LNLSLight">
+    <!-- Channels -->
+    <channel type="epics" name="epicsLight" polling="500">MXROB:StaubliCS8:SetLight3</channel>
+</equipment>

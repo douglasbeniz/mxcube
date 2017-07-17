@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Design Overview &mdash; MxCuBE 2.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="MxCuBE 2.0 documentation" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">MxCuBE 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="design-overview">
+<h1>Design Overview<a class="headerlink" href="#design-overview" title="Permalink to this headline">¶</a></h1>
+<p>Hardware objects are located in two submodules:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/mxcube/HardwareObjects.git">HardwareObjects</a> stores all hardware objects that are used within MXCuBE. It contains directories for site specific hardware objects (<a class="reference external" href="https://github.com/mxcube/HardwareObjects/tree/master/EMBL">EMBL</a>, <a class="reference external" href="https://github.com/mxcube/HardwareObjects/tree/master/ESRF">ESRF</a>, <a class="reference external" href="https://github.com/mxcube/HardwareObjects/tree/master/MAXLAB">MAXLAB</a>, <a class="reference external" href="https://github.com/mxcube/HardwareObjects/tree/master/SOLEIL">SOLEIL</a>) and directories for <a class="reference external" href="https://github.com/mxcube/HardwareObjects/tree/master/detectors">detectors</a> and <a class="reference external" href="https://github.com/mxcube/HardwareObjects/tree/master/sample_changer">sample_changer</a>.</li>
+<li><a class="reference external" href="https://github.com/mxcube/HardwareRepository/tree/master/HardwareObjects">HardwareObjects</a> directory in <a class="reference external" href="http://github.com/mxcube/HardwareRepository">HardwareRepository</a> holds basic hardware objects, like motors, actuators and etc.</li>
+</ul>
+<p>Hardware objects are managed by <a class="reference external" href="http://github.com/mxcube/HardwareRepository">HardwareRepository</a> and each of them has a xml configuration (more detailed information here: <a class="reference internal" href="packages/example_files.html"><em>Configuration example Files</em></a>).</p>
+<p>The figure below shows the principal communication paths between the Hardware Repository (Hardware Objects), GUI (Framework Bricks) and
+clients using the XMLRPCServer feature.</p>
+<img alt="_images/design_overview.png" src="_images/design_overview.png" />
+<p>Further main hardware objects are described.</p>
+<div class="section" id="queue-and-queuemodel">
+<h2>Queue and QueueModel<a class="headerlink" href="#queue-and-queuemodel" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="packages/HardwareObjects/QueueModel.html"><em>QueueModel</em></a> is a key component in MxCuBE. It handles the data model for the <a class="reference internal" href="packages/HardwareObjects/Queue.html"><em>Queue</em></a>. Each task in the queue, is a subclass of <a class="reference internal" href="packages/HardwareObjects/queue_entry.html"><em>QueueEntry</em></a>, and is associated with a model data node (<a class="reference internal" href="packages/HardwareObjects/queue_model_objects.html"><em>TaskNode</em></a>).
+The QueueModel and is designed to be part of a MVC like pattern, where the QueueModel acts as the <strong>Controller</strong>. The QueueModel has a reference to one or more <a class="reference internal" href="packages/HardwareObjects/queue_model_objects.html"><em>RootNode</em></a> objects which contain the model.
+The TreeBrick and the Queue hardware objects behaves as <strong>views</strong> for the QueueModel. The TreeBrick is displaying the tasks for the user while the Queue represents the exectuable &#8216;entity&#8217;.
+The Queue contains QueueEntry objects, which each holds a reference to to a TaskNode in the model. A mapping between TaskNodes and QueueEntries can be found at the end of the file HardwareObjecs/queue_entry.py. This makes it easy to add a new type of task. The only thing that is needed is:</p>
+<ul class="simple">
+<li>Create a TaskNode that holds any data needed to perform the task.</li>
+<li>Implement the logic for the task, subclassing QueueEntry</li>
+<li>Add the mapping.</li>
+</ul>
+</div>
+<div class="section" id="beamlinesetup">
+<h2>BeamlineSetup<a class="headerlink" href="#beamlinesetup" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="packages/HardwareObjects/BeamlineSetup.html"><em>BeamlineSetup</em></a> is used like a container for hardware objects. Within the code there is a tendency to keep all hardware objects in the beamline setup and call them from gui bricks, rather then defining all hardware objects in each brick.</p>
+</div>
+<div class="section" id="session">
+<h2>Session<a class="headerlink" href="#session" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="packages/HardwareObjects/Session.html"><em>Session</em></a> module defines current MXCuBE session. In the xml of it is possible to define: synchrotron name, endstation name, beamline name and information related to the experiment: file suffix, base directory, raw data folder name etc.</p>
+</div>
+<div class="section" id="shapehistory-and-qt4-graphicsmanager">
+<h2>ShapeHistory and Qt4_GraphicsManager<a class="headerlink" href="#shapehistory-and-qt4-graphicsmanager" title="Permalink to this headline">¶</a></h2>
+<p>In Qt3 version graphics are handled by <a class="reference internal" href="packages/HardwareObjects/ShapeHistory.html"><em>ShapeHistory</em></a>  hardware object and in Qt4 version <a class="reference internal" href="packages/HardwareObjects/Qt4_GraphicsManager.html"><em>Qt4_GraphicsManager</em></a> with <a class="reference internal" href="packages/HardwareObjects/Qt4_GraphicsLib.html"><em>graphics library</em></a> is used.</p>
+</div>
+<div class="section" id="other-modules">
+<h2>Other modules<a class="headerlink" href="#other-modules" title="Permalink to this headline">¶</a></h2>
+<p>For communication with ISPyB <a class="reference internal" href="packages/HardwareObjects/ISPyBClient2.html"><em>ISPyBClient2</em></a> hardware object is used.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Design Overview</a><ul>
+<li><a class="reference internal" href="#queue-and-queuemodel">Queue and QueueModel</a></li>
+<li><a class="reference internal" href="#beamlinesetup">BeamlineSetup</a></li>
+<li><a class="reference internal" href="#session">Session</a></li>
+<li><a class="reference internal" href="#shapehistory-and-qt4-graphicsmanager">ShapeHistory and Qt4_GraphicsManager</a></li>
+<li><a class="reference internal" href="#other-modules">Other modules</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/design_overview.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">MxCuBE 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2013, MxCuBE Collaboration.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.6.
+    </div>
+  </body>
+</html>

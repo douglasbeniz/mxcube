@@ -1,0 +1,5 @@
+    1: <procedure class="LdapLogin">
+    2:   <ldaphost>isis.embl-hamburg.de</ldaphost>
+    3:   <ldapport>389</ldapport> 
+    4:   <ldapstring>ou=people,dc=embl-hamburg,dc=de</ldapstring> 
+    5  </procedure>

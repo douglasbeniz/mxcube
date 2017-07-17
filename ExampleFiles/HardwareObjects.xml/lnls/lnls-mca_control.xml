@@ -1,0 +1,4 @@
+<device class = "LNLSMcaControl">
+    <mcaIPAddress>10.2.48.34</mcaIPAddress>
+    <mcaUdpPort>10001</mcaUdpPort>
+</device>

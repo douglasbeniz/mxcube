@@ -1,0 +1,14 @@
+<device class="LNLSMotor">
+    <!-- Channels -->
+    <channel type="epics" name="epicsMotor_val">MXROB:DMC3:m1.VAL</channel>
+    <channel type="epics" name="epicsMotor_rlv">MXROB:DMC3:m1.RLV</channel>
+    <channel type="epics" name="epicsMotor_rbv" polling="500">MXROB:DMC3:m1.RBV</channel>
+    <channel type="epics" name="epicsMotor_dmov" polling="500">MXROB:DMC3:m1.DMOV</channel>
+    <channel type="epics" name="epicsMotor_stop">MXROB:DMC3:m1.STOP</channel>
+    <channel type="epics" name="epicsMotor_velo">MXROB:DMC3:m1.VELO</channel>
+    <channel type="epics" name="epicsMotor_dllm">MXROB:DMC3:m1.DLLM</channel>
+    <channel type="epics" name="epicsMotor_dhlm">MXROB:DMC3:m1.DHLM</channel>
+    <channel type="epics" name="epicsMotor_egu">MXROB:DMC3:m1.EGU</channel>
+    <!-- Properties -->
+    <motor_name>Slit1BaseX</motor_name>
+</device>

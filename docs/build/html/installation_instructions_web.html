@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>How to install and run web version &mdash; MxCuBE 2.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="MxCuBE 2.0 documentation" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">MxCuBE 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="how-to-install-and-run-web-version">
+<h1>How to install and run web version<a class="headerlink" href="#how-to-install-and-run-web-version" title="Permalink to this headline">¶</a></h1>
+<p>This page will describe the steps required to successfully install and launch the web version of MXCuBE, aka MXCuBE3.
+Before installing packages it might be useful to have a look at configuring
+a virtual environment, so you do not change your system. For example <a class="reference external" href="http://docs.python-guide.org/en/latest/dev/virtualenvs/">here</a></p>
+<p>Note that you need to install the pip tool, see <a class="reference external" href="https://pypi.python.org/pypi/pip">here</a>;
+as well as Node v 4.2.2 see <a class="reference external" href="https://nodejs.org/en/">here</a>,
+and the Node Package Manager (npm) v2.14.x <a class="reference external" href="https://www.npmjs.com/package/npm">here</a>.
+Be very carefull with the version numbers, otherwise the client interface might not work at all.</p>
+<div class="section" id="getting-code-from-git">
+<h2>Getting code from git<a class="headerlink" href="#getting-code-from-git" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>git clone git@github.com:mxcube/mxcube3.git
+</pre></div>
+</div>
+<p>Initialize the HardwareRepository and HardwareObjects submodules:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">cd</span> mxcube3
+git submodule init
+git submodule update
+</pre></div>
+</div>
+<p>So, at this point your local copy should contain the latest version
+of the repo and all the required mxcube internals. But before launching
+the application some python packages must be installed.</p>
+</div>
+<div class="section" id="installing-python-requirements">
+<h2>Installing python requirements<a class="headerlink" href="#installing-python-requirements" title="Permalink to this headline">¶</a></h2>
+<p>All the requirements are in <strong>requirements.txt</strong> file, which is a list of all
+the packages and their respective versions. So, just type the following:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>pip install -r requirements.txt
+</pre></div>
+</div>
+<p>It will download and install all the missing python packages.
+Be carefull with the permissions if you are not using a virtual environment.</p>
+</div>
+<div class="section" id="running-the-server">
+<h2>Running the server<a class="headerlink" href="#running-the-server" title="Permalink to this headline">¶</a></h2>
+<p>Assuming that previous steps were successful, now it&#8217;s time to launch the server.
+The repository already contains a mockup folder for the configuration of
+the hardware objects (<strong>test/HardwareObjectsMockup.xml</strong>). Just type:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>python mxcube3-server -r test/HardwareObjectsMockup.xml
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>* Running on http://0.0.0.0:8082/
+* Restarting with reloader
+ERROR:HWR:Cannot load Hardware Object <span class="s2">&quot;/session&quot;</span> : file not found.
+WARNING:root:Could not find autocentring library, automatic centring is disabled
+INFO:HWR:initializing camera object
+INFO:HWR:going to poll images
+WARNING:HWR:MiniDiff: sample changer is not defined in minidiff equipment /minidiff-mockup
+WARNING:HWR:MiniDiff: wago light is not defined in minidiff equipment /minidiff-mockup
+</pre></div>
+</div>
+<p>Now it&#8217;s time to go to <a class="reference external" href="http://w-v-kitslab-mxcube-0:8082/">http://w-v-kitslab-mxcube-0:8082/</a> and have fun.
+You can change the port in <strong>mxcube3-server:L8</strong>, the <strong>0.0.0.0</strong> address means that
+the server is listening in all IP addresses on your local machine.</p>
+</div>
+<div class="section" id="running-client">
+<h2>Running client<a class="headerlink" href="#running-client" title="Permalink to this headline">¶</a></h2>
+<p>It is also possible to test the web interface without worrying about the server.
+In this case, no mockups are needed and all the calls that are supposed to be sent
+to the server will not have any effect, but again, you can have a look at how
+the interface looks. We are using <strong>webpack development server</strong> for that purpose.</p>
+<p>First you need to install the requirements for the web client,
+you can have a look at <strong>package.json</strong> if you are curious.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>npm install
+</pre></div>
+</div>
+<p>And then, run webpack in development mode:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>npm start
+</pre></div>
+</div>
+<p>And finally, open a web browser a go to <a class="reference external" href="http://localhost:8090">http://localhost:8090</a>.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">How to install and run web version</a><ul>
+<li><a class="reference internal" href="#getting-code-from-git">Getting code from git</a></li>
+<li><a class="reference internal" href="#installing-python-requirements">Installing python requirements</a></li>
+<li><a class="reference internal" href="#running-the-server">Running the server</a></li>
+<li><a class="reference internal" href="#running-client">Running client</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/installation_instructions_web.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">MxCuBE 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2013, MxCuBE Collaboration.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.6.
+    </div>
+  </body>
+</html>

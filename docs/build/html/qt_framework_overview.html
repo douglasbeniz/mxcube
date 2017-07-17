@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Qt framework based GUI &mdash; MxCuBE 2.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="MxCuBE 2.0 documentation" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">MxCuBE 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="qt-framework-based-gui">
+<h1>Qt framework based GUI<a class="headerlink" href="#qt-framework-based-gui" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/mxcube/BlissFramework.git">BlissFramework</a> is the graphical user interface
+based on bricks (available in
+<a class="reference external" href="https://github.com/mxcube/BlissFramework/tree/master/Bricks">BlissFramework/Bricks</a> and
+<a class="reference external" href="https://github.com/mxcube/mxcube/tree/master/Bricks">mxcube/Bricks</a>)
+and basic layout items (horizonal box, vertical box, groupbox etc.).
+Originaly it was written in Qt3 and later adopted to the Qt4 platform.
+It is possible to run MXCuBE on both Qt versions (<a class="reference internal" href="installation_instructions_qt4.html"><em>How to install and run Qt version</em></a>), but
+it is not possible to run both versions of Qt simultaneously.
+To clearly separate these two Qt version, Qt4 bricks, widgets and other
+files have prefix <a href="#id1"><span class="problematic" id="id2">Qt4_</span></a>.</p>
+<div class="section" id="best-practices">
+<h2>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">¶</a></h2>
+<p>To format code PEP-8 (<a class="reference external" href="http://www.python.org/dev/peps/pep-0008/">http://www.python.org/dev/peps/pep-0008/</a>) is used in general.
+However, Qt diverges from PEP-8 and uses camel case notation. This can be seen in the diagrams
+that contain Qt derived objects. New code should as much as possible confirm to PEP-8.</p>
+</div>
+<div class="section" id="qt-signals">
+<h2>Qt Signals<a class="headerlink" href="#qt-signals" title="Permalink to this headline">¶</a></h2>
+<p>Qt signals provides an elegant way of decoupling Qt objects from each other. However
+it can sometimes be difficult to understand the function of certain signals. Its therefore
+very important that both signals and slots are properly documented. Some objects might
+need alot of interaction/signals, it is in those cases recommended to use one signal to
+get a reference to the receiver object. The reference can be used to access the receiver
+object directly instead of defining alot of signals. This approach makes the code cleaner
+and easier to understand.</p>
+</div>
+<div class="section" id="widget-logic">
+<h2>Widget Logic<a class="headerlink" href="#widget-logic" title="Permalink to this headline">¶</a></h2>
+<p>Its recommended to separate widget logic from widget layout. One way of achieving that
+is to implement the layout in one widget and then use that layout from a widget which
+implements the logic.</p>
+</div>
+<div class="section" id="naming-conventions">
+<h2>Naming Conventions<a class="headerlink" href="#naming-conventions" title="Permalink to this headline">¶</a></h2>
+<p>Attributes which reference hardware objects should end with hwobj, for in-
+stance characterization hwobj or data collection hwobj. Names that are used frequently
+and/or which together with other names create long attribute names are abbreviated.
+The general rule is to use the first letter in each word. For instance, data collection
+group and data collection would be abbreviated dcg and dc.</p>
+</div>
+<div class="section" id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="installation_instructions_qt4.html"><em>How to install and run Qt version</em></a></li>
+<li><a class="reference internal" href="how_to_create_hwobj.html"><em>How to create hardware object</em></a></li>
+<li><a class="reference internal" href="how_to_create_qt_brick.html"><em>How to create GUI brick in Qt version</em></a></li>
+<li><code class="xref doc docutils literal"><span class="pre">how_to_define_gui</span></code></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Qt framework based GUI</a><ul>
+<li><a class="reference internal" href="#best-practices">Best Practices</a></li>
+<li><a class="reference internal" href="#qt-signals">Qt Signals</a></li>
+<li><a class="reference internal" href="#widget-logic">Widget Logic</a></li>
+<li><a class="reference internal" href="#naming-conventions">Naming Conventions</a></li>
+<li><a class="reference internal" href="#tutorials">Tutorials</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/qt_framework_overview.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">MxCuBE 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2013, MxCuBE Collaboration.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.6.
+    </div>
+  </body>
+</html>

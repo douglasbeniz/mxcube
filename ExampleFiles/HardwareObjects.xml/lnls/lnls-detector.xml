@@ -1,0 +1,39 @@
+<equipment class="LNLSDetector">
+  <!-- generic devices -->
+  <device hwrid="/lnls/lnls-motor_detector_distance" role="distance_motor"/>
+
+  <!-- generic properties -->
+  <tempThreshold>33.5</tempThreshold>
+  <humidityThreshold>20.0</humidityThreshold>
+  <tolerance>0.2</tolerance>
+  <type>pilatus</type>
+  <model>2M</model>
+  <manufacturer>DECTRIS</manufacturer>
+  <px>0.172</px>
+  <py>0.172</py>
+  <hasShutterless>False</hasShutterless>
+  <fileSuffix>cbf</fileSuffix>
+  <readoutPerImage>0.0023</readoutPerImage>
+
+  <!-- site specific properties -->
+  <pilatusEpicsAddress>MX2:cam1</pilatusEpicsAddress>
+  <shutterEpicsAddress>MXROB:StaubliCS8:SetShutter</shutterEpicsAddress>
+  <pilatusServerIP>10.2.48.33</pilatusServerIP>
+  <pilatusSshUser>det</pilatusSshUser>
+  <pilatusSshPassword>Pilatus2</pilatusSshPassword>
+  <!-- official -->
+  <pilatusServerStorageTemp>/MX2Temp</pilatusServerStorageTemp>
+  <pilatusServerStorage>/storage</pilatusServerStorage>
+  <!-- <pilatusServerStorageTemp>/sto2temp</pilatusServerStorageTemp>
+  <pilatusServerStorage>/sto2</pilatusServerStorage> -->
+  <camserverXpraDisplay>10002</camserverXpraDisplay>
+  <camserverXpraPath>/home/det/p2_det</camserverXpraPath>
+  <camserverXpraPort>1200</camserverXpraPort>
+  <camserverXpraProgram>xpra</camserverXpraProgram>
+  <camserverCamonlyProgram>/home/det/run_camonly.sh</camserverCamonlyProgram>
+  <camserverExitCommand>exit</camserverExitCommand>
+  <camserverScreenshotName>CamServer_Screenshot</camserverScreenshotName>
+  <camserverUniqueName>camserver</camserverUniqueName>
+  <!-- upper height (Beam center * 0.172) -->
+  <pilatusHalfOfHeight>145.684</pilatusHalfOfHeight>
+</equipment>

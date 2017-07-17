@@ -1,0 +1,4 @@
+<equipment class="LNLSAttenuator">
+    <!-- Channels -->
+    <channel type="epics" name="epicsAttenuator" polling="500">MX2:DMC6:bo2</channel>
+</equipment>

@@ -1,0 +1,14 @@
+<device class="LNLSMotor">
+    <!-- Channels -->
+    <channel type="epics" name="epicsMotor_val">MXROB:SlitGonioBase:motor.VAL</channel>
+    <channel type="epics" name="epicsMotor_rlv">MXROB:SlitGonioBase:motor.RLV</channel>
+    <channel type="epics" name="epicsMotor_rbv" polling="500">MXROB:SlitGonioBase:motor.RBV</channel>
+    <channel type="epics" name="epicsMotor_dmov" polling="500">MXROB:SlitGonioBase:motor.DMOV</channel>
+    <channel type="epics" name="epicsMotor_stop">MXROB:SlitGonioBase:motor.STOP</channel>
+    <channel type="epics" name="epicsMotor_velo">MXROB:SlitGonioBase:motorVELO</channel>
+    <channel type="epics" name="epicsMotor_dllm">MXROB:SlitGonioBase:motor.DLLM</channel>
+    <channel type="epics" name="epicsMotor_dhlm">MXROB:SlitGonioBase:motor.DHLM</channel>
+    <channel type="epics" name="epicsMotor_egu">MXROB:SlitGonioBase:motor.EGU</channel>
+    <!-- Properties -->
+    <motor_name>Slit2BaseZ</motor_name>
+</device>

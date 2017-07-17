@@ -1,0 +1,337 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Configuration example Files &mdash; MxCuBE 2.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="MxCuBE 2.0 documentation" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MxCuBE 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="configuration-example-files">
+<h1>Configuration example Files<a class="headerlink" href="#configuration-example-files" title="Permalink to this headline">¶</a></h1>
+<p>Example configuration files for framework-2 hardware objects.
+These xml files can also be found in ExampleFiles/HardwareObjects.xml.</p>
+<div class="section" id="basic-configuration-file-structure">
+<h2>Basic configuration file structure<a class="headerlink" href="#basic-configuration-file-structure" title="Permalink to this headline">¶</a></h2>
+<p>Configuration xml file defines hardware object behaviour. Available configuration methods are described in example:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>&lt;equipment <span class="nv">class</span><span class="o">=</span><span class="s2">&quot;ExampleClassName&quot;</span>&gt;
+  &lt;!-- Short description
+
+  --&gt;
+  &lt;!-- Channels --&gt;
+  &lt;channel <span class="nv">type</span><span class="o">=</span><span class="s2">&quot;exporter&quot;</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&quot;chanExporterChannelName&quot;</span>&gt;ExporterValueName&lt;/channel&gt;
+  &lt;channel <span class="nv">type</span><span class="o">=</span><span class="s2">&quot;spec&quot;</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&quot;chanSpecChannelName&quot;</span>&gt;SpecValueName&lt;/channel&gt;
+  &lt;channel <span class="nv">type</span><span class="o">=</span><span class="s2">&quot;tine&quot;</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&quot;chanTineChannelName&quot;</span> <span class="nv">tinename</span><span class="o">=</span><span class="s2">&quot;SpecificTineName&quot;</span>&gt;TineValueName&lt;/channel&gt;
+  &lt;channel <span class="nv">type</span><span class="o">=</span><span class="s2">&quot;tango&quot;</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&quot;chanTangoChannelName&quot;</span> <span class="nv">polling</span><span class="o">=</span><span class="s2">&quot;events&quot;</span>&gt;ChannelValueName&lt;/channel&gt;
+  &lt;channel <span class="nv">type</span><span class="o">=</span><span class="s2">&quot;taco&quot;</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&quot;chanTacoChannelName&quot;</span> <span class="nv">taconame</span><span class="o">=</span><span class="s2">&quot;TacoName&quot;</span> <span class="nv">polling</span><span class="o">=</span><span class="s2">&quot;3000&quot;</span> <span class="nv">compare</span><span class="o">=</span><span class="s2">&quot;False&quot;</span>&gt;TacoValueName&lt;/channel&gt;
+
+  &lt;!-- Command --&gt;
+  &lt;<span class="nb">command</span> <span class="nv">type</span><span class="o">=</span><span class="s2">&quot;exporter&quot;</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&quot;cmdExporterCmdName&quot;</span>&gt;ExporterValueName&lt;/command&gt;
+  &lt;<span class="nb">command</span> <span class="nv">type</span><span class="o">=</span><span class="s2">&quot;spec&quot;</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&quot;cmdSpecCmdName&quot;</span>&gt;SpecValueName&lt;/command&gt;
+  &lt;<span class="nb">command</span> <span class="nv">type</span><span class="o">=</span><span class="s2">&quot;tine&quot;</span> <span class="nv">name</span><span class="o">=</span><span class="s2">&quot;cmdTineCmdName&quot;</span> <span class="nv">tinename</span><span class="o">=</span><span class="s2">&quot;TineName&quot;</span>&gt;TineValueName&lt;/command&gt;
+
+  &lt;!-- Hardware objects --&gt;
+  &lt;object <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;/device-role&quot;</span> <span class="nv">role</span><span class="o">=</span><span class="s2">&quot;device_role&quot;</span>/&gt;
+  &lt;object <span class="nv">href</span><span class="o">=</span><span class="s2">&quot;/subdir/device-role-two&quot;</span> <span class="nv">role</span><span class="o">=</span><span class="s2">&quot;device_role_two&quot;</span>/&gt;
+
+  &lt;!-- Properties --&gt;
+  &lt;propertyNameOne&gt;0&lt;/propertyNameOne&gt;
+  &lt;propertyNameTwo&gt;1.23&lt;/propertyNameTwo&gt;
+  &lt;propertyNameThree&gt;<span class="s2">&quot;Demo value&quot;</span>&lt;/propertyNameThree&gt;
+  &lt;propertyNameFour&gt;True&lt;/propertyNameFour&gt;
+  &lt;propertyNameFive&gt;<span class="o">(</span>0, 1, 2, 3<span class="o">)</span>&lt;/propertyNameFive&gt;
+  &lt;propertyNameSix&gt;<span class="o">{</span><span class="s2">&quot;one&quot;</span>: 1, <span class="s2">&quot;two&quot;</span> : 2<span class="o">}</span>&lt;/propertyNameSix&gt;
+ &lt;/equipment&gt;
+</pre></div>
+</div>
+<p>Basic xml file formating guide lines:</p>
+<ul class="simple">
+<li>Xml file starts with class type (<strong>Device</strong>, <strong>Equipment</strong> or <strong>Procedure</strong>) and class name</li>
+<li>Class name should mach with hardware object file name and class name defined in this hardware object. If <strong>class=ExampleClassName</strong> then file <strong>ExampleClassName.py</strong> should contain <strong>class ExampleClassName</strong></li>
+<li>It is recommended to organize channels and command alphabetically.</li>
+<li>Channel name should have template <strong>chanExampleName</strong> and initialized as <strong>chan_example_name</strong></li>
+<li>Command name should have template <strong>cmdExampleName</strong> and initialized as <strong>cmd_example_name</strong></li>
+<li>Propety name should be in camelcase style. For example: propertyExampleName and initialized as self.property_example_name</li>
+<li>It is possible to use boolean, int, float, lists and dictionaries as property names</li>
+<li>Use xmllint filename.xml to verify xml</li>
+</ul>
+</div>
+<div class="section" id="generic-and-mockup-configuration-files">
+<h2>Generic and mockup configuration files<a class="headerlink" href="#generic-and-mockup-configuration-files" title="Permalink to this headline">¶</a></h2>
+<table class="hlist"><tr><td><ul class="simple">
+<li><a class="reference download internal" href="../_downloads/beam-info.xml" download=""><code class="xref download docutils literal"><span class="pre">beam-info.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/beamline-setup.xml" download=""><code class="xref download docutils literal"><span class="pre">beamline-setup.xml</span></code></a></li>
+<li><code class="xref download docutils literal"><span class="pre">beamline-test.xml</span></code></li>
+<li><a class="reference download internal" href="../_downloads/camera.xml" download=""><code class="xref download docutils literal"><span class="pre">camera.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/cats.xml" download=""><code class="xref download docutils literal"><span class="pre">cats.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/catsmaint.xml" download=""><code class="xref download docutils literal"><span class="pre">catsmaint.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/centring-math2.xml" download=""><code class="xref download docutils literal"><span class="pre">centring-math.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/collect-mockup.xml" download=""><code class="xref download docutils literal"><span class="pre">collect-mockup.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/data-analysis.xml" download=""><code class="xref download docutils literal"><span class="pre">data-analysis.xml</span></code></a></li>
+</ul>
+</td><td><ul class="simple">
+<li><a class="reference download internal" href="../_downloads/detector-mockup.xml" download=""><code class="xref download docutils literal"><span class="pre">detector-mockup.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-kappa-mockup.xml" download=""><code class="xref download docutils literal"><span class="pre">diff-kappa-mockup.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-kappaphi-mockup.xml" download=""><code class="xref download docutils literal"><span class="pre">diff-kappaphi-mockup.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-omega-mockup.xml" download=""><code class="xref download docutils literal"><span class="pre">diff-omega-mockup.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-phiz.xml" download=""><code class="xref download docutils literal"><span class="pre">diff-phiz.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diffractometer-mockup.xml" download=""><code class="xref download docutils literal"><span class="pre">diffractometer-mockup.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/edna_defaults.xml" download=""><code class="xref download docutils literal"><span class="pre">edna_defaults.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/energy-mockup.xml" download=""><code class="xref download docutils literal"><span class="pre">energy-mockup.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/energyscan-mockup.xml" download=""><code class="xref download docutils literal"><span class="pre">energyscan-mockup.xml</span></code></a></li>
+</ul>
+</td><td><ul class="simple">
+<li><a class="reference download internal" href="../_downloads/instanceconnection.xml" download=""><code class="xref download docutils literal"><span class="pre">instanceconnection.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/ldapconnection-mockup.xml" download=""><code class="xref download docutils literal"><span class="pre">ldapconnection-mockup.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/lims-client-mockup.xml" download=""><code class="xref download docutils literal"><span class="pre">lims-client-mockup.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/locallogin.xml" download=""><code class="xref download docutils literal"><span class="pre">locallogin.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/minikappa-correction.xml" download=""><code class="xref download docutils literal"><span class="pre">minikappa-correction.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/mockup_camera.xml" download=""><code class="xref download docutils literal"><span class="pre">mockup_camera.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/queue-model.xml" download=""><code class="xref download docutils literal"><span class="pre">queue_model.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/queue.xml" download=""><code class="xref download docutils literal"><span class="pre">queue.xml</span></code></a></li>
+</ul>
+</td><td><ul class="simple">
+<li><a class="reference download internal" href="../_downloads/resolution-mockup.xml" download=""><code class="xref download docutils literal"><span class="pre">resolution-mockup.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/sc-generic.xml" download=""><code class="xref download docutils literal"><span class="pre">sc-generic.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/sc-mockup.xml" download=""><code class="xref download docutils literal"><span class="pre">sc-mockup.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/session.xml" download=""><code class="xref download docutils literal"><span class="pre">session.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/shape-history.xml" download=""><code class="xref download docutils literal"><span class="pre">shape-history.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/transmission-mockup.xml" download=""><code class="xref download docutils literal"><span class="pre">transmission-mockup.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/xml-rpc-server.xml" download=""><code class="xref download docutils literal"><span class="pre">xml-rpc-server.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/xrf-spectrum-mockup.xml" download=""><code class="xref download docutils literal"><span class="pre">xrf-spectrum-mockup.xml</span></code></a></li>
+</ul>
+</td></tr></table>
+</div>
+<div class="section" id="esrf-id23-1">
+<h2>ESRF ID23_1<a class="headerlink" href="#esrf-id23-1" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="esrf-id29">
+<h2>ESRF ID29<a class="headerlink" href="#esrf-id29" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="embl-hamburg-p13">
+<h2>EMBL Hamburg P13<a class="headerlink" href="#embl-hamburg-p13" title="Permalink to this headline">¶</a></h2>
+<table class="hlist"><tr><td><ul class="simple">
+<li><a class="reference download internal" href="../_downloads/attenuators.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/attenuators.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/auto-processing.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/auto-processing.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/beam-info1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/beam-info.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/beam-test.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/beam-test.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/beamcmds.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/beamcmds.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/beamline-setup1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/beamline-setup.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/centring-math.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/centring-math.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/data-analysis1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/data-analysis.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/dbconnection.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/dbconnection.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/detector-distance.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/detector-distance.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/detector.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/detector.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/door-interlock.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/door-interlock.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/edna-defaults.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/edna-defaults.xml</span></code></a></li>
+</ul>
+</td><td><ul class="simple">
+<li><a class="reference download internal" href="../_downloads/energy.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/energy.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/energy-motor.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/energy-motor.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/energyscan.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/energyscan.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/image-tracking.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/image-tracking.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/instanceconnection1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/instanceconnection.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/ldapconnection.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/ldapconnection.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/locallogin1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/locallogin.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/minikappa-correction1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/minikappa-correction.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/mxcollect.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/mxcollect.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/ppu-control.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/ppu-control.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/queue-model1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/queue_model.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/queue1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/queue.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/resolution.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/eh1/resolution.xml</span></code></a></li>
+</ul>
+</td><td><ul class="simple">
+<li><a class="reference download internal" href="../_downloads/safshut.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/safshut.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/sc-generic1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/sc-generic.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/session1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/session.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/shape-history1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/shape-history.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/xml-rpc-server1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/xml-rpc-server.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/xrf-spectrum.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/xrf-spectrum.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/limavideo.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/ccd/limavideo.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/detector-distance.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/eh1/detector-distance.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/detector.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/eh1/detector.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-aperture.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/eh1/diff-aperture.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-backLight.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/eh1/diff-backLight.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-beamstop.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/eh1/diff-beamstop.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-centring-vert.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/eh1/diff-centring-vert.xml</span></code></a></li>
+</ul>
+</td><td><ul class="simple">
+<li><a class="reference download internal" href="../_downloads/diff-focus.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/eh1/diff-focus.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-frontLight.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/eh1/diff-frontLight.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-holder-length.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/eh1/diff-holder-length.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-kappa.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/eh1/diff-kappa.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-kappaphi.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/eh1/diff-kappaphi.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-omega.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/eh1/diff-omega.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-phiy.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/eh1/diff-phiy.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-phiz1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/eh1/diff-phiz.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-sampx.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/eh1/diff-sampx.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-sampy.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/eh1/diff-sampy.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-zoom.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/eh1/diff-zoom.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/resolution.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p13/eh1/resolution.xml</span></code></a></li>
+</ul>
+</td></tr></table>
+</div>
+<div class="section" id="embl-hamburg-p14">
+<h2>EMBL Hamburg P14<a class="headerlink" href="#embl-hamburg-p14" title="Permalink to this headline">¶</a></h2>
+<table class="hlist"><tr><td><ul class="simple">
+<li><a class="reference download internal" href="../_downloads/attenuators1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/attenuators.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/auto-processing1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/auto-processing.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/beam-info2.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/beam-info.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/beam-test1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/beam-test.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/beamcmds1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/beamcmds.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/beamline-setup2.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/beamline-setup.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/centring-math1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/centring-math.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/data-analysis2.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/data-analysis.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/dbconnection1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/dbconnection.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/door-interlock1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/door-interlock.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/edna-defaults1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/edna-defaults.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/energyscan1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/energyscan.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/image-tracking1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/image-tracking.xml</span></code></a></li>
+</ul>
+</td><td><ul class="simple">
+<li><a class="reference download internal" href="../_downloads/instanceconnection2.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/instanceconnection.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/locallogin2.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/locallogin.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/minikappa-correction2.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/minikappa-correction.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/mxcollect1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/mxcollect.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/ppu-control1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/ppu-control.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/queue-model2.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/queue_model.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/queue2.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/queue.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/safshut1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/safshut.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/sc-generic2.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/sc-generic.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/session2.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/session.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/shape-history2.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/shape-history.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/xml-rpc-server2.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/xml-rpc-server.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/xrf-spectrum1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/xrf-spectrum.xml</span></code></a></li>
+</ul>
+</td><td><ul class="simple">
+<li><a class="reference download internal" href="../_downloads/limavideo1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/ccd/limavideo.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/beamAttocube.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/eh1/beamAttocube.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/beamFocusing.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/eh1/beamFocusing.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/detector-distance1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/eh1/detector-distance.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/detector1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/eh1/detector.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-aperture1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/eh1/diff-aperture.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-beamstop1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/eh1/diff-beamstop.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-focus1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/eh1/diff-focus.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-frontLight1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/eh1/diff-frontLight.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-holder-length1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/eh1/diff-holder-length.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-kappa1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/eh1/diff-kappa.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-kappaphi1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/eh1/diff-kappaphi.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-light.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/eh1/diff-light.xml</span></code></a></li>
+</ul>
+</td><td><ul class="simple">
+<li><a class="reference download internal" href="../_downloads/diff-omega1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/eh1/diff-omega.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-phiy1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/eh1/diff-phiy.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-phiz2.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/eh1/diff-phiz.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-sampx1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/eh1/diff-sampx.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-sampy1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/eh1/diff-sampy.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/diff-zoom1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/eh1/diff-zoom.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/energy1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/eh1/energy.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/resolution1.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/eh1/resolution.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/attoGroup.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/eh1/attocubeMotors/attoGroup.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/P14BCU.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/eh1/beamFocusingMotors/P14BCU.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/P14DetTrans.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/eh1/beamFocusingMotors/P14DetTrans.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/P14ExpTbl.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/eh1/beamFocusingMotors/P14ExpTbl.xml</span></code></a></li>
+<li><a class="reference download internal" href="../_downloads/P14KB.xml" download=""><code class="xref download docutils literal"><span class="pre">embl_hh_p14/eh1/beamFocusingMotors/P14KB.xml</span></code></a></li>
+</ul>
+</td></tr></table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Configuration example Files</a><ul>
+<li><a class="reference internal" href="#basic-configuration-file-structure">Basic configuration file structure</a></li>
+<li><a class="reference internal" href="#generic-and-mockup-configuration-files">Generic and mockup configuration files</a></li>
+<li><a class="reference internal" href="#esrf-id23-1">ESRF ID23_1</a></li>
+<li><a class="reference internal" href="#esrf-id29">ESRF ID29</a></li>
+<li><a class="reference internal" href="#embl-hamburg-p13">EMBL Hamburg P13</a></li>
+<li><a class="reference internal" href="#embl-hamburg-p14">EMBL Hamburg P14</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/packages/example_files.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">MxCuBE 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2013, MxCuBE Collaboration.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.6.
+    </div>
+  </body>
+</html>

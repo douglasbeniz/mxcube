@@ -1,0 +1,25 @@
+<equipment class="LNLSSlitBox">
+    <object href="/lnls/lnls-beam_focus" role="focusing"/>             - focusing mode equipments
+    <!--
+    <focModeEq>/beamFocusing</focModeEq>             - focusing mode equipment
+    <focModes>['Unfocused', 'Horizontal', 'Vertical', 'Double']</focModes> 
+                                                     - used focusing modes
+    -->
+    <object href="/lnls/lnls-motor_slit1_gap_hor" role="slit_gap_hor"/>
+    <object href="/lnls/lnls-motor_slit1_gap_ver" role="slit_gap_ver"/>
+
+    <gapH>
+       <modesAllowed>['Unfocused', 'Vertical']</modesAllowed> - used modes
+       <stepSize>0.0050</stepSize>                            - step size used in spinbox
+       <minGap>0.001</minGap>                                 - min gap
+       <maxGap>5.000</maxGap>                                 - max max gap
+       <updateTolerance>0.0005</updateTolerance>              - gap update tolerance
+    </gapH>
+    <gapV>                                              
+       <modesAllowed>['Unfocused', 'Horizontal']</modesAllowed>
+       <stepSize>0.0050</stepSize>
+       <minGap>0.001</minGap>
+       <maxGap>5.000</maxGap>
+       <updateTolerance>0.0005</updateTolerance>
+    </gapV>
+</equipment>

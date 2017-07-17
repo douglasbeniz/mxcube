@@ -1,0 +1,687 @@
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:43,653 EpicsCommand: creating pv MXROB:DMC3:m7.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:43,680 EpicsCommand: creating pv MXROB:DMC3:m7.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:43,709 EpicsCommand: creating pv MXROB:DMC3:m5.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:43,711 EpicsCommand: creating pv MXROB:DMC3:m5.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:43,713 EpicsCommand: creating pv MXROB:DMC3:m5.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:43,714 EpicsCommand: creating pv MXROB:DMC3:m5.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:43,716 EpicsCommand: creating pv MXROB:DMC3:m5.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:43,717 EpicsCommand: creating pv MXROB:DMC3:m5.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:43,719 EpicsCommand: creating pv MXROB:DMC3:m5.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:43,721 EpicsCommand: creating pv MXROB:DMC3:m5.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:43,723 EpicsCommand: creating pv MXROB:DMC3:m5.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:43,726 EpicsCommand: creating pv MXROB:DMC1:m5.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:43,734 EpicsCommand: creating pv MXROB:DMC1:m5.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:43,762 EpicsCommand: creating pv MXROB:DMC1:m5.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:43,788 EpicsCommand: creating pv MXROB:DMC1:m5.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:43,815 EpicsCommand: creating pv MXROB:DMC1:m5.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:43,842 EpicsCommand: creating pv MXROB:DMC1:m5.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:43,868 EpicsCommand: Error connecting to pv MXROB:DMC1:m5.VELO.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:43,869 EpicsCommand: creating pv MXROB:DMC1:m5.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:43,896 EpicsCommand: creating pv MXROB:DMC1:m5.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:43,924 EpicsCommand: creating pv MXROB:DMC1:m5.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:43,951 EpicsCommand: creating pv MXROB:DMC1:m4.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:43,976 EpicsCommand: Error connecting to pv MXROB:DMC1:m4.VAL.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:43,977 EpicsCommand: creating pv MXROB:DMC1:m4.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:44,004 EpicsCommand: Error connecting to pv MXROB:DMC1:m4.RLV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,004 EpicsCommand: creating pv MXROB:DMC1:m4.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,032 EpicsCommand: creating pv MXROB:DMC1:m4.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,059 EpicsCommand: creating pv MXROB:DMC1:m4.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,086 EpicsCommand: creating pv MXROB:DMC1:m4.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,112 EpicsCommand: creating pv MXROB:DMC1:m4.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,140 EpicsCommand: creating pv MXROB:DMC1:m4.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,167 EpicsCommand: creating pv MXROB:DMC1:m4.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] WARNING 2017-03-20 16:38:44,194 Diffractometer: Zoom center is not defined continuing with the middle: {'y': 256.0, 'x': 320.0}
+* [Qt4_mx2_mxcube.gui, HWR] WARNING 2017-03-20 16:38:44,195 Diffractometer: Grid direction is not defined. Using default.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,350 EpicsCommand: creating pv MXROB:DMC2:m4.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:44,358 EpicsCommand: Error connecting to pv MXROB:DMC2:m4.VAL.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,359 EpicsCommand: creating pv MXROB:DMC2:m4.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,384 EpicsCommand: creating pv MXROB:DMC2:m4.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,412 EpicsCommand: creating pv MXROB:DMC2:m4.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:44,438 EpicsCommand: Error connecting to pv MXROB:DMC2:m4.DMOV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,438 EpicsCommand: creating pv MXROB:DMC2:m4.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:44,465 EpicsCommand: Error connecting to pv MXROB:DMC2:m4.STOP.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,465 EpicsCommand: creating pv MXROB:DMC2:m4.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,493 EpicsCommand: creating pv MXROB:DMC2:m4.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,519 EpicsCommand: creating pv MXROB:DMC2:m4.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,546 EpicsCommand: creating pv MXROB:DMC2:m4.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,574 EpicsCommand: creating pv MXROB:DMC2:m2.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,600 EpicsCommand: creating pv MXROB:DMC2:m2.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,628 EpicsCommand: creating pv MXROB:DMC2:m2.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,655 EpicsCommand: creating pv MXROB:DMC2:m2.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,681 EpicsCommand: creating pv MXROB:DMC2:m2.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,708 EpicsCommand: creating pv MXROB:DMC2:m2.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,736 EpicsCommand: creating pv MXROB:DMC2:m2.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,762 EpicsCommand: creating pv MXROB:DMC2:m2.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,791 EpicsCommand: creating pv MXROB:DMC2:m2.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,820 BeamFocusing: No motors defined
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,830 EpicsCommand: creating pv MXROB:DMC2:m8.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:44,843 EpicsCommand: Error connecting to pv MXROB:DMC2:m8.VAL.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,843 EpicsCommand: creating pv MXROB:DMC2:m8.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,871 EpicsCommand: creating pv MXROB:DMC2:m8.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,898 EpicsCommand: creating pv MXROB:DMC2:m8.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,925 EpicsCommand: creating pv MXROB:DMC2:m8.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:44,951 EpicsCommand: Error connecting to pv MXROB:DMC2:m8.STOP.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,951 EpicsCommand: creating pv MXROB:DMC2:m8.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:44,978 EpicsCommand: Error connecting to pv MXROB:DMC2:m8.VELO.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:44,978 EpicsCommand: creating pv MXROB:DMC2:m8.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:45,006 EpicsCommand: creating pv MXROB:DMC2:m8.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:45,032 EpicsCommand: Error connecting to pv MXROB:DMC2:m8.DHLM.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:45,033 EpicsCommand: creating pv MXROB:DMC2:m8.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:45,062 EpicsCommand: creating pv MXROB:DMC2:m6.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:45,086 EpicsCommand: Error connecting to pv MXROB:DMC2:m6.VAL.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:45,086 EpicsCommand: creating pv MXROB:DMC2:m6.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:45,114 EpicsCommand: creating pv MXROB:DMC2:m6.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:45,142 EpicsCommand: creating pv MXROB:DMC2:m6.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:45,169 EpicsCommand: creating pv MXROB:DMC2:m6.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:45,195 EpicsCommand: Error connecting to pv MXROB:DMC2:m6.STOP.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:45,195 EpicsCommand: creating pv MXROB:DMC2:m6.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:45,222 EpicsCommand: creating pv MXROB:DMC2:m6.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:45,252 EpicsCommand: creating pv MXROB:DMC2:m6.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:45,275 EpicsCommand: Error connecting to pv MXROB:DMC2:m6.DHLM.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:45,276 EpicsCommand: creating pv MXROB:DMC2:m6.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:45,987 EpicsCommand: creating pv MXROB:StaubliCS8:SetShutter.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, root] ERROR 2017-03-20 16:38:46,258 /usr/local/src/mxcube/HardwareObjects/LNLS/LNLSDetector.py:18: RuntimeWarning: Patching more than once will result in the union of all True parameters being patched
+  monkey.patch_all()
+
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:46,272 EpicsCommand: creating pv MXROB:DMC1:m3.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:46,279 EpicsCommand: creating pv MXROB:DMC1:m3.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:46,305 EpicsCommand: creating pv MXROB:DMC1:m3.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:46,332 EpicsCommand: creating pv MXROB:DMC1:m3.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:46,359 EpicsCommand: creating pv MXROB:DMC1:m3.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:46,386 EpicsCommand: Error connecting to pv MXROB:DMC1:m3.STOP.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:46,387 EpicsCommand: creating pv MXROB:DMC1:m3.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:46,413 EpicsCommand: creating pv MXROB:DMC1:m3.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:46,439 EpicsCommand: Error connecting to pv MXROB:DMC1:m3.DLLM.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:46,440 EpicsCommand: creating pv MXROB:DMC1:m3.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:46,468 EpicsCommand: creating pv MXROB:DMC1:m3.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:46,493 EpicsCommand: Error connecting to pv MXROB:DMC1:m3.EGU.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:46,562 LDAP Server is not available
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:46,570 EpicsCommand: creating pv MX2:DMC4:m4.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:46,582 EpicsCommand: Error connecting to pv MX2:DMC4:m4.VAL.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:46,582 EpicsCommand: creating pv MX2:DMC4:m4.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:46,606 EpicsCommand: creating pv MX2:DMC4:m4.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:46,634 EpicsCommand: creating pv MX2:DMC4:m4.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:46,661 EpicsCommand: creating pv MX2:DMC4:m4.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:46,687 EpicsCommand: creating pv MX2:DMC4:m4.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:46,713 EpicsCommand: Error connecting to pv MX2:DMC4:m4.DLLM.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:46,714 EpicsCommand: creating pv MX2:DMC4:m4.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:46,743 EpicsCommand: Error connecting to pv MX2:DMC4:m4.DHLM.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:46,743 EpicsCommand: creating pv MX2:DMC4:m4.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:46,770 EpicsCommand: creating pv MX2:DMC4:m1.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:46,796 EpicsCommand: creating pv MX2:DMC4:m1.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:46,822 EpicsCommand: creating pv MX2:DMC4:m1.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:46,852 EpicsCommand: creating pv MX2:DMC4:m1.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:46,876 EpicsCommand: Error connecting to pv MX2:DMC4:m1.DMOV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:46,877 EpicsCommand: creating pv MX2:DMC4:m1.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:46,905 EpicsCommand: creating pv MX2:DMC4:m1.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:46,931 EpicsCommand: creating pv MX2:DMC4:m1.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:46,957 EpicsCommand: Error connecting to pv MX2:DMC4:m1.DHLM.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:46,957 EpicsCommand: creating pv MX2:DMC4:m1.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:47,011 EpicsCommand: creating pv LNLS:ANEL:corrente: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:47,038 EpicsCommand: Error connecting to pv LNLS:ANEL:corrente.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:47,039 EpicsCommand: creating pv LNLS:ANEL:gama_en: read_as_str = True
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:47,065 EpicsCommand: creating pv MX2:IO:ai10: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:47,093 EpicsCommand: Error connecting to pv MX2:IO:ai10.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:47,094 EpicsCommand: creating pv MX2:IO:ai11: read_as_str = False
+* [Qt4_mx2_mxcube.gui, root] INFO 2017-03-20 16:38:47,126 ParallelProcessing: No beamstop hwobj defined
+* [Qt4_mx2_mxcube.gui, HWR] WARNING 2017-03-20 16:38:47,149 LNLSEnergyScan: Database hwobj not defined
+* [Qt4_mx2_mxcube.gui, HWR] WARNING 2017-03-20 16:38:47,149 LNLSEnergyScan: Transmission hwobj not defined
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:47,186 LDAP Server is not available
+* [Qt4_mx2_mxcube.gui, queue_exec] INFO 2017-03-20 16:38:47,210 Module load, probably application start
+* [Qt4_mx2_mxcube.gui, root] INFO 2017-03-20 16:38:47,441 connectNotify statusChanged
+* [Qt4_mx2_mxcube.gui, root] INFO 2017-03-20 16:38:47,441 connectNotify stateChanged
+* [Qt4_mx2_mxcube.gui, root] INFO 2017-03-20 16:38:47,441 connectNotify infoChanged
+* [Qt4_mx2_mxcube.gui, root] INFO 2017-03-20 16:38:47,442 connectNotify selectionChanged
+* [Qt4_mx2_mxcube.gui, root] INFO 2017-03-20 16:38:47,442 connectNotify loadedSampleChanged
+* [Qt4_mx2_mxcube.gui, root] ERROR 2017-03-20 16:38:48,214 Cannot import module Qt4_XRFSpectrumParametersBrick
+Traceback (most recent call last):
+  File "/usr/local/src/mxcube_2017_03_06_01_mx2a/BlissFramework/Qt4_Configuration.py", line 37, in loadModule
+    mod = imp.load_module(brick_name, fp, path_name, description)
+  File "/usr/local/lib/python3.4/imp.py", line 235, in load_module
+    return load_source(name, filename, file)
+  File "/usr/local/lib/python3.4/imp.py", line 171, in load_source
+    module = methods.load()
+  File "<frozen importlib._bootstrap>", line 1220, in load
+  File "<frozen importlib._bootstrap>", line 1200, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1129, in _exec
+  File "<frozen importlib._bootstrap>", line 1471, in exec_module
+  File "<frozen importlib._bootstrap>", line 321, in _call_with_frames_removed
+  File "/usr/local/src/mxcube_2017_03_06_01_mx2a/Bricks/Qt4_XRFSpectrumParametersBrick.py", line 23, in <module>
+    from widgets.Qt4_xrf_spectrum_parameters_widget import XRFSpectrumParametersWidget
+  File "/usr/local/src/mxcube_2017_03_06_01_mx2a/Bricks/widgets/Qt4_xrf_spectrum_parameters_widget.py", line 30, in <module>
+    from widgets.Qt4_mca_spectrum_widget import McaSpectrumWidget
+  File "/usr/local/src/mxcube_2017_03_06_01_mx2a/Bricks/widgets/Qt4_mca_spectrum_widget.py", line 56, in <module>
+    from PyMca import McaAdvancedFit
+  File "/usr/local/lib/python3.4/site-packages/PyMca/McaAdvancedFit.py", line 64, in <module>
+    from PyMca import QtBlissGraph
+  File "/usr/local/lib/python3.4/site-packages/PyMca/QtBlissGraph.py", line 43, in <module>
+    from PyQt4 import Qwt5
+ImportError: cannot import name 'Qwt5'
+* [Qt4_mx2_mxcube.gui, root] ERROR 2017-03-20 16:38:48,218 Cannot load brick xrf_spectrum_parameters : module could not be loaded.
+* [Qt4_mx2_mxcube.gui, root] INFO 2017-03-20 16:38:48,427 connectNotify infoChanged
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:48,439 EpicsCommand: creating pv MX2:DMC4:m3.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:48,446 EpicsCommand: Error connecting to pv MX2:DMC4:m3.VAL.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:48,447 EpicsCommand: creating pv MX2:DMC4:m3.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:48,474 EpicsCommand: creating pv MX2:DMC4:m3.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:48,499 EpicsCommand: Error connecting to pv MX2:DMC4:m3.RBV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:48,500 EpicsCommand: creating pv MX2:DMC4:m3.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:48,530 EpicsCommand: creating pv MX2:DMC4:m3.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:48,554 EpicsCommand: creating pv MX2:DMC4:m3.LLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:48,582 EpicsCommand: creating pv MX2:DMC4:m3.HLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:48,608 EpicsCommand: creating pv MX2:DMC4:m3.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:48,649 EpicsCommand: creating pv MXROB:DMC3:m1.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:48,660 EpicsCommand: creating pv MXROB:DMC3:m1.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:48,685 EpicsCommand: Error connecting to pv MXROB:DMC3:m1.RLV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:48,686 EpicsCommand: creating pv MXROB:DMC3:m1.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:48,714 EpicsCommand: creating pv MXROB:DMC3:m1.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:48,741 EpicsCommand: Error connecting to pv MXROB:DMC3:m1.DMOV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:48,741 EpicsCommand: creating pv MXROB:DMC3:m1.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:48,767 EpicsCommand: creating pv MXROB:DMC3:m1.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:48,795 EpicsCommand: creating pv MXROB:DMC3:m1.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:48,821 EpicsCommand: creating pv MXROB:DMC3:m1.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:48,850 EpicsCommand: creating pv MXROB:DMC3:m1.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:48,888 EpicsCommand: creating pv MXROB:DMC3:m2.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:48,902 EpicsCommand: Error connecting to pv MXROB:DMC3:m2.VAL.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:48,902 EpicsCommand: creating pv MXROB:DMC3:m2.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:48,929 EpicsCommand: Error connecting to pv MXROB:DMC3:m2.RLV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:48,929 EpicsCommand: creating pv MXROB:DMC3:m2.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:48,957 EpicsCommand: creating pv MXROB:DMC3:m2.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:48,985 EpicsCommand: creating pv MXROB:DMC3:m2.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,011 EpicsCommand: creating pv MXROB:DMC3:m2.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,039 EpicsCommand: creating pv MXROB:DMC3:m2.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:49,065 EpicsCommand: Error connecting to pv MXROB:DMC3:m2.DLLM.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,065 EpicsCommand: creating pv MXROB:DMC3:m2.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,092 EpicsCommand: creating pv MXROB:DMC3:m2.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:49,119 EpicsCommand: Error connecting to pv MXROB:DMC3:m2.EGU.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,132 EpicsCommand: creating pv MXROB:DMC3:m3.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:49,146 EpicsCommand: Error connecting to pv MXROB:DMC3:m3.VAL.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,146 EpicsCommand: creating pv MXROB:DMC3:m3.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:49,173 EpicsCommand: Error connecting to pv MXROB:DMC3:m3.RLV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,174 EpicsCommand: creating pv MXROB:DMC3:m3.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,203 EpicsCommand: creating pv MXROB:DMC3:m3.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,231 EpicsCommand: creating pv MXROB:DMC3:m3.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,256 EpicsCommand: creating pv MXROB:DMC3:m3.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,284 EpicsCommand: creating pv MXROB:DMC3:m3.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,309 EpicsCommand: creating pv MXROB:DMC3:m3.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:49,335 EpicsCommand: Error connecting to pv MXROB:DMC3:m3.DHLM.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,336 EpicsCommand: creating pv MXROB:DMC3:m3.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,376 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,393 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:49,416 EpicsCommand: Error connecting to pv MXROB:SlitGonioBase:motor.RLV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,416 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,445 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,471 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:49,497 EpicsCommand: Error connecting to pv MXROB:SlitGonioBase:motor.STOP.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,498 EpicsCommand: creating pv MXROB:SlitGonioBase:motorVELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,526 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:49,552 EpicsCommand: Error connecting to pv MXROB:SlitGonioBase:motor.DLLM.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,553 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,580 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:49,606 EpicsCommand: Error connecting to pv MXROB:SlitGonioBase:motor.EGU.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,926 EpicsCommand: creating pv MX2:DMC4:m3.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,928 EpicsCommand: creating pv MX2:DMC4:m3.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,929 EpicsCommand: creating pv MX2:DMC4:m3.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,931 EpicsCommand: creating pv MX2:DMC4:m3.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,932 EpicsCommand: creating pv MX2:DMC4:m3.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,933 EpicsCommand: creating pv MX2:DMC4:m3.HLS: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:49,962 EpicsCommand: Error connecting to pv MX2:DMC4:m3.HLS.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,963 EpicsCommand: creating pv MX2:DMC4:m3.LLS: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:49,988 EpicsCommand: Error connecting to pv MX2:DMC4:m3.LLS.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,988 EpicsCommand: creating pv MX2:DMC4:m3.HLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,989 EpicsCommand: creating pv MX2:DMC4:m3.LLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:49,991 EpicsCommand: creating pv MX2:IO:ai9: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,015 EpicsCommand: creating pv MXROB:DMC3:m1.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,018 EpicsCommand: creating pv MXROB:DMC3:m1.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,019 EpicsCommand: creating pv MXROB:DMC3:m1.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,021 EpicsCommand: creating pv MXROB:DMC3:m1.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,022 EpicsCommand: creating pv MXROB:DMC3:m1.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,025 EpicsCommand: creating pv MXROB:DMC3:m1.HLS: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,041 EpicsCommand: creating pv MXROB:DMC3:m1.LLS: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,067 EpicsCommand: creating pv MXROB:DMC3:m1.HLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,094 EpicsCommand: creating pv MXROB:DMC3:m1.LLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:50,120 EpicsCommand: Error connecting to pv MXROB:DMC3:m1.LLM.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,120 EpicsCommand: creating pv MXROB:DMC3:m2.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,122 EpicsCommand: creating pv MXROB:DMC3:m2.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,124 EpicsCommand: creating pv MXROB:DMC3:m2.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,125 EpicsCommand: creating pv MXROB:DMC3:m2.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,128 EpicsCommand: creating pv MXROB:DMC3:m2.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,131 EpicsCommand: creating pv MXROB:DMC3:m2.HLS: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,149 EpicsCommand: creating pv MXROB:DMC3:m2.LLS: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,175 EpicsCommand: creating pv MXROB:DMC3:m2.HLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,204 EpicsCommand: creating pv MXROB:DMC3:m2.LLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,229 EpicsCommand: creating pv MX2:IO:ai10: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,231 EpicsCommand: creating pv MXROB:DMC3:m3.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,232 EpicsCommand: creating pv MXROB:DMC3:m3.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,234 EpicsCommand: creating pv MXROB:DMC3:m3.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,237 EpicsCommand: creating pv MXROB:DMC3:m3.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,238 EpicsCommand: creating pv MXROB:DMC3:m3.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,240 EpicsCommand: creating pv MXROB:DMC3:m3.HLS: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:50,255 EpicsCommand: Error connecting to pv MXROB:DMC3:m3.HLS.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,256 EpicsCommand: creating pv MXROB:DMC3:m3.LLS: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,284 EpicsCommand: creating pv MXROB:DMC3:m3.HLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,310 EpicsCommand: creating pv MXROB:DMC3:m3.LLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,338 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,339 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,341 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,344 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,345 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,347 EpicsCommand: creating pv MXROB:SlitGonioBase:motorHLS: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,364 EpicsCommand: creating pv MXROB:SlitGonioBase:motorLLS: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,392 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.HLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,418 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.LLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:50,447 EpicsCommand: Error connecting to pv MXROB:SlitGonioBase:motor.LLM.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,447 EpicsCommand: creating pv MX2:IO:ai11: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:50,676 Cannot load Hardware Object "/" : file not found.
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:50,722 Cannot load Hardware Object "/" : file not found.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,737 EpicsCommand: creating pv MXROB:StaubliCS8:SetLight1: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:50,743 EpicsCommand: Error connecting to pv MXROB:StaubliCS8:SetLight1.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,748 EpicsCommand: creating pv MXROB:StaubliCS8:SetLight2: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:38:50,769 EpicsCommand: Error connecting to pv MXROB:StaubliCS8:SetLight2.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:50,773 EpicsCommand: creating pv MXROB:StaubliCS8:SetLight3: read_as_str = False
+* [Qt4_mx2_mxcube.gui, root] ERROR 2017-03-20 16:38:50,851 No slot 'populate_xrf_widget' in receiver xrf_spectrum_parameters
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:38:51,247 InstanceServer: listening to connections on mx2a-linux:14001
+* [Qt4_mx2_mxcube.gui, root] ERROR 2017-03-20 16:39:01,378 Problem removing the lock file
+* [Qt4_mx2_mxcube.gui, root] ERROR 2017-03-20 16:39:01,378 Problem removing the log lock file
+Traceback (most recent call last):
+  File "/usr/local/src/mxcube_2017_03_06_01_mx2a/BlissFramework/Qt4_startGUI.py", line 312, in run
+    os.unlink(filename)
+PermissionError: [Errno 1] Operation not permitted: '/tmp/.mxcube.log.lock'
+* [Qt4_mx2_mxcube.gui, root] INFO 2017-03-20 16:39:08,489 Qt4 GUI started (/usr/local/src/mxcube/Qt4_mx2_mxcube.gui), HWRSERVER=/usr/local/src/mxcube/ExampleFiles/HardwareObjects.xml, HODIRS=/usr/local/src/mxcube_2017_03_06_01_mx2a/HardwareObjects, BRICKSDIRS=/usr/local/src/mxcube_2017_03_06_01_mx2a/Bricks
+* [Qt4_mx2_mxcube.gui, root] INFO 2017-03-20 16:39:08,499 Connected to Hardware Repository server ['/usr/local/src/mxcube/ExampleFiles/HardwareObjects.xml']
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:08,573 EpicsCommand: creating pv MXROB:S300:m1.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:08,606 EpicsCommand: Error connecting to pv MXROB:S300:m1.VAL.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:08,607 EpicsCommand: creating pv MXROB:S300:m1.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:08,630 EpicsCommand: Error connecting to pv MXROB:S300:m1.RLV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:08,631 EpicsCommand: creating pv MXROB:S300:m1.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:08,659 EpicsCommand: creating pv MXROB:S300:m1.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:08,686 EpicsCommand: creating pv MXROB:S300:m1.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:08,712 EpicsCommand: Error connecting to pv MXROB:S300:m1.STOP.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:08,712 EpicsCommand: creating pv MXROB:S300:m1.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:08,741 EpicsCommand: creating pv MXROB:S300:m1.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:08,767 EpicsCommand: creating pv MXROB:S300:m1.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:08,794 EpicsCommand: creating pv MXROB:S300:m1.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:08,820 EpicsCommand: Error connecting to pv MXROB:S300:m1.EGU.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:08,834 EpicsCommand: creating pv MXROB:DMC1:m6.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:08,850 EpicsCommand: Error connecting to pv MXROB:DMC1:m6.VAL.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:08,850 EpicsCommand: creating pv MXROB:DMC1:m6.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:08,875 EpicsCommand: creating pv MXROB:DMC1:m6.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:08,902 EpicsCommand: creating pv MXROB:DMC1:m6.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:08,928 EpicsCommand: Error connecting to pv MXROB:DMC1:m6.DMOV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:08,929 EpicsCommand: creating pv MXROB:DMC1:m6.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:08,956 EpicsCommand: creating pv MXROB:DMC1:m6.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:08,982 EpicsCommand: Error connecting to pv MXROB:DMC1:m6.VELO.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:08,983 EpicsCommand: creating pv MXROB:DMC1:m6.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,010 EpicsCommand: creating pv MXROB:DMC1:m6.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,037 EpicsCommand: creating pv MXROB:DMC1:m6.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:09,063 EpicsCommand: Error connecting to pv MXROB:DMC1:m6.EGU.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,076 EpicsCommand: creating pv MXROB:DMC1:m7.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:09,090 EpicsCommand: Error connecting to pv MXROB:DMC1:m7.VAL.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,091 EpicsCommand: creating pv MXROB:DMC1:m7.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:09,117 EpicsCommand: Error connecting to pv MXROB:DMC1:m7.RLV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,118 EpicsCommand: creating pv MXROB:DMC1:m7.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:09,145 EpicsCommand: Error connecting to pv MXROB:DMC1:m7.RBV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,146 EpicsCommand: creating pv MXROB:DMC1:m7.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,173 EpicsCommand: creating pv MXROB:DMC1:m7.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:09,199 EpicsCommand: Error connecting to pv MXROB:DMC1:m7.STOP.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,199 EpicsCommand: creating pv MXROB:DMC1:m7.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,227 EpicsCommand: creating pv MXROB:DMC1:m7.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,254 EpicsCommand: creating pv MXROB:DMC1:m7.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,281 EpicsCommand: creating pv MXROB:DMC1:m7.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,321 EpicsCommand: creating pv MXROB:DMC1:m1.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:09,335 EpicsCommand: Error connecting to pv MXROB:DMC1:m1.VAL.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,335 EpicsCommand: creating pv MXROB:DMC1:m1.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,363 EpicsCommand: creating pv MXROB:DMC1:m1.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,390 EpicsCommand: creating pv MXROB:DMC1:m1.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:09,415 EpicsCommand: Error connecting to pv MXROB:DMC1:m1.DMOV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,416 EpicsCommand: creating pv MXROB:DMC1:m1.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,443 EpicsCommand: creating pv MXROB:DMC1:m1.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:09,470 EpicsCommand: Error connecting to pv MXROB:DMC1:m1.VELO.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,470 EpicsCommand: creating pv MXROB:DMC1:m1.LLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,497 EpicsCommand: creating pv MXROB:DMC1:m1.HLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,525 EpicsCommand: creating pv MXROB:DMC1:m1.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,560 EpicsCommand: creating pv MXROB:DMC1:m2.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,579 EpicsCommand: creating pv MXROB:DMC1:m2.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,606 EpicsCommand: creating pv MXROB:DMC1:m2.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,633 EpicsCommand: creating pv MXROB:DMC1:m2.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,660 EpicsCommand: creating pv MXROB:DMC1:m2.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,686 EpicsCommand: creating pv MXROB:DMC1:m2.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,713 EpicsCommand: creating pv MXROB:DMC1:m2.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,741 EpicsCommand: creating pv MXROB:DMC1:m2.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,767 EpicsCommand: creating pv MXROB:DMC1:m2.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,807 EpicsCommand: creating pv MXROB:DMC3:m5.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:09,824 EpicsCommand: Error connecting to pv MXROB:DMC3:m5.VAL.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,824 EpicsCommand: creating pv MXROB:DMC3:m5.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,849 EpicsCommand: creating pv MXROB:DMC3:m5.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,875 EpicsCommand: creating pv MXROB:DMC3:m5.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:09,902 EpicsCommand: Error connecting to pv MXROB:DMC3:m5.DMOV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,903 EpicsCommand: creating pv MXROB:DMC3:m5.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,930 EpicsCommand: creating pv MXROB:DMC3:m5.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:09,956 EpicsCommand: Error connecting to pv MXROB:DMC3:m5.VELO.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,957 EpicsCommand: creating pv MXROB:DMC3:m5.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:09,984 EpicsCommand: creating pv MXROB:DMC3:m5.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:10,011 EpicsCommand: creating pv MXROB:DMC3:m5.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:10,051 EpicsCommand: creating pv MXROB:DMC3:m6.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:10,065 EpicsCommand: creating pv MXROB:DMC3:m6.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:10,092 EpicsCommand: creating pv MXROB:DMC3:m6.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:10,118 EpicsCommand: Error connecting to pv MXROB:DMC3:m6.RBV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:10,119 EpicsCommand: creating pv MXROB:DMC3:m6.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:10,147 EpicsCommand: creating pv MXROB:DMC3:m6.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:10,175 EpicsCommand: creating pv MXROB:DMC3:m6.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:10,201 EpicsCommand: Error connecting to pv MXROB:DMC3:m6.VELO.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:10,202 EpicsCommand: creating pv MXROB:DMC3:m6.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:10,227 EpicsCommand: creating pv MXROB:DMC3:m6.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:10,256 EpicsCommand: creating pv MXROB:DMC3:m6.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:10,675 EpicsCommand: creating pv MXROB:image_ueye:ArrayData: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:11,619 EpicsCommand: Error connecting to pv MXROB:image_ueye:ArrayData.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:11,620 EpicsCommand: creating pv MXROB:image_ueye:ArrayCallbacks: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:11,633 EpicsCommand: Error connecting to pv MXROB:image_ueye:ArrayCallbacks.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:11,634 EpicsCommand: creating pv MXROB:image_ueye:EnableCallbacks: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:11,661 EpicsCommand: creating pv MXROB:ueye:AcquisitionStop: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:11,688 EpicsCommand: creating pv MXROB:ueye:AcquisitionStart: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:11,714 EpicsCommand: Error connecting to pv MXROB:ueye:AcquisitionStart.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:11,715 EpicsCommand: creating pv MXROB:ueye:AcquireTime: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:11,745 EpicsCommand: Error connecting to pv MXROB:ueye:AcquireTime.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:11,745 EpicsCommand: creating pv MXROB:ueye:AcquireTime_RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:11,769 EpicsCommand: creating pv MXROB:ueye:Gain: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:11,796 EpicsCommand: creating pv MXROB:ueye:Gain_RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:11,822 EpicsCommand: Error connecting to pv MXROB:ueye:Gain_RBV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:11,823 EpicsCommand: creating pv MXROB:ueye:AutoGain: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:11,849 EpicsCommand: Error connecting to pv MXROB:ueye:AutoGain.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:11,850 EpicsCommand: creating pv MXROB:ueye:AutoGain_RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:11,880 EpicsCommand: creating pv MXROB:ueye:FramesPerSecond: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:11,904 EpicsCommand: Error connecting to pv MXROB:ueye:FramesPerSecond.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:11,905 EpicsCommand: creating pv MXROB:ueye:FramesPerSecond: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:11,921 EpicsCommand: creating pv MXROB:DMC3:m7.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:11,931 EpicsCommand: Error connecting to pv MXROB:DMC3:m7.VAL.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:11,932 EpicsCommand: creating pv MXROB:DMC3:m7.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:11,960 EpicsCommand: creating pv MXROB:DMC3:m7.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:11,985 EpicsCommand: Error connecting to pv MXROB:DMC3:m7.RBV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:11,986 EpicsCommand: creating pv MXROB:DMC3:m7.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,013 EpicsCommand: creating pv MXROB:DMC3:m7.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,040 EpicsCommand: creating pv MXROB:DMC3:m7.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,069 EpicsCommand: creating pv MXROB:DMC3:m7.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,094 EpicsCommand: creating pv MXROB:DMC3:m7.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,122 EpicsCommand: creating pv MXROB:DMC3:m7.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,150 EpicsCommand: creating pv MXROB:DMC3:m5.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,152 EpicsCommand: creating pv MXROB:DMC3:m5.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,153 EpicsCommand: creating pv MXROB:DMC3:m5.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,154 EpicsCommand: creating pv MXROB:DMC3:m5.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,156 EpicsCommand: creating pv MXROB:DMC3:m5.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,157 EpicsCommand: creating pv MXROB:DMC3:m5.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,159 EpicsCommand: creating pv MXROB:DMC3:m5.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,161 EpicsCommand: creating pv MXROB:DMC3:m5.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,163 EpicsCommand: creating pv MXROB:DMC3:m5.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,165 EpicsCommand: creating pv MXROB:DMC1:m5.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:12,174 EpicsCommand: Error connecting to pv MXROB:DMC1:m5.VAL.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,175 EpicsCommand: creating pv MXROB:DMC1:m5.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,204 EpicsCommand: creating pv MXROB:DMC1:m5.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:12,229 EpicsCommand: Error connecting to pv MXROB:DMC1:m5.RBV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,229 EpicsCommand: creating pv MXROB:DMC1:m5.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:12,257 EpicsCommand: Error connecting to pv MXROB:DMC1:m5.DMOV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,257 EpicsCommand: creating pv MXROB:DMC1:m5.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,285 EpicsCommand: creating pv MXROB:DMC1:m5.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:12,309 EpicsCommand: Error connecting to pv MXROB:DMC1:m5.VELO.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,310 EpicsCommand: creating pv MXROB:DMC1:m5.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,337 EpicsCommand: creating pv MXROB:DMC1:m5.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,365 EpicsCommand: creating pv MXROB:DMC1:m5.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:12,391 EpicsCommand: Error connecting to pv MXROB:DMC1:m5.EGU.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,392 EpicsCommand: creating pv MXROB:DMC1:m4.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,419 EpicsCommand: creating pv MXROB:DMC1:m4.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:12,445 EpicsCommand: Error connecting to pv MXROB:DMC1:m4.RLV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,446 EpicsCommand: creating pv MXROB:DMC1:m4.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,473 EpicsCommand: creating pv MXROB:DMC1:m4.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,501 EpicsCommand: creating pv MXROB:DMC1:m4.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:12,526 EpicsCommand: Error connecting to pv MXROB:DMC1:m4.STOP.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,526 EpicsCommand: creating pv MXROB:DMC1:m4.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:12,554 EpicsCommand: Error connecting to pv MXROB:DMC1:m4.VELO.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,554 EpicsCommand: creating pv MXROB:DMC1:m4.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,582 EpicsCommand: creating pv MXROB:DMC1:m4.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:12,608 EpicsCommand: Error connecting to pv MXROB:DMC1:m4.DHLM.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,608 EpicsCommand: creating pv MXROB:DMC1:m4.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] WARNING 2017-03-20 16:39:12,636 Diffractometer: Zoom center is not defined continuing with the middle: {'y': 256.0, 'x': 320.0}
+* [Qt4_mx2_mxcube.gui, HWR] WARNING 2017-03-20 16:39:12,636 Diffractometer: Grid direction is not defined. Using default.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,792 EpicsCommand: creating pv MXROB:DMC2:m4.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:12,800 EpicsCommand: Error connecting to pv MXROB:DMC2:m4.VAL.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,800 EpicsCommand: creating pv MXROB:DMC2:m4.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,825 EpicsCommand: creating pv MXROB:DMC2:m4.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,852 EpicsCommand: creating pv MXROB:DMC2:m4.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,879 EpicsCommand: creating pv MXROB:DMC2:m4.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,907 EpicsCommand: creating pv MXROB:DMC2:m4.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,933 EpicsCommand: creating pv MXROB:DMC2:m4.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,960 EpicsCommand: creating pv MXROB:DMC2:m4.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:12,986 EpicsCommand: Error connecting to pv MXROB:DMC2:m4.DHLM.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:12,986 EpicsCommand: creating pv MXROB:DMC2:m4.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,016 EpicsCommand: creating pv MXROB:DMC2:m2.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,042 EpicsCommand: creating pv MXROB:DMC2:m2.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,068 EpicsCommand: creating pv MXROB:DMC2:m2.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,095 EpicsCommand: creating pv MXROB:DMC2:m2.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,122 EpicsCommand: creating pv MXROB:DMC2:m2.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,149 EpicsCommand: creating pv MXROB:DMC2:m2.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,177 EpicsCommand: creating pv MXROB:DMC2:m2.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,204 EpicsCommand: creating pv MXROB:DMC2:m2.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,231 EpicsCommand: creating pv MXROB:DMC2:m2.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,261 BeamFocusing: No motors defined
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,272 EpicsCommand: creating pv MXROB:DMC2:m8.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,284 EpicsCommand: creating pv MXROB:DMC2:m8.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:13,310 EpicsCommand: Error connecting to pv MXROB:DMC2:m8.RLV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,311 EpicsCommand: creating pv MXROB:DMC2:m8.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,340 EpicsCommand: creating pv MXROB:DMC2:m8.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,366 EpicsCommand: creating pv MXROB:DMC2:m8.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,392 EpicsCommand: creating pv MXROB:DMC2:m8.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:13,419 EpicsCommand: Error connecting to pv MXROB:DMC2:m8.VELO.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,419 EpicsCommand: creating pv MXROB:DMC2:m8.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:13,447 EpicsCommand: Error connecting to pv MXROB:DMC2:m8.DLLM.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,447 EpicsCommand: creating pv MXROB:DMC2:m8.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,474 EpicsCommand: creating pv MXROB:DMC2:m8.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:13,500 EpicsCommand: Error connecting to pv MXROB:DMC2:m8.EGU.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,502 EpicsCommand: creating pv MXROB:DMC2:m6.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,529 EpicsCommand: creating pv MXROB:DMC2:m6.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:13,555 EpicsCommand: Error connecting to pv MXROB:DMC2:m6.RLV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,556 EpicsCommand: creating pv MXROB:DMC2:m6.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,583 EpicsCommand: creating pv MXROB:DMC2:m6.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,609 EpicsCommand: creating pv MXROB:DMC2:m6.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,638 EpicsCommand: creating pv MXROB:DMC2:m6.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,664 EpicsCommand: creating pv MXROB:DMC2:m6.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,691 EpicsCommand: creating pv MXROB:DMC2:m6.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:13,716 EpicsCommand: Error connecting to pv MXROB:DMC2:m6.DHLM.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:13,717 EpicsCommand: creating pv MXROB:DMC2:m6.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:14,419 EpicsCommand: creating pv MXROB:StaubliCS8:SetShutter.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:14,423 EpicsCommand: Error connecting to pv MXROB:StaubliCS8:SetShutter.VAL.
+* [Qt4_mx2_mxcube.gui, root] ERROR 2017-03-20 16:39:14,671 /usr/local/src/mxcube/HardwareObjects/LNLS/LNLSDetector.py:18: RuntimeWarning: Patching more than once will result in the union of all True parameters being patched
+  monkey.patch_all()
+
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:14,685 EpicsCommand: creating pv MXROB:DMC1:m3.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:14,693 EpicsCommand: Error connecting to pv MXROB:DMC1:m3.VAL.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:14,693 EpicsCommand: creating pv MXROB:DMC1:m3.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:14,718 EpicsCommand: Error connecting to pv MXROB:DMC1:m3.RLV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:14,718 EpicsCommand: creating pv MXROB:DMC1:m3.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:14,747 EpicsCommand: creating pv MXROB:DMC1:m3.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:14,773 EpicsCommand: creating pv MXROB:DMC1:m3.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:14,801 EpicsCommand: creating pv MXROB:DMC1:m3.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:14,827 EpicsCommand: creating pv MXROB:DMC1:m3.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:14,854 EpicsCommand: creating pv MXROB:DMC1:m3.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:14,881 EpicsCommand: creating pv MXROB:DMC1:m3.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:14,976 LDAP Server is not available
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:14,984 EpicsCommand: creating pv MX2:DMC4:m4.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:15,039 EpicsCommand: Error connecting to pv MX2:DMC4:m4.VAL.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:15,039 EpicsCommand: creating pv MX2:DMC4:m4.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:15,047 EpicsCommand: creating pv MX2:DMC4:m4.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:15,075 EpicsCommand: creating pv MX2:DMC4:m4.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:15,137 EpicsCommand: creating pv MX2:DMC4:m4.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:15,156 EpicsCommand: creating pv MX2:DMC4:m4.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:15,183 EpicsCommand: creating pv MX2:DMC4:m4.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:15,247 EpicsCommand: creating pv MX2:DMC4:m4.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:15,262 EpicsCommand: Error connecting to pv MX2:DMC4:m4.EGU.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:15,263 EpicsCommand: creating pv MX2:DMC4:m1.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:15,291 EpicsCommand: creating pv MX2:DMC4:m1.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:15,351 EpicsCommand: creating pv MX2:DMC4:m1.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:15,370 EpicsCommand: Error connecting to pv MX2:DMC4:m1.RBV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:15,371 EpicsCommand: creating pv MX2:DMC4:m1.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:15,435 EpicsCommand: creating pv MX2:DMC4:m1.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:15,453 EpicsCommand: creating pv MX2:DMC4:m1.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:15,480 EpicsCommand: creating pv MX2:DMC4:m1.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:15,507 EpicsCommand: creating pv MX2:DMC4:m1.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:15,566 EpicsCommand: creating pv LNLS:ANEL:corrente: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:15,587 EpicsCommand: Error connecting to pv LNLS:ANEL:corrente.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:15,587 EpicsCommand: creating pv LNLS:ANEL:gama_en: read_as_str = True
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:15,614 EpicsCommand: creating pv MX2:IO:ai10: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:15,643 EpicsCommand: Error connecting to pv MX2:IO:ai10.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:15,644 EpicsCommand: creating pv MX2:IO:ai11: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:15,668 EpicsCommand: Error connecting to pv MX2:IO:ai11.
+* [Qt4_mx2_mxcube.gui, root] INFO 2017-03-20 16:39:15,675 ParallelProcessing: No beamstop hwobj defined
+* [Qt4_mx2_mxcube.gui, HWR] WARNING 2017-03-20 16:39:15,698 LNLSEnergyScan: Database hwobj not defined
+* [Qt4_mx2_mxcube.gui, HWR] WARNING 2017-03-20 16:39:15,698 LNLSEnergyScan: Transmission hwobj not defined
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:15,736 LDAP Server is not available
+* [Qt4_mx2_mxcube.gui, queue_exec] INFO 2017-03-20 16:39:15,760 Module load, probably application start
+* [Qt4_mx2_mxcube.gui, root] INFO 2017-03-20 16:39:16,000 connectNotify statusChanged
+* [Qt4_mx2_mxcube.gui, root] INFO 2017-03-20 16:39:16,000 connectNotify stateChanged
+* [Qt4_mx2_mxcube.gui, root] INFO 2017-03-20 16:39:16,000 connectNotify infoChanged
+* [Qt4_mx2_mxcube.gui, root] INFO 2017-03-20 16:39:16,000 connectNotify selectionChanged
+* [Qt4_mx2_mxcube.gui, root] INFO 2017-03-20 16:39:16,001 connectNotify loadedSampleChanged
+* [Qt4_mx2_mxcube.gui, root] ERROR 2017-03-20 16:39:16,782 Cannot import module Qt4_XRFSpectrumParametersBrick
+Traceback (most recent call last):
+  File "/usr/local/src/mxcube_2017_03_06_01_mx2a/BlissFramework/Qt4_Configuration.py", line 37, in loadModule
+    mod = imp.load_module(brick_name, fp, path_name, description)
+  File "/usr/local/lib/python3.4/imp.py", line 235, in load_module
+    return load_source(name, filename, file)
+  File "/usr/local/lib/python3.4/imp.py", line 171, in load_source
+    module = methods.load()
+  File "<frozen importlib._bootstrap>", line 1220, in load
+  File "<frozen importlib._bootstrap>", line 1200, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1129, in _exec
+  File "<frozen importlib._bootstrap>", line 1471, in exec_module
+  File "<frozen importlib._bootstrap>", line 321, in _call_with_frames_removed
+  File "/usr/local/src/mxcube_2017_03_06_01_mx2a/Bricks/Qt4_XRFSpectrumParametersBrick.py", line 23, in <module>
+    from widgets.Qt4_xrf_spectrum_parameters_widget import XRFSpectrumParametersWidget
+  File "/usr/local/src/mxcube_2017_03_06_01_mx2a/Bricks/widgets/Qt4_xrf_spectrum_parameters_widget.py", line 30, in <module>
+    from widgets.Qt4_mca_spectrum_widget import McaSpectrumWidget
+  File "/usr/local/src/mxcube_2017_03_06_01_mx2a/Bricks/widgets/Qt4_mca_spectrum_widget.py", line 56, in <module>
+    from PyMca import McaAdvancedFit
+  File "/usr/local/lib/python3.4/site-packages/PyMca/McaAdvancedFit.py", line 64, in <module>
+    from PyMca import QtBlissGraph
+  File "/usr/local/lib/python3.4/site-packages/PyMca/QtBlissGraph.py", line 43, in <module>
+    from PyQt4 import Qwt5
+ImportError: cannot import name 'Qwt5'
+* [Qt4_mx2_mxcube.gui, root] ERROR 2017-03-20 16:39:16,785 Cannot load brick xrf_spectrum_parameters : module could not be loaded.
+* [Qt4_mx2_mxcube.gui, root] INFO 2017-03-20 16:39:16,995 connectNotify infoChanged
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,007 EpicsCommand: creating pv MX2:DMC4:m3.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,025 EpicsCommand: creating pv MX2:DMC4:m3.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,050 EpicsCommand: creating pv MX2:DMC4:m3.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,078 EpicsCommand: creating pv MX2:DMC4:m3.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,105 EpicsCommand: creating pv MX2:DMC4:m3.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,133 EpicsCommand: creating pv MX2:DMC4:m3.LLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,158 EpicsCommand: creating pv MX2:DMC4:m3.HLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,184 EpicsCommand: creating pv MX2:DMC4:m3.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,226 EpicsCommand: creating pv MXROB:DMC3:m1.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:17,236 EpicsCommand: Error connecting to pv MXROB:DMC3:m1.VAL.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,236 EpicsCommand: creating pv MXROB:DMC3:m1.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,263 EpicsCommand: creating pv MXROB:DMC3:m1.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:17,289 EpicsCommand: Error connecting to pv MXROB:DMC3:m1.RBV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,290 EpicsCommand: creating pv MXROB:DMC3:m1.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,317 EpicsCommand: creating pv MXROB:DMC3:m1.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:17,343 EpicsCommand: Error connecting to pv MXROB:DMC3:m1.STOP.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,343 EpicsCommand: creating pv MXROB:DMC3:m1.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:17,369 EpicsCommand: Error connecting to pv MXROB:DMC3:m1.VELO.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,370 EpicsCommand: creating pv MXROB:DMC3:m1.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,397 EpicsCommand: creating pv MXROB:DMC3:m1.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:17,424 EpicsCommand: Error connecting to pv MXROB:DMC3:m1.DHLM.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,424 EpicsCommand: creating pv MXROB:DMC3:m1.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,464 EpicsCommand: creating pv MXROB:DMC3:m2.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:17,478 EpicsCommand: Error connecting to pv MXROB:DMC3:m2.VAL.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,479 EpicsCommand: creating pv MXROB:DMC3:m2.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,506 EpicsCommand: creating pv MXROB:DMC3:m2.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:17,532 EpicsCommand: Error connecting to pv MXROB:DMC3:m2.RBV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,532 EpicsCommand: creating pv MXROB:DMC3:m2.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:17,559 EpicsCommand: Error connecting to pv MXROB:DMC3:m2.DMOV.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,559 EpicsCommand: creating pv MXROB:DMC3:m2.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:17,586 EpicsCommand: Error connecting to pv MXROB:DMC3:m2.STOP.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,586 EpicsCommand: creating pv MXROB:DMC3:m2.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,614 EpicsCommand: creating pv MXROB:DMC3:m2.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,641 EpicsCommand: creating pv MXROB:DMC3:m2.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,668 EpicsCommand: creating pv MXROB:DMC3:m2.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,709 EpicsCommand: creating pv MXROB:DMC3:m3.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:17,721 EpicsCommand: Error connecting to pv MXROB:DMC3:m3.VAL.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,721 EpicsCommand: creating pv MXROB:DMC3:m3.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,749 EpicsCommand: creating pv MXROB:DMC3:m3.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,778 EpicsCommand: creating pv MXROB:DMC3:m3.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,805 EpicsCommand: creating pv MXROB:DMC3:m3.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,830 EpicsCommand: creating pv MXROB:DMC3:m3.VELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,857 EpicsCommand: creating pv MXROB:DMC3:m3.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,885 EpicsCommand: creating pv MXROB:DMC3:m3.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,911 EpicsCommand: creating pv MXROB:DMC3:m3.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,951 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:17,967 EpicsCommand: Error connecting to pv MXROB:SlitGonioBase:motor.VAL.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,967 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:17,993 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,020 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,048 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,074 EpicsCommand: creating pv MXROB:SlitGonioBase:motorVELO: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,101 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.DLLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,129 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.DHLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,155 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.EGU: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,507 EpicsCommand: creating pv MX2:DMC4:m3.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,509 EpicsCommand: creating pv MX2:DMC4:m3.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,510 EpicsCommand: creating pv MX2:DMC4:m3.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,511 EpicsCommand: creating pv MX2:DMC4:m3.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,513 EpicsCommand: creating pv MX2:DMC4:m3.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,514 EpicsCommand: creating pv MX2:DMC4:m3.HLS: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,538 EpicsCommand: creating pv MX2:DMC4:m3.LLS: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,564 EpicsCommand: creating pv MX2:DMC4:m3.HLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,565 EpicsCommand: creating pv MX2:DMC4:m3.LLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,566 EpicsCommand: creating pv MX2:IO:ai9: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,592 EpicsCommand: creating pv MXROB:DMC3:m1.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,594 EpicsCommand: creating pv MXROB:DMC3:m1.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,595 EpicsCommand: creating pv MXROB:DMC3:m1.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,597 EpicsCommand: creating pv MXROB:DMC3:m1.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,598 EpicsCommand: creating pv MXROB:DMC3:m1.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,600 EpicsCommand: creating pv MXROB:DMC3:m1.HLS: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,615 EpicsCommand: creating pv MXROB:DMC3:m1.LLS: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,642 EpicsCommand: creating pv MXROB:DMC3:m1.HLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,669 EpicsCommand: creating pv MXROB:DMC3:m1.LLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,697 EpicsCommand: creating pv MXROB:DMC3:m2.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,698 EpicsCommand: creating pv MXROB:DMC3:m2.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,700 EpicsCommand: creating pv MXROB:DMC3:m2.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,702 EpicsCommand: creating pv MXROB:DMC3:m2.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,704 EpicsCommand: creating pv MXROB:DMC3:m2.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,705 EpicsCommand: creating pv MXROB:DMC3:m2.HLS: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,723 EpicsCommand: creating pv MXROB:DMC3:m2.LLS: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,750 EpicsCommand: creating pv MXROB:DMC3:m2.HLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,778 EpicsCommand: creating pv MXROB:DMC3:m2.LLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,804 EpicsCommand: creating pv MX2:IO:ai10: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,807 EpicsCommand: creating pv MXROB:DMC3:m3.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,808 EpicsCommand: creating pv MXROB:DMC3:m3.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,810 EpicsCommand: creating pv MXROB:DMC3:m3.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,812 EpicsCommand: creating pv MXROB:DMC3:m3.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,813 EpicsCommand: creating pv MXROB:DMC3:m3.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,814 EpicsCommand: creating pv MXROB:DMC3:m3.HLS: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,832 EpicsCommand: creating pv MXROB:DMC3:m3.LLS: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,858 EpicsCommand: creating pv MXROB:DMC3:m3.HLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:18,884 EpicsCommand: Error connecting to pv MXROB:DMC3:m3.HLM.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,885 EpicsCommand: creating pv MXROB:DMC3:m3.LLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:18,911 EpicsCommand: Error connecting to pv MXROB:DMC3:m3.LLM.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,912 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.VAL: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,914 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.RLV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,915 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.RBV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,916 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.DMOV: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,919 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.STOP: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,921 EpicsCommand: creating pv MXROB:SlitGonioBase:motorHLS: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,940 EpicsCommand: creating pv MXROB:SlitGonioBase:motorLLS: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,968 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.HLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:18,994 EpicsCommand: creating pv MXROB:SlitGonioBase:motor.LLM: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:19,020 EpicsCommand: Error connecting to pv MXROB:SlitGonioBase:motor.LLM.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:19,020 EpicsCommand: creating pv MX2:IO:ai11: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:19,247 Cannot load Hardware Object "/" : file not found.
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:19,293 Cannot load Hardware Object "/" : file not found.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:19,308 EpicsCommand: creating pv MXROB:StaubliCS8:SetLight1: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:19,318 EpicsCommand: Error connecting to pv MXROB:StaubliCS8:SetLight1.
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:19,323 EpicsCommand: creating pv MXROB:StaubliCS8:SetLight2: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:19,350 EpicsCommand: creating pv MXROB:StaubliCS8:SetLight3: read_as_str = False
+* [Qt4_mx2_mxcube.gui, HWR] ERROR 2017-03-20 16:39:19,371 EpicsCommand: Error connecting to pv MXROB:StaubliCS8:SetLight3.
+* [Qt4_mx2_mxcube.gui, root] ERROR 2017-03-20 16:39:19,427 No slot 'populate_xrf_widget' in receiver xrf_spectrum_parameters
+* [Qt4_mx2_mxcube.gui, HWR] DEBUG 2017-03-20 16:39:19,823 InstanceServer: listening to connections on mx2a-linux:14001
+* [Qt4_mx2_mxcube.gui, root] ERROR 2017-03-20 16:39:25,048 Problem removing the lock file
+* [Qt4_mx2_mxcube.gui, root] ERROR 2017-03-20 16:39:25,048 Problem removing the log lock file
+Traceback (most recent call last):
+  File "/usr/local/src/mxcube_2017_03_06_01_mx2a/BlissFramework/Qt4_startGUI.py", line 312, in run
+    os.unlink(filename)
+PermissionError: [Errno 1] Operation not permitted: '/tmp/.mxcube.log.lock'

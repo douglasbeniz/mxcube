@@ -1,0 +1,15 @@
+<equipment class="LNLSMotor">
+  <!-- Channels :: Mono_Theta_Second_Xtal_Pitch :: Real = MX2:DMC4:m3 -->
+  <channel type="epics" name="epicsMotor_val">MX2:DMC4:m3.VAL</channel>
+  <channel type="epics" name="epicsMotor_rlv" >MX2:DMC4:m3.RLV</channel>
+  <channel type="epics" name="epicsMotor_rbv" polling="200">MX2:DMC4:m3.RBV</channel>
+  <channel type="epics" name="epicsMotor_dmov" polling="200">MX2:DMC4:m3.DMOV</channel>
+  <channel type="epics" name="epicsMotor_stop">MX2:DMC4:m3.STOP</channel>
+  <!-- Specifically for this motor use LLM and HLM instead of DLLM and DHLM -->
+  <channel type="epics" name="epicsMotor_dllm">MX2:DMC4:m3.LLM</channel>
+  <channel type="epics" name="epicsMotor_dhlm">MX2:DMC4:m3.HLM</channel>
+  <channel type="epics" name="epicsMotor_egu">MX2:DMC4:m3.EGU</channel>
+
+  <!-- Specific properties -->
+  <motor_name>mono_theta_second_xtal_pitch</motor_name>
+</equipment>

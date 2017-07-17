@@ -1,0 +1,20 @@
+<equipment class="LNLSBeamFocus">
+    <focusModes>
+      <focusMode>
+           <modeName>Unfocused</modeName>
+           <message>'Set beam focusing to Unfocused mode'</message>
+           <size>100</size>
+           <divergence>5</divergence>
+      </focusMode>
+      <focusMode>
+           <modeName>Focused</modeName>
+           <message>'Set beam focusing to Focused mode'</message>
+           <size>10</size>
+           <divergence>1.2</divergence>
+      </focusMode>
+    </focusModes>
+    <!--
+    <focModes>['Unfocused', 'Horizontal', 'Vertical', 'Double']</focModes> 
+                                                     - used focusing modes
+    -->
+</equipment>

@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MxCuBE Documentation &mdash; MxCuBE 2.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="MxCuBE 2.0 documentation" href="#" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">MxCuBE 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="mxcube-documentation">
+<h1>MxCuBE Documentation<a class="headerlink" href="#mxcube-documentation" title="Permalink to this headline">¶</a></h1>
+<p>MXCuBE stands for Macromolecular Xtallography CUstomized Beamline Environment.
+The project started in 2005 at <a class="reference external" href="http://www.esrf.eu">ESRF</a>, since then it has
+been adopted by other institutes in Europe. In 2010, a collaboration
+agreement has been signed for the development of MXCuBE with the following
+partners:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.esrf.eu">ESRF</a></li>
+<li><a class="reference external" href="http://www.synchrotron-soleil.fr/">Soleil</a></li>
+<li><a class="reference external" href="https://www.maxlab.lu.se/">Max lab</a></li>
+<li><a class="reference external" href="http://www.helmholtz-berlin.de/">HZB</a></li>
+<li><a class="reference external" href="http://www.embl.org/">EMBL</a></li>
+<li><a class="reference external" href="http://www.globalphasing.com/">Global Phasing Ltd.</a></li>
+<li><a class="reference external" href="https://www.cells.es/en">ALBA</a></li>
+<li><a class="reference external" href="https://www.desy.de">DESY</a></li>
+</ul>
+<p>Latest news about the MXCuBE project can be found in the <a class="reference external" href="http://mxcube.github.io/mxcube/">project website</a>.</p>
+<p>MXCuBE consist of separated data acquisition control layer and graphical user interface.</p>
+<p class="rubric">Data acquisition control</p>
+<p>Data acquisition control is based on Hardware Objects as Python classes associated with a configuration XML file. Hardware Objects are instanciated by the <a class="reference external" href="http://github.com/mxcube/HardwareRepository">Hardware Repository</a>.
+Each Hardware Object should be based on an abstract class, defining a common API for MXCuBE. Then, implementation differs at each site depending on hardware and beamline specificities.
+See the <a class="reference internal" href="design_overview.html"><em>Design Overview</em></a> and <a class="reference internal" href="feature_overview.html"><em>Overview of features</em></a> for more details.</p>
+<p class="rubric">Graphical user interface</p>
+<p>MXCuBE has two graphical user interfaces:</p>
+<ul class="simple">
+<li><a class="reference internal" href="qt_framework_overview.html"><em>Qt framework based GUI</em></a></li>
+<li><a class="reference internal" href="web_framework_overview.html"><em>Web based GUI</em></a></li>
+</ul>
+<div class="section" id="information-for-users">
+<h2>Information for users<a class="headerlink" href="#information-for-users" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="gui_overview.html"><em>Overview of graphical user interface</em></a></li>
+<li><a class="reference internal" href="feature_overview.html"><em>Overview of features</em></a></li>
+<li><a class="reference internal" href="user_manual.html"><em>Qt version user manual</em></a></li>
+<li>If you cite MXCuBE, please use the reference:</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Gabadinho, J. et al. (2010). MxCuBE: a synchrotron beamline control environment customized for macromolecular crystallography experiments. J. Synchrotron Rad. 17, 700-707</p>
+</div>
+<ul class="simple">
+<li><a class="reference external" href="http://www.ncbi.nlm.nih.gov/pubmed/20724792">Article</a></li>
+</ul>
+</div>
+<div class="section" id="information-for-developers">
+<h2>Information for developers<a class="headerlink" href="#information-for-developers" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="installation_instructions_qt4.html"><em>How to install and run Qt version</em></a></li>
+<li><a class="reference internal" href="installation_instructions_web.html"><em>How to install and run web version</em></a></li>
+<li><a class="reference internal" href="how_to_create_hwobj.html"><em>How to create hardware object</em></a></li>
+<li><a class="reference internal" href="how_to_create_qt_brick.html"><em>How to create GUI brick in Qt version</em></a></li>
+<li><a class="reference internal" href="how_to_define_qt_gui.html"><em>How to define GUI in Qt version</em></a></li>
+<li><a class="reference internal" href="packages/HardwareObjects.html"><em>HardwareObjects Package</em></a></li>
+<li><a class="reference internal" href="packages/example_files.html"><em>Configuration example Files</em></a></li>
+<li><a class="reference internal" href="mxcube_meetings.html"><em>MXCuBE meetings</em></a></li>
+<li><a class="reference internal" href="changelog.html"><em>Change log</em></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">MxCuBE Documentation</a><ul>
+<li><a class="reference internal" href="#information-for-users">Information for users</a></li>
+<li><a class="reference internal" href="#information-for-developers">Information for developers</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">MxCuBE 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2013, MxCuBE Collaboration.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.6.
+    </div>
+  </body>
+</html>

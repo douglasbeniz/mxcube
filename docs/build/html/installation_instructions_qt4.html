@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>How to install and run Qt version &mdash; MxCuBE 2.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="MxCuBE 2.0 documentation" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">MxCuBE 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="how-to-install-and-run-qt-version">
+<h1>How to install and run Qt version<a class="headerlink" href="#how-to-install-and-run-qt-version" title="Permalink to this headline">¶</a></h1>
+<p>MXCuBE is organized as a subset of several git submodules.
+In this page a sequence how to get software code, install dependencies and execute software is described.</p>
+<p>Tested with:</p>
+<ul class="simple">
+<li>Linux: Ubuntu 10, 12, 14 (with gnome and kde) and Centos 7 (with gnome)</li>
+<li>Macos.</li>
+</ul>
+<div class="section" id="git-repository">
+<h2>1. Git repository<a class="headerlink" href="#git-repository" title="Permalink to this headline">¶</a></h2>
+<p>The MXCuBE is hosten in several git projects that all together can be found <a class="reference external" href="https://github.com/mxcube/mxcube">here</a>
+The repository for Qt version is organized in three submodules:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/mxcube/HardwareRepository.git">HardwareRepository</a></li>
+<li><a class="reference external" href="https://github.com/mxcube/HardwareObjects.git">HardwareObjects</a></li>
+<li><a class="reference external" href="https://github.com/mxcube/BlissFramework.git">BlissFramework</a></li>
+</ul>
+<p>To get MXCuBE code execute:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>git clone https://github.com/mxcube/mxcube.git mxcube-2
+<span class="nb">cd</span> mxcube-2
+git submodule init
+git submodule update
+</pre></div>
+</div>
+</div>
+<div class="section" id="python-dependencies">
+<h2>2. Python dependencies<a class="headerlink" href="#python-dependencies" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://www.python.org/">Python (&gt;2.6)</a></li>
+<li><a class="reference external" href="http://doc.qt.io/qt-4.8/)">Qt4</a></li>
+<li><a class="reference external" href="https://riverbankcomputing.com/software/pyqt/intro">PyQt</a></li>
+<li><a class="reference external" href="https://pypi.python.org/pypi/Louie/1.1">louie (pydispatcher)</a></li>
+<li><a class="reference external" href="https://github.com/downloads/surfly/gevent/gevent-1.0rc2.tar.gz">gevent &gt;= 1.0RC2</a></li>
+<li><a class="reference external" href="http://github.com/mxcube/pychooch">PyChooch</a></li>
+<li><a class="reference external" href="http://sourceforge.net/projects/pymca/">PyMca</a></li>
+<li><a class="reference external" href="https://pypi.python.org/pypi/jsonpickle/0.7.0">jsonpickle</a></li>
+<li><a class="reference external" href="http://www.scipy.org/install.html">scipy stack</a></li>
+</ul>
+<p>Before installing dependencies it is recomended to run mxcube (see :) to see
+which dependencies are missing.</p>
+<div class="section" id="debian-ubuntu">
+<h3>2.1. Debian/Ubuntu<a class="headerlink" href="#debian-ubuntu" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt-get install python-qt4 python-gevent python-louie python-jsonpickle python-numpy python-scipy python-matplotlib python-suds pymca
+</pre></div>
+</div>
+</div>
+<div class="section" id="fedora-centos">
+<h3>2.2. Fedora/Centos<a class="headerlink" href="#fedora-centos" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo yum install qt qt-demos qt-designer qt4 qt4-designer PyQt4 PyQt4-webkit numpy scipy python-pip
+sudo pip install matplotlib PyDispatcher
+</pre></div>
+</div>
+<p>Some hints if problems during <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">matplotlib</span></code>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># missing libpng</span>
+sudo yum install libpng-devel
+<span class="c1"># gcc error</span>
+sudo yum install gcc-c++
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>2.3. PyMca<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>If pymca is not available via package management tool then:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="c1"># download source from: http://pymca.sourceforge.net/download.html</span>
+sudo python setup.py install
+
+<span class="c1"># when Qwt not available</span>
+<span class="c1"># download source from http://sourceforge.net/projects/qwt/files/qwt/</span>
+qt4-qmake qwt.pro
+sudo make install
+</pre></div>
+</div>
+<p>More info:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://pymca.sourceforge.net/">http://pymca.sourceforge.net/</a></li>
+<li><a class="reference external" href="http://qwt.sourceforge.net/index.html">http://qwt.sourceforge.net/index.html</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="running-code">
+<h2>3. Running code<a class="headerlink" href="#running-code" title="Permalink to this headline">¶</a></h2>
+<p>Use <strong>mxcube</strong> script file located in <strong>bin</strong> directory with
+command line arguments to launch MXCuBE.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Last command line argument has to indicate qt version (<strong>-qt3</strong> or <strong>-qt4</strong>).</p>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>Usage: mxcube &lt;GUI definition file&gt; <span class="o">[</span>options<span class="o">]</span> <span class="o">[</span>-qt3 or -qt4<span class="o">]</span>
+
+Options:
+       -h, --help            show this <span class="nb">help</span> message and <span class="nb">exit</span>
+       --logFile<span class="o">=</span>FILE        Log file
+       --logLevel<span class="o">=</span>LOGLEVEL   Log level
+       --bricksDirs<span class="o">=</span>dir1:dir2...dirN
+                    Additional directories <span class="k">for</span> bricks search path <span class="o">(</span>you can
+                    also use the CUSTOM_BRICKS_PATH environment variable<span class="o">)</span>
+       --hardwareRepository<span class="o">=</span>dir
+                            Directory where configuration xml files are located
+       --hardwareObjectsDirs<span class="o">=</span>dir1:dir2...dirN
+                             Additional directories <span class="k">for</span> Hardware Objects search
+                             path <span class="o">(</span>you can also use the
+                             CUSTOM_HARDWARE_OBJECTS_PATH environment variable<span class="o">)</span>
+       -d                    start GUI in Design mode
+       -m                    maximize main window
+       --no-border           does not show borders on main window
+</pre></div>
+</div>
+<p><strong>run_mxcube.csh*</strong> script file located in <strong>bin</strong> directory can be adjusted and used.
+For example to run MXCuBE with default parameters edit script:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>PATH_TO_MXCUBE/bin/mxcube --hardwareRepository<span class="o">=</span>PATH_TO_MXCUBE/ExampleFiles/HardwareObjects.xml -qt4
+</pre></div>
+</div>
+<p>In this case MXCuBE will start in <strong>Qt4</strong> mode with GUI definition file
+<strong>Qt4_example_mxcube.gui</strong>. It is possible to adjust script by defining gui
+configuration file, additional directories for bricks and hardware objects. For example:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>PATH_TO_MXCUBE/bin/mxcube PATH_TO_GUI_FILE --hardwareRepository<span class="o">=</span>PATH_TO_XML_FILES  --hardwareObjectsDirs<span class="o">=</span>PATHs_TO_ADDITIONAL_HARDWARE_OBJECTS --bricksDirs<span class="o">=</span>PATHS_TO_ADDITIONAL_BRICKS -qt4
+</pre></div>
+</div>
+<p>Example xml files are available <a class="reference external" href="https://github.com/mxcube/mxcube/tree/master/ExampleFiles/HardwareObjects.xml">here</a></p>
+<div class="section" id="gui-builder">
+<h3>3.1. GUI builder<a class="headerlink" href="#gui-builder" title="Permalink to this headline">¶</a></h3>
+<p>GUI builder is used to define GUI layout. It is possible to add, edit or remove bricks,
+change brick parameters, edit signals and slots between bricks.
+To launch gui builder add <strong>-d</strong> before <strong>-qt4</strong> argument. For example:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>PATH_TO_MXCUBE/bin/mxcube --hardwareRepository<span class="o">=</span>PATH_TO_MXCUBE/ExampleFiles/HardwareObjects.xml -d -qt4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="other-information">
+<h2>Other information<a class="headerlink" href="#other-information" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="how_to_create_hwobj.html"><em>How to create hardware object</em></a></li>
+<li><a class="reference internal" href="how_to_create_qt_brick.html"><em>How to create GUI brick in Qt version</em></a></li>
+<li><code class="xref doc docutils literal"><span class="pre">how_to_defined_gui</span></code></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">How to install and run Qt version</a><ul>
+<li><a class="reference internal" href="#git-repository">1. Git repository</a></li>
+<li><a class="reference internal" href="#python-dependencies">2. Python dependencies</a><ul>
+<li><a class="reference internal" href="#debian-ubuntu">2.1. Debian/Ubuntu</a></li>
+<li><a class="reference internal" href="#fedora-centos">2.2. Fedora/Centos</a></li>
+<li><a class="reference internal" href="#id1">2.3. PyMca</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#running-code">3. Running code</a><ul>
+<li><a class="reference internal" href="#gui-builder">3.1. GUI builder</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#other-information">Other information</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/installation_instructions_qt4.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">MxCuBE 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2013, MxCuBE Collaboration.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.6.
+    </div>
+  </body>
+</html>

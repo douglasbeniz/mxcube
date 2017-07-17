@@ -1,0 +1,11 @@
+<equipment class="LNLSEnergy">
+  <!-- Hardware objects of motors related to energy -->
+  <object href="/lnls/lnls-motor_mono_first_xtal" role="mono_first_xtal"/>
+  <object href="/lnls/lnls-motor_mono_second_xtal" role="mono_second_xtal"/>
+  <object href="/lnls/lnls-detector" role="detector"/>
+
+  <!-- Specific properties -->
+  <crystal_offset>18</crystal_offset>
+  <!-- Crystal param, distance between atomic layers in a Si-111 crystal (2d in angstroms) -->
+  <crystal_param_si_111>6.270855</crystal_param_si_111>
+</equipment>
