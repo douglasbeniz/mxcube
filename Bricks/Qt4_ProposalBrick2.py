@@ -287,15 +287,12 @@ class Qt4_ProposalBrick2(BlissWidget):
             QtGui.QMessageBox.Cancel) == QtGui.QMessageBox.Ok:
             self.log_out()
 
-<<<<<<< HEAD
     def stop(self):
         # Stop CamServer
         if (self.session_hwobj):
             self.session_hwobj.stop_camserver()
 
 
-=======
->>>>>>> 181e5b696a7219b2c558c09da6b9e1d0b04bd414
     # Logout the user; reset the brick; changes from logout mode to login mode
     def log_out(self):
         """
