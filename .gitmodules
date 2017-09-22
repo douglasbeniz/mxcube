@@ -1,0 +1,9 @@
+[submodule "HardwareRepository"]
+	path = HardwareRepository
+	url = git://github.com/douglasbeniz/HardwareRepository
+[submodule "BlissFramework"]
+	path = BlissFramework
+	url = git://github.com/douglasbeniz/BlissFramework
+[submodule "HardwareObjects"]
+	path = HardwareObjects
+	url = git://github.com/douglasbeniz/HardwareObjects

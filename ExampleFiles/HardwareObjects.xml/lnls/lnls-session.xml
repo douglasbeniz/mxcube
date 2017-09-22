@@ -9,7 +9,11 @@
   <file_info>
     <file_suffix>cbf</file_suffix>
     <!-- official -->
+<<<<<<< HEAD
     <base_directory>/storage/_usersdata_/</base_directory>
+=======
+    <base_directory>/storage</base_directory>
+>>>>>>> 181e5b696a7219b2c558c09da6b9e1d0b04bd414
     <!-- <base_directory>/sto2</base_directory>  -->
     <raw_data_folder_name>RAW_DATA</raw_data_folder_name>
     <snapshot_folder_name>SNAPSHOTS</snapshot_folder_name>

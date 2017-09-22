@@ -23,7 +23,11 @@
   <pilatusSshPassword>Pilatus2</pilatusSshPassword>
   <!-- official -->
   <pilatusServerStorageTemp>/MX2Temp</pilatusServerStorageTemp>
+<<<<<<< HEAD
   <pilatusServerStorage>/storage/_usersdata_</pilatusServerStorage>
+=======
+  <pilatusServerStorage>/storage</pilatusServerStorage>
+>>>>>>> 181e5b696a7219b2c558c09da6b9e1d0b04bd414
   <!-- <pilatusServerStorageTemp>/sto2temp</pilatusServerStorageTemp>
   <pilatusServerStorage>/sto2</pilatusServerStorage> -->
   <camserverXpraDisplay>10002</camserverXpraDisplay>

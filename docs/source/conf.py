@@ -46,8 +46,13 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
+<<<<<<< HEAD
 project = 'MxCuBE'
 copyright = '2013, MxCuBE Collaboration'
+=======
+project = u'MxCuBE'
+copyright = u'2013, MxCuBE Collaboration'
+>>>>>>> 181e5b696a7219b2c558c09da6b9e1d0b04bd414
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -181,8 +186,13 @@ latex_font_size = '10pt'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
+<<<<<<< HEAD
   ('user_manual', 'MxCuBE2.tex', 'MxCuBE 2.0 Documentation',
    'MxCuBE Collaboration', 'manual'),
+=======
+  ('user_manual', 'MxCuBE2.tex', u'MxCuBE 2.0 Documentation',
+   u'MxCuBE Collaboration', 'manual'),
+>>>>>>> 181e5b696a7219b2c558c09da6b9e1d0b04bd414
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -204,7 +214,11 @@ latex_documents = [
 
 numfig = True
 
+<<<<<<< HEAD
 pdf_documents = [('index', 'mxcube_manual', 'MXCuBE manual', ''),]
+=======
+pdf_documents = [('index', u'mxcube_manual', u'MXCuBE manual', u''),]
+>>>>>>> 181e5b696a7219b2c558c09da6b9e1d0b04bd414
 # index - master document
 # rst2pdf - name of the generated pdf
 # Sample rst2pdf doc - title of the pdf

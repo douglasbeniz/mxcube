@@ -1,6 +1,13 @@
 <equipment class="LNLSBeamInfo">
+<<<<<<< HEAD
   <beam_crystal_position_x>317</beam_crystal_position_x>
   <beam_crystal_position_y>243</beam_crystal_position_y>
   <beam_det_position_x>751</beam_det_position_x>
   <beam_det_position_y>855</beam_det_position_y>
+=======
+  <beam_crystal_position_x>327</beam_crystal_position_x>
+  <beam_crystal_position_y>252</beam_crystal_position_y>
+  <beam_det_position_x>751</beam_det_position_x>
+  <beam_det_position_y>859</beam_det_position_y>
+>>>>>>> 181e5b696a7219b2c558c09da6b9e1d0b04bd414
 </equipment>

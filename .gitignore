@@ -1,0 +1,11 @@
+*.pyc
+*~
+*.gui
+*.old
+build
+*.swp
+\#*#
+.*
+.ab*
+.ik*
+
